@@ -1,0 +1,1 @@
+var aarch64 = {"instr":["mov","add","ldr","str","adrp","bl","ldrb","ldur","strb","sub","ret","b","cmp","strh","tbnz","ldurb","stp","ldp","stur","and","ldrh","subs","cbz","sturb","b.ge","mul","b.le","movk","ldrsh","eor","sturh","orr"]}

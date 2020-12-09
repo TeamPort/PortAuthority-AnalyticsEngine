@@ -39,7 +39,8 @@ class Energy extends Analyser
     {
         super()
         this.energy = 0
-        this.dictionary = platform.includes("x86_64") ? marcher: tx2
+        this.x86 = platform.includes("x86_64")
+        this.dictionary =  this.x86 ? marcher: tx2
     }
 
     analyze(instruction)
@@ -47,22 +48,26 @@ class Energy extends Analyser
         for(var i = 0; i < this.dictionary.instructions.length; i++)
         {
             var test = this.dictionary.instructions[i]
-            if(test.name == instruction.mnem)
+            if(instruction.mnem == test.name)
             {
                 this.energy += parseFloat(test.joules)
                 return
             }
         }
 
-        /* DANGEROUS */
-        // Give the best possible chance of an exact match before resorting to this
-        for(var i = 0; i < this.dictionary.instructions.length; i++)
+        if(this.x86)
         {
-            var test = this.dictionary.instructions[i]
-            if(instruction.mnem.includes(test.name))
+            /* DANGEROUS */
+            // x86-64 has multiple mnemonics for the same instruction
+            // Our internal dictionary is based on the short form
+            for(var i = 0; i < this.dictionary.instructions.length; i++)
             {
-                this.energy += parseFloat(test.joules)
-                return
+                var test = this.dictionary.instructions[i]
+                if(instruction.mnem.slice(0,-1) == test.name)
+                {
+                    this.energy += parseFloat(test.joules)
+                    return
+                }
             }
         }
 

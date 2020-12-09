@@ -20,11 +20,13 @@ function buildSyntheticInstanceMap(selected)
         }
 
         /* DANGEROUS */
+        // x86-64 has multiple mnemonics for the same instruction
+        // Our internal dictionary is based on the short form
         if(mnem == "")
         {
             for(var j = 0; j < x64.instr.length; j++)
             {
-                if(first.includes(x64.instr[j].toUpperCase()))
+                if(first.slice(0,-1) == x64.instr[j].toUpperCase())
                 {
                     mnem = aarch64.instr[j].toUpperCase()
                     break

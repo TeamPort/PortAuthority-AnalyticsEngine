@@ -1,2 +1,2 @@
 // Always store in short mnemonic from
-var x64 = {"instr":["mov","callq","movzbl","movabs","add","pop","push","jmpq","retq","movb","movswl","cmp","xor","jne","sub","test","je","and","movl","shl","jge","nopl","nopw","or","cmpl","jle","movzwl","movsbl","testb","xchg","movw"]}
+var x64 = {"instr":["MOV","LEA","CALL","ADD","CMP","JMP","MOVZX","XOR","SUB","SHL","MOVABS","MOVAPS","MOVSXD","NOP","MOVAPD","MOVSX","JGE","PUSH","POP","AND","MOVSS","RET","MOVSD","IMUL","JE","JNE","IDIV","CQO","TEST","SETNE","JLE","OR","SETE","SAR","JL","CMOVE","MULSD","MULSS","JG","SETL","MOVUPS","SETLE","SETGE","SHR","ADDSD","SETG","SETA","SETB","ADDSS","DIV","SETBE","JAE","JB","CDQ","CWDE","SETAE","JA","PSHUFD","REP","CVTTSS2SI","JBE","MOVDQA","UNPCKLPD","SHUFPS"]}

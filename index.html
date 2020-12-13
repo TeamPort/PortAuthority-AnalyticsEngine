@@ -7,9 +7,8 @@
 <script src="x86.words.js"></script>
 <script src="arm64.words.js"></script>
 <script src="synthetic.js"></script>
-<!--input type="file" id="replay"-->
+<input type="file" id="replay">
 <script>
-//    var run = null
     replay.addEventListener('change', function(event)
     {
       var file = replay.files[0];
@@ -22,7 +21,7 @@
       {
         if(event.target.readyState == FileReader.DONE)
         {
-//            run = JSON.parse(event.target.result);
+            run = JSON.parse(event.target.result);
             analyze(run);
         }
       };
@@ -71,5 +70,12 @@ function instance()
 </script>
 <br>
 <textarea id="output" style="width: 512px; height: 512px"></textarea>
-<script>analyze(run);</script>
+<script>
+    if(run != null)
+    {
+        analyze(run);
+        document.getElementById("replay").style.display = "none"
+
+    }
+</script>
 </html>

@@ -87,9 +87,9 @@ function analyze(selected)
     {
         var count = analyzers.length
         var instr = selected.run[i]
+        instr.mnem = instr.mnem.toUpperCase() //Everything in the framework expects upper case
         if(instruction.mnem == "NONE") return;
 
-        instr.mnem = instr.mnem.toUpperCase() //Everything in the framework expects upper case
         while(count--)
         {
             var a = analyzers[count]

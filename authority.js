@@ -45,8 +45,6 @@ class Energy extends Analyser
 
     analyze(instruction)
     {
-        if(instruction.mnem == "NONE") return;
-
         for(var i = 0; i < this.dictionary.instructions.length; i++)
         {
             var test = this.dictionary.instructions[i]
@@ -89,6 +87,8 @@ function analyze(selected)
     {
         var count = analyzers.length
         var instr = selected.run[i]
+        if(instruction.mnem == "NONE") return;
+
         instr.mnem = instr.mnem.toUpperCase() //Everything in the framework expects upper case
         while(count--)
         {

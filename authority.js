@@ -45,6 +45,8 @@ class Energy extends Analyser
 
     analyze(instruction)
     {
+        if(instruction.mnem == "NONE") return;
+
         for(var i = 0; i < this.dictionary.instructions.length; i++)
         {
             var test = this.dictionary.instructions[i]

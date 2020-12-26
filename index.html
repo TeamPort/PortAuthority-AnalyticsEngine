@@ -7,6 +7,9 @@
 <script src="x86.words.js"></script>
 <script src="arm64.words.js"></script>
 <script src="synthetic.js"></script>
+
+<script src="pako.min.js"></script>
+
 <input type="file" id="replay">
 <script>
     replay.addEventListener('change', function(event)
@@ -21,11 +24,13 @@
       {
         if(event.target.readyState == FileReader.DONE)
         {
-            run = JSON.parse(event.target.result);
+            var result = window.pako.inflate(event.target.result);
+            var text = new TextDecoder("utf-8").decode(result)
+            run = JSON.parse(text);
             analyze(run);
         }
       };
-      reader.readAsText(file.slice(0, file.size));
+      reader.readAsArrayBuffer(file.slice(0, file.size));
     }, false);
 </script>
 <br>

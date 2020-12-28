@@ -9,7 +9,7 @@ function buildSyntheticInstanceMap(selected)
     {
         var mnem = ""
         var value = 0
-        var first = selected.run[i].mnem.toUpperCase()
+        var first = selected.run[i].m.toUpperCase()
         for(var j = 0; j < x64.instr.length; j++)
         {
             if(first == x64.instr[j].toUpperCase())

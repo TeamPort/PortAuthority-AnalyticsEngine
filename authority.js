@@ -15,11 +15,11 @@ class Coverage extends Analyser
 
     analyze(instruction)
     {
-        var address = parseInt(instruction.address)
+        var address = parseInt(instruction.a)
         if(!this.addresses.has(address))
         {
             this.addresses.add(address)
-            this.profiledSize += ((instruction.opcode.length-2)/2)
+            this.profiledSize += ((instruction.o.length-2)/2)
         }
     }
 
@@ -48,7 +48,7 @@ class Energy extends Analyser
         for(var i = 0; i < this.dictionary.instructions.length; i++)
         {
             var test = this.dictionary.instructions[i]
-            if(instruction.mnem == test.name)
+            if(instruction.m == test.name)
             {
                 this.energy += parseFloat(test.joules)
                 return
@@ -63,7 +63,7 @@ class Energy extends Analyser
             for(var i = 0; i < this.dictionary.instructions.length; i++)
             {
                 var test = this.dictionary.instructions[i]
-                if(instruction.mnem.slice(0,-1) == test.name)
+                if(instruction.m.slice(0,-1) == test.name)
                 {
                     this.energy += parseFloat(test.joules)
                     return
@@ -87,8 +87,8 @@ function analyze(selected)
     {
         var count = analyzers.length
         var instr = selected.run[i]
-        instr.mnem = instr.mnem.toUpperCase() //Everything in the framework expects upper case
-        if(instr.mnem == "NONE") continue;
+        instr.m = instr.m.toUpperCase() //Everything in the framework expects upper case
+        if(instr.m == "NONE") continue;
 
         while(count--)
         {

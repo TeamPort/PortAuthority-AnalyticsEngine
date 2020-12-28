@@ -39,8 +39,16 @@ class Energy extends Analyser
     {
         super()
         this.energy = 0
+        this.defaultValue = 0.0
         this.x86 = platform.includes("x86_64")
         this.dictionary =  this.x86 ? marcher: tx2
+        for(var i = 0; i < this.dictionary.instructions.length; i++)
+        {
+            var instr = this.dictionary.instructions[i]
+            this.defaultValue += parseFloat(instr.joules)
+        }
+
+        this.defaultValue /= this.dictionary.instructions.length
     }
 
     analyze(instruction)
@@ -72,6 +80,8 @@ class Energy extends Analyser
         }
 
 //        console.log("EnergyAnalyzer - Not Found " + instruction.mnem)
+// Best guess
+        this.energy += this.defaultValue
     }
 
     energyUsage()

@@ -14,23 +14,33 @@
 <script>
     replay.addEventListener('change', function(event)
     {
-      var file = replay.files[0];
-      if(!file)
-      {
-        return;
-      }
-      var reader = new FileReader();
-      reader.onloadend = function(event)
-      {
-        if(event.target.readyState == FileReader.DONE)
-        {
-            var result = window.pako.inflate(event.target.result);
-            var text = new TextDecoder("utf-8").decode(result)
-            run = JSON.parse(text);
-            analyze(run);
-        }
-      };
-      reader.readAsArrayBuffer(file.slice(0, file.size));
+          var i = 0;
+          while(i < replay.files.length)
+          {
+              var file = replay.files[i];
+              if(!file)
+              {
+                  continue;
+              }
+
+              var reader = new FileReader();
+              reader.onloadend = function(event)
+              {
+                  if(event.target.readyState == FileReader.DONE)
+                  {
+                      var result = window.pako.inflate(event.target.result);
+                      var text = new TextDecoder("utf-8").decode(result)
+                      run = JSON.parse(text);
+                      if(analyzers == null)
+                      {
+                          analyzers = [new Coverage(run.size), new Category(), new Energy(run.triple)]
+                      }
+                      analyze(run);
+                  }
+              };
+              reader.readAsArrayBuffer(file.slice(0, file.size));
+              i++;
+          }
     }, false);
 </script>
 <br>

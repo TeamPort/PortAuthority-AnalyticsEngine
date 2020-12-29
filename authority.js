@@ -90,9 +90,10 @@ class Energy extends Analyser
     }
 }
 
+var analyzers = null
+
 function analyze(selected)
 {
-    var analyzers = [new Coverage(selected.size), new Category(), new Energy(selected.triple)]
     for(var i = 0; i < selected.run.length; i++)
     {
         var count = analyzers.length
@@ -110,4 +111,3 @@ function analyze(selected)
     document.getElementById("output").value  = "Coverage " + analyzers[0].percentCoverage() + "%\n"
     document.getElementById("output").value += "Energy Usage (J) " + analyzers[2].energyUsage() + "\n"
 }
-

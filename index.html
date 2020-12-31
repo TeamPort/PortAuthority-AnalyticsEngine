@@ -12,6 +12,32 @@
 
 <input type="file" id="replay" multiple>
 <script>
+    function updateText()
+    {
+        var name = document.getElementById("algorithm")
+
+        var selected = document.getElementById("selection").selectedIndex
+        name.innerHTML=names[selected]
+        switch(selected)
+        {
+        }
+    }
+
+    var names = [
+        "O(1)",
+        "O(log log n)",
+        "O(log n)",
+        "O((log n)<sup>c</sup>)",
+        "O(n<sup>1/c</sup>)",
+        "O(n)",
+        "O(n log* n)",
+        "O(n log n)",
+        "O(n<sup>2</sup>)",
+        "O(n<sup>c</sup>)",
+        "O(c<sup>n</sup>)",
+        "O(n!)"
+    ]
+
     replay.addEventListener('change', function(event)
     {
           var i = 0;
@@ -28,6 +54,7 @@
               {
                   if(event.target.readyState == FileReader.DONE)
                   {
+                      console.log("Unpacking... " + event.target.fileName)
                       var result = window.pako.inflate(event.target.result);
                       var text = new TextDecoder("utf-8").decode(result)
                       run = JSON.parse(text);
@@ -38,6 +65,7 @@
                       analyze(run);
                   }
               };
+              reader.fileName = file.name
               reader.readAsArrayBuffer(file.slice(0, file.size));
               i++;
           }
@@ -85,6 +113,22 @@ function instance()
 </script>
 <br>
 <textarea id="output" style="width: 512px; height: 512px"></textarea>
+<br>
+<p id="algorithm">O(1)</p>
+<select id="selection" onchange="updateText()">
+    <option>Constant</option>
+    <option>Double Logarithmic</option>
+    <option>Logarithmic</option>
+    <option>Polylogarithmic</option>
+    <option>Fractional Power</option>
+    <option>Linear</option>
+    <option>N Log-Star N</option>
+    <option>Linearithmic</option>
+    <option>Quadratic</option>
+    <option>Polynomial</option>
+    <option>Exponential</option>
+    <option>Factorial</option>
+</select>
 <script>
     if(run != null)
     {

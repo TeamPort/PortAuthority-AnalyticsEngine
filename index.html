@@ -40,11 +40,26 @@
         {
             case 0: // Constant
                 break;
+            case 1: // Double Logarithmic
+                scaled*=Math.log10(Math.log10(n))
+                break;
+            case 2: // Logarithmic
+                var factor = Math.log10(n)
+                scaled*=factor
+                break;
+            case 3: // Polylogarithmic
+                scaled*=Math.pow(Math.log10(n), c)
+                break;
             case 4: // Fractional Power
                 scaled*=Math.pow(n,1/c)
                 break;
             case 5: // Linear
                 scaled*=n
+                break;
+            case 6: // N Log-Star N
+                break;
+            case 7: // Linearithmic
+                scaled*=(n*Math.log10(n))
                 break;
             case 8: // Quadratic
                 scaled*=Math.pow(n,2)

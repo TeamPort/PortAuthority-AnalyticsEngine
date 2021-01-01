@@ -12,15 +12,43 @@
 
 <input type="file" id="replay" multiple>
 <script>
+    function updateOutput()
+    {
+        var raw = analyzers[2].energyUsage()
+
+        var scaled = raw;
+        var selected = document.getElementById("selection").selectedIndex
+        var n = document.getElementById("BigN").value
+        var c = document.getElementById("Constant").value
+        switch(selected)
+        {
+            case 0: // Constant
+                break;
+            case 5: // Linear
+                scaled*=n
+                break;
+            case 8: // Quadratic
+                scaled*=Math.pow(n,2)
+                break;
+            case 9: // Polynomial
+                scaled*=Math.pow(n,c)
+                break;
+            case 10: // Exponential
+                scaled*=Math.pow(c,n)
+                break;
+        }
+
+        document.getElementById("output").value  = "Coverage " + analyzers[0].percentCoverage() + "%\n"
+        document.getElementById("output").value += "Energy Usage (J) " +  scaled + "\n"
+    }
+
     function updateText()
     {
         var name = document.getElementById("algorithm")
 
         var selected = document.getElementById("selection").selectedIndex
         name.innerHTML=names[selected]
-        switch(selected)
-        {
-        }
+        updateOutput();
     }
 
     var names = [
@@ -63,6 +91,7 @@
                           analyzers = [new Coverage(run.size), new Category(), new Energy(run.triple)]
                       }
                       analyze(run);
+                      updateOutput();
                   }
               };
               reader.fileName = file.name
@@ -114,27 +143,42 @@ function instance()
 <br>
 <textarea id="output" style="width: 512px; height: 512px"></textarea>
 <br>
-<p id="algorithm">O(1)</p>
-<select id="selection" onchange="updateText()">
-    <option>Constant</option>
-    <option>Double Logarithmic</option>
-    <option>Logarithmic</option>
-    <option>Polylogarithmic</option>
-    <option>Fractional Power</option>
-    <option>Linear</option>
-    <option>N Log-Star N</option>
-    <option>Linearithmic</option>
-    <option>Quadratic</option>
-    <option>Polynomial</option>
-    <option>Exponential</option>
-    <option>Factorial</option>
-</select>
+<table style="width: 512px;">
+<tr>
+<td><p id="algorithm">O(1)</p></td>
+<td><p>n</p></td>
+<td><p>c</p></td>
+</tr>
+<tr>
+<td>
+    <select id="selection" onchange="updateText()">
+        <option>Constant</option>
+        <option>Double Logarithmic</option>
+        <option>Logarithmic</option>
+        <option>Polylogarithmic</option>
+        <option>Fractional Power</option>
+        <option>Linear</option>
+        <option>N Log-Star N</option>
+        <option>Linearithmic</option>
+        <option>Quadratic</option>
+        <option>Polynomial</option>
+        <option>Exponential</option>
+        <option>Factorial</option>
+    </select>
+</td>
+<td>
+    <input type="number" id="BigN" min="1" value="1">
+</td>
+<td>
+    <input type="number" id="Constant" min="1" value="1">
+</td>
+</tr>
+</table>
 <script>
     if(run != null)
     {
         analyze(run);
         document.getElementById("replay").style.display = "none"
-
     }
 </script>
 </html>

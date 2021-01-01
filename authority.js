@@ -107,7 +107,4 @@ function analyze(selected)
             a.analyze(instr);
         }
     }
-
-    document.getElementById("output").value  = "Coverage " + analyzers[0].percentCoverage() + "%\n"
-    document.getElementById("output").value += "Energy Usage (J) " + analyzers[2].energyUsage() + "\n"
 }

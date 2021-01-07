@@ -18,7 +18,7 @@ var marcher = {"hardwareName":"Marcher","hardwareId":"e53fcc4d-a2c9-4833-9cc9-2e
     {"name":"JNE","joules":"0.000000025"},
     {"name":"JZ","joules":"0.000000002"},
     {"name":"JE","joules":"0.000000002"},
-    {"name":"LEA","joules":"0.000000009"},
+    {"name":"LEA","joules":"0.000000005"},
     {"name":"LEAVE","joules":"0.000000002"},
     {"name":"MOV","joules":"0.000000005"},
     {"name":"MOVSX","joules":"0.000000004"},

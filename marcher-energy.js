@@ -1,6 +1,7 @@
 // Always store in short mnemonic from
 var marcher = {"hardwareName":"Marcher","hardwareId":"e53fcc4d-a2c9-4833-9cc9-2e5ba182718e","idle":"25.0","instructions":[
     {"name":"ADD","joules":"0.000000004"},
+    {"name":"ADDSD","joules":"0.000000014"},
     {"name":"AND","joules":"0.000000004"},
     {"name":"CALL","joules":"0.000000000"},
     {"name":"CMP","joules":"0.000000003"},

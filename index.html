@@ -5,6 +5,7 @@
 <script src="authority.js"></script>
 <script src="instance.js"></script>
 <script src="bigrams.js"></script>
+<script src="trigrams.js"></script>
 <script src="synthetic.js"></script>
 
 <script src="pako.min.js"></script>
@@ -33,7 +34,7 @@
 
         var scaled = raw;
         var selected = document.getElementById("selection").selectedIndex
-        var n = document.getElementById("BigN").value
+        var n = document.getElementById("BigO").value
         var c = document.getElementById("Constant").value
         switch(selected)
         {
@@ -157,11 +158,12 @@ function instance()
 }
 </script>
 <br>
-<button onclick="synthetic()">Build Synthetic Table</button>
+<button onclick="synthetic(2)">Build Synthetic 2-Gram Table</button>
+<button onclick="synthetic(3)">Build Synthetic 3-Gram Table</button>
 <script>
-    function synthetic()
+    function synthetic(n)
     {
-        buildSyntheticInstanceMap(run)
+        buildSyntheticInstanceMap(run, n)
 
         var text = ""
         var total = 0
@@ -203,10 +205,13 @@ function instance()
     </select>
 </td>
 <td>
-    <input type="number" id="BigN" min="1" value="1">
+    <input type="number" id="BigO" min="1" value="1">
 </td>
 <td>
     <input type="number" id="Constant" min="1" value="1">
+</td>
+<td>
+    <input type="button" onclick="updateText()">
 </td>
 </tr>
 </table>

@@ -2,7 +2,17 @@ var usedMap = null
 var synthMap = null
 function emit(ngram)
 {
-    var test = bigrams[ngram]
+    var test = null
+    var n = ngram.split("-").length;
+    switch(n)
+    {
+        case 2:
+            test = bigrams[ngram]
+            break;
+        case 3:
+            test = trigrams[ngram]
+            break;
+    }
     if(test == null) return ""
 
     var key = Object.keys(test)[0]
@@ -36,24 +46,38 @@ function emit(ngram)
     return key
 }
 
-function buildSyntheticInstanceMap(selected)
+function buildSyntheticInstanceMap(selected, n)
 {
-    usedMap = new Map()
     synthMap = new Map()
     if(!selected.triple.includes("x86_64")) return
 
-    for(var i = 0; i < selected.run.length-1; i+=2)
+    usedMap = new Map()
+    var parts = ["", "", "", ""];
+    for(var i = 0; i < selected.run.length-(n-1); i+=n)
     {
-        var first = selected.run[i].m.toUpperCase()
-        var second = selected.run[i+1].m.toUpperCase()
-        var ngram = emit(first + "-" + second)
-
-        if(ngram == "")
+        for(var k = 0; k < n; k++)
         {
-            ngram = "UNKNOWN-UNKNOWN"
+            parts[k] = selected.run[i + k].m.toUpperCase()
         }
 
-        var instructions = ngram.split("-");
+        var ngram = ""
+        for(var k = 0; k < n-1; k++)
+        {
+            ngram += parts[k] + "-"
+        }
+        ngram += parts[n-1]
+
+        var generated = emit(ngram)
+        if(generated == "")
+        {
+            for(var k = 0; k < n-1; k++)
+            {
+                generated += "UNKNOWN-"
+            }
+            generated += "UNKNOWN"
+        }
+
+        var instructions = generated.split("-");
         for(var j = 0; j < instructions.length; j++)
         {
             var value = 0

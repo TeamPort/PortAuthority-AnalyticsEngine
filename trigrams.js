@@ -10794,4 +10794,16 @@ var trigrams = {
   "MOV-MOVSD-POP":{
     "LDR-ADD-RET":100
   },
+
+  // Special transition trigrams
+  "CALL-PUSH-MOV":{
+    "BL-STP-LDR":50,
+    "BL-ADRP-LDR":25,
+    "BL-LDR-LDR":25,
+  },
+  "MOV-CALL-PUSH":{
+    "MOV-BL-STP":50,
+    "MOV-BL-ADRP":25,
+    "MOV-BL-LDR":25,
+  },
 }

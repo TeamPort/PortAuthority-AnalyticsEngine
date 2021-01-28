@@ -6709,4 +6709,11 @@ var bigrams = {
   "XORPS-MOVSD":{
     "STR-STR":100
   },
+
+  // Special transition bigram
+  "CALL-PUSH":{
+    "BL-STP":50,
+    "BL-ADRP":25,
+    "BL-LDR":25,
+  },
 }

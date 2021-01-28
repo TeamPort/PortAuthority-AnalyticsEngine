@@ -70,11 +70,31 @@ function buildSyntheticInstanceMap(selected, n)
         var generated = emit(ngram)
         if(generated == "")
         {
-            for(var k = 0; k < n-1; k++)
+            // Aid transistion points not served by the static ngram generation tool
+            if(ngram.charAt(0) == 'J')
             {
-                generated += "UNKNOWN-"
+                generated = "B.NE-" + Math.floor(Math.random() * 1) == 0 ? "MOV": "ADD"
+                for(var l = 0; l < n-2; l++)
+                {
+                    generated += "-UNKNOWN"
+                }
             }
-            generated += "UNKNOWN"
+            else if(ngram.split('-')[0] == 'RET')
+            {
+                generated = "RET-ADD"
+                for(var l = 0; l < n-2; l++)
+                {
+                    generated += "-UNKNOWN"
+                }
+            }
+            else
+            {
+                for(var k = 0; k < n-1; k++)
+                {
+                    generated += "UNKNOWN-"
+                }
+                generated += "UNKNOWN"
+            }
         }
 
         var instructions = generated.split("-");

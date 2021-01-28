@@ -76,7 +76,7 @@ function buildSyntheticInstanceMap(selected, n)
                 generated = "B.NE-" + Math.floor(Math.random() * 1) == 0 ? "MOV": "ADD"
                 for(var l = 0; l < n-2; l++)
                 {
-                    generated += "-UNKNOWN"
+                    generated += "-INVALID"
                 }
             }
             else if(ngram.split('-')[0] == 'RET')
@@ -84,16 +84,25 @@ function buildSyntheticInstanceMap(selected, n)
                 generated = "RET-ADD"
                 for(var l = 0; l < n-2; l++)
                 {
-                    generated += "-UNKNOWN"
+                    generated += "-INVALID"
                 }
             }
-            else
+            else if(ngram.includes("JZ"))
+            {
+                generated = emit(ngram.replace("JZ", "JE"))
+            }
+            else if(ngram.includes("JNZ"))
+            {
+                generated = emit(ngram.replace("JNZ", "JNE"))
+            }
+
+            if(generated == "")
             {
                 for(var k = 0; k < n-1; k++)
                 {
-                    generated += "UNKNOWN-"
+                    generated += "INVALID-"
                 }
-                generated += "UNKNOWN"
+                generated += "INVALID"
             }
         }
 

@@ -5,65 +5,67 @@ var trigrams = {
     "STR-LDR-LDR":3,
     "LDR-LDR-LDR":3,
     "STR-LDR-STR":2,
-    "LDR-LDR-ADD":2,
+    "LDR-LDR-ADD":1,
     "STUR-STUR-STUR":1,
     "STR-BL-LDR":1,
     "STUR-STR-STR":1,
     "STR-STR-LDR":1,
-    "LDUR-LDR-ADD":1,
-    "STUR-LDUR-LDR":1,
-    "LDR-ADD-STR":1,
-    "ADD-LDR-STR":1,
     "LDR-LDR-STR":1,
+    "LDUR-LDR-ADD":1,
+    "LDR-ADD-STR":1,
+    "STUR-LDUR-LDR":1,
+    "ADD-LDR-STR":1,
     "LDUR-LDR-LDR":1,
+    "STR-LDUR-LDUR":1,
     "MOV-MOV-MOV":1,
     "BL-ADD-STR":1,
-    "STR-LDUR-LDUR":1,
     "STUR-STUR-LDUR":1,
-    "STUR-LDUR-LDUR":1,
   },
   "PUSH-MOV-SUB":{
-    "SUB-STP-ADD":82,
+    "SUB-STP-ADD":80,
     "STP-STR-MOV":12,
     "SUB-STP-STR":3,
     "SUB-STR-STR":1,
+    "LDR-MOV-STP":1,
   },
   "SUB-MOV-MOV":{
-    "ADD-STUR-STUR":26,
-    "ADD-STUR-STR":17,
-    "ADD-STR-STR":9,
-    "ADD-MOV-STUR":7,
-    "ADD-MOV-MOV":5,
+    "ADD-STUR-STUR":23,
+    "ADD-STUR-STR":15,
+    "ADD-STR-STR":8,
+    "ADD-MOV-STUR":6,
+    "STR-MOV-STR":6,
+    "ADD-MOV-MOV":4,
     "MOV-SUB-ADD":3,
     "ADD-MOV-STR":3,
     "MUL-LDUR-SUBS":3,
-    "ADD-STR-LDR":3,
-    "MOV-SUB-MOV":3,
+    "ADD-STR-LDR":2,
+    "MOV-SUB-MOV":2,
     "B.GE-LDUR-LDR":2,
     "STUR-LDUR-LDR":2,
     "ADD-ADRP-ADD":2,
     "ADD-ADD-STUR":1,
     "MOV-SUB-SUB":1,
-    "LDUR-MOV-SDIV":1,
-    "LDR-ADD-LDURSW":1,
-    "SUBS-STUR-B":1,
   },
   "MOV-CALL-MOV":{
-    "STR-BL-LDR":14,
+    "STR-BL-LDR":11,
     "STR-STR-STR":4,
+    "B-MOV-BL":3,
+    "BL-MOV-BL":3,
     "LDR-LDR-LDR":3,
     "LDR-LDR-ADD":3,
-    "STR-STR-LDR":3,
-    "MOV-STR-BL":3,
-    "STR-LDR-LDR":3,
+    "STR-STR-LDR":2,
+    "MOV-STR-BL":2,
+    "STR-LDR-LDR":2,
     "ADD-LDURSW-STR":2,
     "STUR-LDUR-LDUR":2,
     "LDR-MOV-BL":2,
-    "BL-LDR-ADD":2,
-    "ADD-STR-B":2,
-    "LDR-STR-LDR":2,
-    "MUL-LDUR-SUBS":2,
+    "BL-LDR-ADD":1,
+    "ADD-STR-B":1,
+    "MOV-BL-LDR":1,
     "ADD-STR-MOV":1,
+    "LDR-STR-LDR":1,
+    "BL-LDR-LDR":1,
+    "MUL-LDUR-SUBS":1,
     "LDR-BL-LDR":1,
     "BL-STR-STR":1,
     "LDR-STR-MOV":1,
@@ -71,20 +73,14 @@ var trigrams = {
     "ADD-LDR-STR":1,
     "BL-LDUR-LDUR":1,
     "STR-MOV-STR":1,
-    "MOV-BL-LDR":1,
-    "ADD-SUBS-CMP":1,
-    "LDR-LDR-STR":1,
-    "MOV-BL-LDUR":1,
-    "BL-LDR-LDR":1,
-    "ADD-STUR-LDR":1,
   },
   "MOV-MOV-CALL":{
     "LDR-BL-LDP":6,
     "STR-LDR-LDR":4,
-    "LDR-STR-LDR":4,
+    "LDR-STR-LDR":3,
     "LDR-LDR-BL":3,
-    "LDR-ADD-STR":3,
-    "LDR-BL-ADD":3,
+    "LDR-ADD-STR":2,
+    "LDR-BL-ADD":2,
     "STR-LDR-ADD":2,
     "STR-STR-LDR":2,
     "LDR-LDR-LDR":2,
@@ -93,9 +89,9 @@ var trigrams = {
     "LDR-LDR-ADD":2,
     "ADD-STR-LDR":2,
     "ADD-LDR-STR":2,
-    "ADD-STR-STR":2,
-    "BL-ADD-STR":2,
-    "LDUR-LDR-ADD":2,
+    "ADD-STR-STR":1,
+    "BL-ADD-STR":1,
+    "LDUR-LDR-ADD":1,
     "STUR-LDR-STUR":1,
     "ADD-LDR-MOV":1,
     "STR-BL-ADD":1,
@@ -113,38 +109,80 @@ var trigrams = {
     "LDR-MUL-LDUR":1,
     "BL-ADD-LDR":1,
     "LDR-LDR-STR":1,
-    "MOV-MUL-ADD":1,
   },
   "CALL-ADD-POP":{
-    "LDP-ADD-RET":53,
-    "BL-LDP-ADD":15,
+    "LDP-ADD-RET":52,
+    "BL-LDP-ADD":14,
     "STR-B-LDR":7,
     "LDUR-BL-LDP":7,
     "ADD-STR-B":7,
     "LDR-LDR-BL":3,
     "LDUR-LDR-STR":2,
     "STR-LDR-LDR":2,
+    "LDP-LDP-RET":2,
   },
   "PUSH-MOV-MOV":{
-    "SUB-STR-STR":30,
-    "SUB-STR-LDR":24,
-    "SUB-STRH-STRH":8,
-    "SUB-STR-ADD":7,
+    "SUB-STR-STR":26,
+    "SUB-STR-LDR":21,
+    "SUB-STRH-STRH":6,
+    "STP-MOV-MOV":6,
+    "SUB-STR-ADD":6,
     "SUB-STRB-STRB":5,
     "SUB-STRH-STR":4,
     "SUB-STRB-STR":4,
+    "STP-MOV-STR":3,
     "MOVZ-MOVK-MOVK":2,
     "SUB-MOV-STR":2,
     "SUB-STR-MOV":2,
-    "MOV-ADRP-ADD":2,
-    "SUB-ADRP-ADD":2,
-    "SUB-MOV-MOV":2,
+    "STP-MOV-LDR":2,
+    "MOV-ADRP-ADD":1,
+    "SUB-ADRP-ADD":1,
+    "SUB-MOV-MOV":1,
     "SUB-STR-STRB":1,
+    "STP-ADRP-ADRP":1,
+    "STR-MOV-LDR":1,
+  },
+  "MOV-MOV-ADD":{
+    "LDR-LDR-ADD":5,
+    "ADD-LDR-STR":3,
+    "LDR-LDUR-ADD":3,
+    "STR-STR-STR":3,
+    "LDR-STR-LDR":3,
+    "LDUR-LDR-ADD":2,
+    "ADD-STR-STR":2,
+    "LDR-ADD-STR":2,
+    "STR-LDR-LDR":2,
+    "LDR-LDR-LDR":2,
+    "STR-ADD-ADD":2,
+    "SUBS-STUR-LDUR":2,
+    "STR-BL-LDR":2,
+    "LDR-LDR-MUL":2,
+    "LDR-ADD-LDR":2,
+    "ADD-STUR-LDR":1,
+    "BL-ADD-STR":1,
+    "LDUR-CMP-CSET":1,
+    "LDR-CMP-B.GE":1,
+    "STR-LDP-ADD":1,
+    "STR-MOV-BL":1,
+    "LDURSW-STR-BL":1,
+    "STR-MOV-LDR":1,
+    "LDR-STR-STR":1,
+    "LDR-ADD-ADD":1,
+    "BL-LDR-LDR":1,
+    "CMP-B.GE-LDR":1,
+    "STR-STR-ADRP":1,
+    "LDR-LDR-STR":1,
+    "STR-STR-BL":1,
+    "LDR-LDR-MOV":1,
+    "ADD-STR-ADD":1,
+    "STR-LDR-ADD":1,
   },
   "LEA-MOV-MOV":{
     "LDR-STR-LDR":6,
     "LDR-BL-ADD":4,
     "BL-ADD-STR":3,
+    "MOV-LDR-MOV":3,
+    "LDR-STR-MOV":3,
     "LDR-LDR-ADD":3,
     "STR-LDR-LDR":2,
     "STR-STR-LDR":2,
@@ -153,7 +191,6 @@ var trigrams = {
     "STUR-LDUR-LDR":2,
     "STR-LDR-ADD":2,
     "LDR-ADD-STR":2,
-    "LDR-STR-MOV":2,
     "ADD-STR-ADD":2,
     "ADD-STR-B":2,
     "STUR-STUR-STUR":2,
@@ -164,6 +201,7 @@ var trigrams = {
     "ADD-LDR-STR":2,
     "BL-ADD-LDR":2,
     "ADD-ADD-ADD":1,
+    "ADD-STR-BL":1,
     "BL-LDR-LDR":1,
     "ADD-ADD-MOV":1,
     "LDUR-STR-LDUR":1,
@@ -171,7 +209,6 @@ var trigrams = {
     "SUB-STUR-LDUR":1,
     "ADD-STR-LDR":1,
     "ADD-STR-MOV":1,
-    "ADD-STR-BL":1,
     "STR-MOV-BL":1,
     "ADD-STUR-LDUR":1,
     "LDR-LDUR-CMP":1,
@@ -183,46 +220,7 @@ var trigrams = {
     "ADD-STUR-STUR":1,
     "LDR-LDR-LDR":1,
     "STR-STR-STR":1,
-  },
-  "MOV-MOV-ADD":{
-    "LDR-LDR-ADD":6,
-    "ADD-LDR-STR":4,
-    "STR-STR-STR":3,
-    "LDR-STR-LDR":3,
-    "ADD-STR-STR":3,
-    "LDUR-LDR-ADD":3,
-    "STR-LDR-LDR":2,
-    "LDR-LDR-LDR":2,
-    "STR-ADD-ADD":2,
-    "LDR-ADD-STR":2,
-    "SUBS-STUR-LDUR":2,
-    "STR-BL-LDR":2,
-    "LDR-LDR-MUL":2,
-    "ADD-STUR-LDR":2,
-    "BL-ADD-STR":2,
-    "LDUR-CMP-CSET":2,
-    "LDR-CMP-B.GE":2,
-    "STR-LDP-ADD":2,
-    "LDR-ADD-LDR":2,
-    "STR-MOV-BL":2,
-    "LDURSW-STR-BL":2,
-    "LDR-ADD-ADD":1,
-    "BL-LDR-LDR":1,
-    "CMP-B.GE-LDR":1,
-    "LDR-STR-STR":1,
-    "STR-STR-ADRP":1,
-    "LDR-LDR-STR":1,
-    "STR-STR-BL":1,
-    "LDR-LDR-MOV":1,
-    "ADD-STR-ADD":1,
-    "STR-LDR-ADD":1,
-    "ADRP-ADD-LDR":1,
-    "STR-ADD-STR":1,
-    "LDUR-MUL-MUL":1,
-    "ADD-BL-ADD":1,
-    "LDR-BL-ADD":1,
-    "LDUR-LDUR-LDUR":1,
-    "SDIV-MUL-LDR":1,
+    "MOV-ADD-LDR":1,
   },
   "ADD-MOV-MOV":{
     "STR-LDR-LDR":5,
@@ -262,16 +260,23 @@ var trigrams = {
     "STR-LDR-MOV":1,
     "STR-MOV-BL":1,
     "STR-BL-ADD":1,
-    "ADRP-ADD-BL":1,
-    "CMP-CSET-AND":1,
-    "STR-STR-ADRP":1,
+  },
+  "PUSH-PUSH-MOV":{
+    "STP-MOV-STP":71,
+    "STP-MOV-MOV":13,
+    "STP-MOV-STR":7,
+    "STP-MOV-LDR":4,
+    "CBNZ-STR-MOV":2,
+    "MOV-LDR-MOV":2,
+    "AND-MOV-STP":2
   },
   "MOV-ADD-MOV":{
     "STR-STR-STR":4,
     "LDR-STR-LDR":4,
     "LDR-ADD-STR":3,
-    "ADD-ADD-ADD":3,
-    "LDR-ADD-LDR":3,
+    "LDUR-STR-ADD":3,
+    "ADD-ADD-ADD":2,
+    "LDR-ADD-LDR":2,
     "LDR-LDR-LDR":2,
     "STUR-STUR-STUR":2,
     "BL-ADD-STR":2,
@@ -287,15 +292,10 @@ var trigrams = {
     "SUBS-STUR-LDUR":1,
     "MOV-BL-LDR":1,
     "MOV-STR-STR":1,
+    "LDR-STR-MOV":1,
     "BL-LDR-STR":1,
     "STUR-LDUR-LDUR":1,
-    "MOV-LDR-BL":1,
-    "STR-ADD-STR":1,
-    "STUR-ADD-ADD":1,
-    "LDR-LDR-MOV":1,
-    "LDR-ADD-MOV":1,
-    "STUR-STUR-LDUR":1,
-    "LDUR-LDR-ADD":1,
+    "ADRP-LDR-ADD":1,
   },
   "ADD-MOV-ADD":{
     "ADD-ADD-ADD":18,
@@ -317,6 +317,7 @@ var trigrams = {
     "LDR-ADD-LDUR":2,
     "STR-BL-LDR":1,
     "SUB-BL-LDR":1,
+    "ADD-ADD-STR":1,
   },
   "LEA-LEA-CALL":{
     "LDR-STR-LDR":7,
@@ -350,42 +351,9 @@ var trigrams = {
     "LDR-BL-LDR":2,
     "BL-LDR-STR":2,
   },
-  "MOV-LEA-MOV":{
-    "LDR-LDR-ADD":5,
-    "STR-LDR-LDR":4,
-    "BL-LDR-LDR":4,
-    "LDR-STR-MOV":4,
-    "STR-STR-LDR":3,
-    "ADD-LDR-STR":3,
-    "LDR-LDR-LDR":3,
-    "BL-ADD-STR":3,
-    "LDR-ADD-LDR":3,
-    "STR-LDR-ADD":3,
-    "ADD-STR-STR":2,
-    "LDR-BL-ADD":2,
-    "ADD-STR-BL":2,
-    "LDR-ADD-BL":2,
-    "ADD-STR-ADD":2,
-    "STR-LDR-STR":2,
-    "LDR-STR-LDR":1,
-    "LDR-LDUR-LDR":1,
-    "LDR-CMP-B.GE":1,
-    "MOV-ADD-LDR":1,
-    "MOV-MOV-MOV":1,
-    "MOV-BL-STR":1,
-    "LDR-BL-STR":1,
-    "MOV-LDR-STR":1,
-    "LDR-ADD-STR":1,
-    "STR-BL-STR":1,
-    "LDR-LDR-BL":1,
-    "MOV-BL-ADD":1,
-    "ADD-STR-SUB":1,
-    "SUB-STUR-STUR":1,
-    "FMUL-ADD-STR":1,
-  },
   "LEA-LEA-LEA":{
-    "LDR-STR-LDR":8,
     "STR-STR-LDR":8,
+    "LDR-STR-LDR":8,
     "ADD-LDR-STR":4,
     "STR-LDR-ADD":4,
     "STR-ADD-MOV":3,
@@ -437,6 +405,39 @@ var trigrams = {
     "ADD-MOV-MOV":1,
     "STUR-LDUR-LDUR":1,
   },
+  "MOV-LEA-MOV":{
+    "LDR-LDR-ADD":5,
+    "LDR-STR-MOV":4,
+    "STR-LDR-LDR":4,
+    "BL-LDR-LDR":4,
+    "STR-STR-LDR":3,
+    "ADD-LDR-STR":3,
+    "LDR-LDR-LDR":3,
+    "BL-ADD-STR":3,
+    "LDR-ADD-LDR":3,
+    "STR-LDR-ADD":3,
+    "ADD-STR-STR":2,
+    "LDR-BL-ADD":2,
+    "ADD-STR-BL":2,
+    "LDR-ADD-BL":2,
+    "ADD-STR-ADD":2,
+    "STR-LDR-STR":2,
+    "LDR-STR-LDR":1,
+    "LDR-LDUR-LDR":1,
+    "LDR-CMP-B.GE":1,
+    "MOV-ADD-LDR":1,
+    "MOV-MOV-MOV":1,
+    "MOV-BL-STR":1,
+    "LDR-BL-STR":1,
+    "MOV-LDR-STR":1,
+    "LDR-ADD-STR":1,
+    "STR-BL-STR":1,
+    "LDR-LDR-BL":1,
+    "MOV-BL-ADD":1,
+    "ADD-STR-SUB":1,
+    "SUB-STUR-STUR":1,
+    "FMUL-ADD-STR":1,
+  },
   "MOV-MOV-SHL":{
     "LDR-STR-LDR":11,
     "STR-LDR-LDR":9,
@@ -473,20 +474,51 @@ var trigrams = {
     "MUL-ADD-LDR":2,
     "STR-ADD-STR":2,
   },
-  "POP-RET-NOP":{
-    "LDP-ADD-RET":19,
-    "BL-STR-LDR":6,
-    "LDR-LDR-ADD":6,
-    "STUR-LDUR-LDP":6,
-    "B-LDR-LDR":6,
-    "BL-MOV-STRB":3,
+  "CMP-JE-MOV":{
+    "BL-LDRB-CBZ":22,
+    "LDR-MOV-MOV":6,
+    "CSEL-STR-LDR":6,
+    "MOV-CMP-CSEL":3,
+    "LDR-MOV-UBFX":3,
+    "LDR-MOV-MUL":3,
+    "CMP-B.GE-LDR":3,
+    "ADD-STR-LDR":3,
+    "MOV-MOV-CMP":3,
     "STR-LDR-MOV":3,
-    "LDURB-AND-LDP":3,
-    "STUR-LDR-TBNZ":3,
-    "STR-LDR-ADD":3,
-    "LDUR-LDR-ADD":3,
-    "ADD-STR-B":3,
-    "STR-BL-LDR":3,
+    "LDR-LDR-CMP":3,
+    "MOV-ADD-BL":3,
+    "BL-ADD-MOV":3,
+    "LDUR-ADRP-ADD":2,
+    "STR-MOV-STR":2,
+    "STR-MOV-BL":2,
+    "B.LS-LDR-STR":2,
+    "STR-MOV-B.EQ":2,
+  },
+  "MOV-CALL-CALL":{
+    "BL-MOV-BL":68,
+    "LDP-ORR-STR":15,
+    "B.NE-BL-LDR":5,
+    "ORR-STR-TBNZ":5,
+    "ADD-LDP-ORR":2,
+    "MOV-BL-MOV":2,
+    "LDUR-ADD-LDP":2
+  },
+  "POP-RET-NOP":{
+    "LDP-ADD-RET":14,
+    "LDR-LDUR-ADD":11,
+    "BL-STR-LDR":5,
+    "LDR-LDR-ADD":4,
+    "STUR-LDUR-LDP":4,
+    "B-LDR-LDR":4,
+    "LDR-LDR-EOR":3,
+    "BL-MOV-STRB":2,
+    "STR-LDR-MOV":2,
+    "LDURB-AND-LDP":2,
+    "STUR-LDR-TBNZ":2,
+    "STR-LDR-ADD":2,
+    "LDUR-LDR-ADD":2,
+    "ADD-STR-B":2,
+    "STR-BL-LDR":2,
     "MOV-ADD-RET":2,
     "LDR-STR-LDR":2,
     "BL-LDP-ADD":2,
@@ -497,6 +529,197 @@ var trigrams = {
     "LDR-BL-AND":1,
     "LDR-LDR-FMLA":1,
     "MUL-ADD-LDP":1,
+    "STR-LDR-LDP":1,
+    "MOV-CMP-B.LE":1,
+    "CBNZ-LDP-LDP":1,
+    "MOV-LDR-LDR":1,
+    "LDR-EOR-CBNZ":1,
+    "BL-MOV-LDR":1,
+    "RET-STR-MOV":1,
+  },
+  "PUSH-XOR-MOV":{
+    "STP-MOV-MOV":100
+  },
+  "MOV-PUSH-PUSH":{
+    "MOV-STP-ADRP":60,
+    "STP-MOV-LDR":14,
+    "STP-ADRP-STP":12,
+    "STP-ADRP-ADRP":9,
+    "STR-MOV-STP":2,
+    "MOV-STR-ADRP":2
+  },
+  "PUSH-MOV-LEA":{
+    "ADRP-MOV-LDR":93,
+    "LDR-MOV-ADD":7
+  },
+  "LEA-MOV-SUB":{
+    "LDR-LDR-STR":96,
+    "STP-ADRP-ADD":4
+  },
+  "MOV-MOV-XOR":{
+    "STR-MOV-MOV":31,
+    "STR-MOV-ADD":10,
+    "SUBS-STR-LDR":10,
+    "MOV-ADD-LDR":5,
+    "LDR-LDR-STR":5,
+    "STR-MOV-STR":4,
+    "LDR-LDR-LDR":2,
+    "LDR-LDUR-STR":2,
+    "LDR-STR-MOV":2,
+    "MOV-STR-ADD":2,
+    "ADRP-LDR-LDR":2,
+    "CBNZ-LDP-LDP":2,
+    "STR-CMN-B.EQ":2,
+    "STRB-LDR-LDRB":1,
+    "STR-LDR-CMP":1,
+    "ADD-LDR-MOV":1,
+    "STR-STR-STR":1,
+    "LDUR-ADD-STUR":1,
+    "MOV-MOV-BL":1,
+    "MOV-BL-MOV":1,
+    "LDRB-EOR-AND":1,
+    "UDIV-STR-LDUR":1,
+    "MOV-UDIV-STR":1,
+    "B.LS-LDRB-STR":1,
+    "MOV-MOV-ADD":1,
+    "STR-AND-STR":1,
+    "B.HS-LDURB-CMP":1,
+    "LDP-CMP-B.HS":1,
+    "STR-ADD-MOV":1,
+    "STR-MOV-BL":1
+  },
+  "XOR-CALL-CMP":{
+    "MOV-ADD-BL":67,
+    "LDR-LDR-STR":10,
+    "ADD-MOV-BL":8,
+    "MOV-STR-MOV":5,
+    "STR-MOV-MOV":5,
+    "MOV-MOV-BL":3,
+    "BL-LDRB-CBZ":3
+  },
+  "MOV-TEST-JE":{
+    "ADD-LDR-CBZ":43,
+    "LDR-CBZ-BR":8,
+    "ADD-LDR-STR":5,
+    "LDR-LDR-BL":3,
+    "TBNZ-B-LDR":3,
+    "LDR-LDRB-TBNZ":3,
+    "LDRB-CBZ-LDR":3,
+    "ADD-LDR-STP":3,
+    "MOV-B.GT-LDR":3,
+    "B.NE-B-LDR":3,
+    "MOV-BL-LDR":3,
+    "LDR-CBZ-LDR":3,
+    "ADD-ADRP-ADD":2,
+    "ADRP-LDR-B":2,
+    "ADRP-LDR-CBZ":2,
+    "LDP-ORR-STR":2,
+    "CBZ-LDRB-CBZ":2,
+    "STR-LDR-STR":2,
+    "LDRB-CBNZ-LDR":2,
+    "STR-MOV-LDR":2,
+    "LDR-MOV-LDR":2
+  },
+  "CALL-CALL-MOV":{
+    "BL-BL-BL":34,
+    "BL-BL-LDR":32,
+    "LDR-LDUR-ADD":9,
+    "STR-TBNZ-BL":8,
+    "BL-LDR-LDUR":4,
+    "BL-MOV-BL":3,
+    "TBNZ-BL-MOV":3,
+    "ORR-STR-TBNZ":1,
+    "B.NE-BL-LDR":1,
+    "B.LE-STR-CBZ":1,
+    "B-STR-BL":1,
+    "MOV-BL-BL":1,
+    "LDP-ORR-STR":1
+  },
+  "MOV-CALL-NOP":{
+    "BL-MOV-BL":63,
+    "MOV-BL-MOV":12,
+    "STR-STR-MOV":5,
+    "ORR-STR-TBZ":5,
+    "MOV-B-MOV":5,
+    "LDUR-STR-LDR":2,
+    "CBNZ-MOV-LDR":2,
+    "CBZ-B-MOV":2,
+    "LDR-BLR-B":2
+  },
+  "ADD-OR-TEST":{
+    "ADD-LDP-ORR":31,
+    "LDP-ORR-STR":30,
+    "BL-CMP-B.NE":6,
+    "ORR-STR-TBZ":6,
+    "B-BL-CMP":5,
+    "LDR-LDR-EOR":2,
+    "ADD-MOV-LDR":1,
+    "LDR-CBNZ-MOV":1,
+    "STR-BL-CMP":1,
+    "LDUR-ADD-MOV":1,
+    "TBNZ-BL-MOV":1,
+    "LDR-ORR-BL":1,
+    "LDR-BLR-B":1,
+    "CSEL-B-BL":1,
+    "CBNZ-LDR-B":1,
+    "LDUR-ADD-LDP":1,
+    "LDR-MOV-LDR":1,
+    "B.NE-BL-LDR":1,
+    "LDR-EOR-CBNZ":1,
+    "BLR-MOV-B":1,
+    "CMP-B.NE-BL":1,
+    "STP-STR-STP":1,
+    "BL-LDR-B":1
+  },
+  "MOV-ADD-OR":{
+    "LDR-ORR-BL":37,
+    "LDR-LDUR-ADD":7,
+    "ORR-BL-B":6,
+    "LDP-ORR-STR":6,
+    "LDUR-ADD-LDP":6,
+    "ADD-LDP-ORR":4,
+    "BL-B-BL":4,
+    "BL-BL-LDR":3,
+    "TBNZ-BL-LDR":3,
+    "LDUR-ADD-LDR":3,
+    "BL-LDR-LDUR":3,
+    "ADD-MOV-LDR":3,
+    "ADD-LDR-ORR":3,
+    "BL-MOV-BL":1,
+    "BLR-CMN-B.NE":1,
+    "MOV-MOV-CMP":1,
+    "CMP-B.LE-STRB":1,
+    "LDR-B-LDR":1,
+    "BLR-STR-B":1,
+    "RET-LDR-MOV":1,
+    "LDUR-ADD-MOV":1,
+    "BL-CMP-B.NE":1,
+    "ORR-STR-TBZ":1
+  },
+  "ADD-POP-RET":{
+    "LDP-ADD-RET":39,
+    "STR-LDR-LDR":10,
+    "BL-LDUR-LDUR":7,
+    "LDR-MUL-LDUR":7,
+    "BL-LDR-STR":5,
+    "BL-ADD-STR":3,
+    "BL-LDP-ADD":3,
+    "LDURB-STURB-LDURB":2,
+    "ADD-LDR-ADD":2,
+    "B-BL-B":2,
+    "MOV-LDR-LDR":2,
+    "LDR-ADD-STR":2,
+    "MUL-SDIV-MUL":2,
+    "LDR-STR-LDURSW":2,
+    "STR-LDR-STR":2,
+    "LDR-LDP-ADD":2,
+    "LDR-LDR-LDR":2,
+    "BL-LDR-ADD":2,
+    "MOV-MUL-SDIV":2,
+    "STR-MOV-LDR":2,
+    "MOV-LDP-ADD":2,
+    "STR-LDR-MOV":2,
+    "LDR-MOV-LDR":2
   },
   "CALL-MOVAPS-LEA":{
     "ADD-STR-LDR":12,
@@ -586,36 +809,209 @@ var trigrams = {
     "ADD-STUR-STUR":2,
     "LDR-LDR-LDR":2
   },
-  "ADD-POP-RET":{
-    "LDP-ADD-RET":42,
-    "BL-LDUR-LDUR":7,
-    "LDR-MUL-LDUR":7,
-    "STR-LDR-LDR":7,
-    "BL-LDR-STR":5,
-    "BL-ADD-STR":4,
-    "BL-LDP-ADD":4,
-    "LDURB-STURB-LDURB":2,
-    "ADD-LDR-ADD":2,
-    "B-BL-B":2,
-    "MOV-LDR-LDR":2,
-    "LDR-ADD-STR":2,
-    "MUL-SDIV-MUL":2,
-    "LDR-STR-LDURSW":2,
-    "STR-LDR-STR":2,
-    "LDR-LDP-ADD":2,
-    "LDR-LDR-LDR":2,
-    "BL-LDR-ADD":2,
-    "MOV-MUL-SDIV":2,
-    "STR-MOV-LDR":2
+  "MOV-TEST-JNE":{
+    "LDR-MOV-LDR":46,
+    "LDR-MOV-STR":12,
+    "MOV-STR-LDR":12,
+    "LDR-LDR-BL":8,
+    "STR-LDR-BL":8,
+    "STR-BL-LDR":4,
+    "MOV-LDR-STRB":4,
+    "ADRP-ADD-STR":2,
+    "LDRSB-CMP-CSET":2,
+    "LDR-STRB-LDUR":2,
+    "LDR-STR-STRB":2
+  },
+  "JNE-MOV-XOR":{
+    "LDR-LDR-EOR":92,
+    "BL-LDRB-CBNZ":8
+  },
+  "XOR-MOV-JNE":{
+    "EOR-CBNZ-LDP":59,
+    "STR-MOV-LDR":10,
+    "LDR-MOV-LDR":5,
+    "MOV-LDR-ORR":5,
+    "CBNZ-LDR-MOV":5,
+    "LDR-STR-MOV":5,
+    "LDUR-ADD-MOV":2,
+    "CMP-B.NE-SUB":2,
+    "B.HS-SUB-STR":2,
+    "B.EQ-MOV-STR":2,
+    "LDR-LDP-RET":2
+  },
+  "JNE-LEA-POP":{
+    "LDP-LDR-LDP":100
+  },
+  "CALL-SUB-MOV":{
+    "CMP-B.NE-BL":55,
+    "ADD-MOV-LDR":7,
+    "MOV-LDR-LDR":5,
+    "ADD-LDP-ORR":2,
+    "CBNZ-B-MOV":2,
+    "LDR-LDUR-ADD":2,
+    "LDR-LDR-BLR":2,
+    "LDUR-ADD-LDR":2,
+    "LDUR-ADD-MOV":2,
+    "BL-CMP-B.NE":2,
+    "LDR-CBNZ-MOV":2,
+    "MOV-B-LDR":2,
+    "STR-BL-CMP":2,
+    "BL-LDR-CBZ":2,
+    "LDR-ORR-BL":2,
+    "BLR-MOV-CMP":2,
+    "MOV-MOV-LDR":2,
+    "STR-CBZ-LDP":2
+  },
+  "MOV-JNE-CALL":{
+    "BL-LDR-LDUR":55,
+    "LDR-ORR-BL":9,
+    "LDR-BLR-MOV":7,
+    "ORR-STR-TBNZ":2,
+    "MOV-B-LDP":2,
+    "ADD-LDP-ORR":2,
+    "BLR-MOV-CMP":2,
+    "MOV-LDR-ORR":2,
+    "B.NE-BL-LDR":2,
+    "MOV-B-LDR":2,
+    "LDR-MOV-MOV":2,
+    "CMP-B.NE-BL":2,
+    "CBZ-NOP-LDR":2,
+    "BL-B-LDR":2,
+    "CMP-B.GT-B":2,
+    "LDP-LDR-LDP":2
+  },
+  "CALL-MOV-ADD":{
+    "LDUR-ADD-LDP":15,
+    "STR-LDR-LDR":6,
+    "ADD-ADD-ADD":6,
+    "LDR-LDR-LDR":6,
+    "LDR-STR-LDR":6,
+    "STR-LDUR-LDUR":5,
+    "ADD-BL-ADD":2,
+    "ADD-STR-B":2,
+    "ADD-STR-ADD":2,
+    "BL-LDR-FMUL":2,
+    "ADD-MOV-ADRP":2,
+    "MOV-LDR-BL":2,
+    "LDR-MOV-MUL":2,
+    "ADD-MOV-ADD":2,
+    "LDR-LDR-MUL":2,
+    "ADD-STR-BL":2,
+    "LDR-LDR-STR":2,
+    "ADD-LDR-STR":2,
+    "BL-B-BL":2,
+    "LDR-MOV-LDR":2,
+    "LDP-ADD-RET":1,
+    "BL-LDUR-ADD":1,
+    "LDR-STUR-STUR":1,
+    "MOV-LSR-B":1,
+    "BL-STR-LDP":1,
+  },
+  "TEST-JE-CALL":{
+    "STR-TBZ-BL":49,
+    "CMP-B.NE-BL":10,
+    "B.NE-BL-LDR":10,
+    "MOV-B-BL":4,
+    "B-BL-CMP":4,
+    "LDR-LDUR-ADD":2,
+    "CBZ-BL-LDR":2,
+    "ORR-STR-TBZ":2,
+    "BL-CMP-B.NE":2,
+    "LDP-ORR-STR":2,
+    "LDR-BLR-B":2,
+    "BL-LDR-LDUR":2,
+    "STP-BL-MOV":2,
+    "STR-CBZ-LDR":2,
+    "BL-LDR-CBZ":2,
+    "LDR-CBZ-BL":2
+  },
+  "TEST-JNE-CALL":{
+    "ORR-STR-TBNZ":60,
+    "TBZ-BL-BL":13,
+    "EOR-CBNZ-LDP":5,
+    "LDR-ORR-BL":3,
+    "MOV-LDR-ORR":3,
+    "STR-TBZ-BL":3,
+    "BL-MOV-B":3,
+    "ORR-STR-TBZ":3,
+    "B-CMP-LDR":3,
+    "LDR-LDUR-ADD":3,
+    "CBNZ-LDP-LDR":3,
+    "B-MOV-BL":3
+  },
+  "CALL-JMP-MOV":{
+    "TBNZ-BL-B":32,
+    "BL-B-LDR":24,
+    "BL-LDR-LDUR":7,
+    "LDUR-ADRP-ADD":4,
+    "STR-BL-LDR":4,
+    "ADRP-ADD-BL":3,
+    "LDR-BL-B":3,
+    "LDR-LDR-BL":3,
+    "ADD-ADD-ADRP":1,
+    "STUR-ADRP-ADD":1,
+    "ADD-STR-ADRP":1,
+    "ADRP-ADD-LDRSW":1,
+    "LDUR-LDUR-LDUR":1,
+    "MOV-LDUR-ADRP":1,
+    "LDRH-MOV-LSL":1,
+    "BL-LDURSW-LDR":1,
+    "LDUR-CMP-B.GE":1,
+    "ADD-LDRH-LDRB":1,
+    "ADD-BL-LDR":1,
+    "LDR-LDRSW-LDUR":1,
+    "LDURSW-LDR-MUL":1,
+    "LDR-LDRH-LDRB":1,
+    "LSL-LDR-AND":1,
+    "BL-BL-LDR":1,
+    "CBNZ-LDP-LDP":1
+  },
+  "POP-POP-POP":{
+    "LDP-RET-LDR":32,
+    "LDP-LDR-LDP":6,
+    "LDR-LDR-EOR":6,
+    "ORR-BL-LDR":4,
+    "LDR-LDP-RET":3,
+    "STR-LDP-STR":3,
+    "MOV-MOV-LDR":3,
+    "LDP-RET-MOV":3,
+    "LDR-EOR-CBNZ":3,
+    "LDR-LDP-MOV":3,
+    "MOV-LDR-LDR":3,
+    "EOR-STR-CMP":1,
+    "AND-MOV-SXTW":1,
+    "LDRSH-CMP-CSET":1,
+    "LDR-LDRH-EOR":1,
+    "EOR-LDR-LDR":1,
+    "LDR-ADD-STR":1,
+    "ADD-STP-STRB":1,
+    "STRB-ADD-STP":1,
+    "ADD-MOV-BL":1,
+    "BL-LDR-ADD":1,
+    "ADD-BL-LDR":1,
+    "ADD-LDP-ORR":1,
+    "CMN-B.NE-B":1,
+    "LDR-LDR-LDR":1,
+    "RET-STR-LDR":1,
+    "LDP-RET-BL":1,
+    "MOV-LDR-ORR":1,
+    "EOR-CBNZ-LDP":1,
+    "MOV-STR-LDUR":1,
+    "LDUR-LDP-ADD":1,
+    "CBZ-LDR-MOV":1,
+    "LDP-LDP-RET":1,
+    "CBZ-LDR-LDR":1,
+    "ADD-MOV-STRB":1
   },
   "MOV-CALL-ADD":{
-    "BL-LDP-ADD":55,
-    "LDR-BL-LDP":33,
-    "STR-ADRP-ADD":3,
-    "STR-MOV-BL":3,
-    "LDR-STR-MOV":3,
-    "MOV-BL-LDP":3,
-    "LDP-ADD-RET":3
+    "BL-LDP-ADD":54,
+    "LDR-BL-LDP":32,
+    "STR-ADRP-ADD":2,
+    "STR-MOV-BL":2,
+    "LDR-STR-MOV":2,
+    "MOV-BL-LDP":2,
+    "LDP-ADD-RET":2,
+    "LDR-BL-ADRP":2
   },
   "SHL-ADD-MOV":{
     "MOV-MUL-ADD":13,
@@ -646,6 +1042,65 @@ var trigrams = {
     "LDR-LDR-BL":2,
     "STR-BL-ADD":2,
     "LDR-LDR-LDR":1,
+  },
+  "JE-MOV-LEA":{
+    "CBZ-LDR-MOV":81,
+    "LDUR-ADD-CBZ":7,
+    "STR-STR-CBZ":7,
+    "MOV-STP-ADD":4
+  },
+  "MOV-MOV-PUSH":{
+    "MOV-ADD-MOV":100
+  },
+  "PUSH-PUSH-XOR":{
+    "MOV-LDR-MOV":100
+  },
+  "XOR-CALL-POP":{
+    "MOV-BLR-LDR":100
+  },
+  "POP-POP-MOV":{
+    "LDR-CBNZ-LDR":88,
+    "MOV-MOV-LDR":12
+  },
+  "NOP-MOV-MOV":{
+    "ADD-MOV-LDR":41,
+    "LDR-MOV-MOV":7,
+    "CBNZ-NOP-LDR":4,
+    "LDP-LDP-RET":4,
+    "EOR-BFI-CBNZ":4,
+    "MOV-BL-TST":4,
+    "BL-TST-B.NE":4,
+    "CMN-B.NE-B":2,
+    "MOV-LDR-BLR":2,
+    "LDR-CMP-CSEL":2,
+    "ADD-LDP-ORR":2,
+    "LDR-EOR-CBNZ":2,
+    "RET-LDR-LDUR":2,
+    "LDR-B-LDR":2,
+    "CBZ-LDR-CBZ":2,
+    "CSEL-B-LDR":2,
+    "BLR-B-BL":2,
+    "LDR-LDUR-ADD":2,
+    "STR-TBNZ-BL":2,
+    "EOR-CBNZ-LDP":2,
+    "ADD-LDR-ORR":2,
+    "RET-LDR-LDR":2,
+    "LDR-MOV-LDR":2,
+    "RET-STR-AND":2,
+    "LDR-LDR-LDP":2
+  },
+  "OR-CALL-JMP":{
+    "BL-B-BL":61,
+    "LDR-BLR-CMN":11,
+    "B-STRH-CBZ":6,
+    "BL-BL-CMP":6,
+    "LDR-ORR-BL":6,
+    "BLR-CMN-B.NE":6,
+    "BLR-MOV-B":3,
+    "RET-LDR-LDUR":3
+  },
+  "JMP-CALL-CALL":{
+    "BL-BL-CMP":100
   },
   "MOV-MOVABS-CALL":{
     "ADRP-ADD-BL":13,
@@ -682,11 +1137,11 @@ var trigrams = {
     "ADRP-ADD-MOV":1,
   },
   "CALL-MOV-MOV":{
-    "LDR-LDR-LDR":6,
-    "STR-LDR-LDR":4,
-    "ADD-LDURSW-STR":4,
-    "LDR-LDR-STR":4,
-    "LDR-ADD-STR":3,
+    "LDR-LDR-LDR":5,
+    "STR-LDR-LDR":3,
+    "ADD-LDURSW-STR":3,
+    "LDR-LDR-STR":3,
+    "LDR-ADD-STR":2,
     "BL-LDR-LDR":2,
     "STUR-LDR-LDUR":2,
     "STR-BL-LDR":2,
@@ -697,14 +1152,15 @@ var trigrams = {
     "STR-MOV-ADD":2,
     "STUR-LDUR-ADD":2,
     "BL-LDUR-LDR":2,
-    "SDIV-STR-LDR":2,
+    "BL-MOV-BL":2,
+    "MOV-MOV-BL":1,
+    "SDIV-STR-LDR":1,
     "ADD-STR-B":1,
+    "MOV-BL-LDR":1,
     "ADD-STUR-LDUR":1,
     "STR-STR-STR":1,
-    "MOV-BL-LDR":1,
     "LDUR-STR-MOV":1,
     "LDR-STR-STR":1,
-    "MOV-MOV-BL":1,
     "STUR-LDUR-STUR":1,
     "LDR-ADD-STUR":1,
     "LDR-STR-LDR":1,
@@ -714,6 +1170,9 @@ var trigrams = {
     "STR-LDR-LDUR":1,
     "BL-ADD-LDR":1,
     "ADD-LDR-STR":1,
+    "LDR-LDUR-ADD":1,
+    "B.NE-BL-LDR":1,
+    "STR-MOV-BL":1,
   },
   "MOV-ADD-MOVSXD":{
     "LDUR-LDR-ADD":20,
@@ -789,11 +1248,12 @@ var trigrams = {
     "LDUR-ADD-STUR":1,
   },
   "MOV-ADD-POP":{
-    "STR-LDP-ADD":48,
-    "LDUR-ADD-STUR":19,
-    "LDR-ADD-ADD":5,
-    "BL-LDR-LDR":5,
-    "LDR-MOV-MUL":5,
+    "STR-LDP-ADD":42,
+    "LDUR-ADD-STUR":17,
+    "STR-LDP-LDP":10,
+    "LDR-ADD-ADD":4,
+    "BL-LDR-LDR":4,
+    "LDR-MOV-MUL":4,
     "LDR-ADD-LDR":2,
     "LDR-STUR-LDUR":2,
     "CSET-AND-LDR":2,
@@ -801,7 +1261,8 @@ var trigrams = {
     "STR-STR-STR":2,
     "LDR-ADD-LDP":2,
     "CBNZ-LDUR-CBZ":2,
-    "LDR-LDR-STR":2
+    "LDR-LDR-STR":2,
+    "LDP-LDP-RET":2
   },
   "LEA-CALL-MOVAPD":{
     "ADD-LDR-STR":13,
@@ -829,29 +1290,6 @@ var trigrams = {
     "STR-LDR-ADD":3,
     "LDUR-LDR-ADD":3
   },
-  "CALL-JMP-MOV":{
-    "BL-B-LDR":40,
-    "LDUR-ADRP-ADD":7,
-    "STR-BL-LDR":7,
-    "ADRP-ADD-BL":4,
-    "LDR-BL-B":4,
-    "LDR-LDR-BL":4,
-    "ADD-ADD-ADRP":2,
-    "STUR-ADRP-ADD":2,
-    "ADD-STR-ADRP":2,
-    "ADRP-ADD-LDRSW":2,
-    "LDUR-LDUR-LDUR":2,
-    "MOV-LDUR-ADRP":2,
-    "LDRH-MOV-LSL":2,
-    "BL-LDURSW-LDR":2,
-    "LDUR-CMP-B.GE":2,
-    "ADD-LDRH-LDRB":2,
-    "ADD-BL-LDR":2,
-    "LDR-LDRSW-LDUR":2,
-    "LDURSW-LDR-MUL":2,
-    "LDR-LDRH-LDRB":2,
-    "LSL-LDR-AND":2
-  },
   "MOV-MOV-CMP":{
     "STR-LDUR-LDR":5,
     "STR-LDR-CMP":4,
@@ -860,8 +1298,8 @@ var trigrams = {
     "STR-STR-STR":3,
     "STUR-LDUR-STUR":3,
     "BL-LDR-LDR":3,
-    "LDR-LDR-LDR":3,
-    "ADD-STR-LDR":3,
+    "LDR-LDR-LDR":2,
+    "ADD-STR-LDR":2,
     "STUR-LDUR-LDUR":2,
     "LDR-STR-B":2,
     "LDUR-CMP-B.GE":2,
@@ -894,45 +1332,57 @@ var trigrams = {
     "ADD-MOV-STR":3
   },
   "CMP-MOV-JNE":{
-    "LDR-CMP-STR":76,
-    "ADD-STUR-LDUR":10,
+    "LDR-CMP-STR":73,
+    "ADD-STUR-LDUR":9,
     "AND-LDR-EOR":5,
     "LDR-BL-LDR":5,
-    "STR-B.NE-SUB":5
+    "STR-B.NE-SUB":5,
+    "LDR-SUB-STR":5
   },
   "JNE-MOV-MOV":{
-    "STR-B.NE-LDR":25,
-    "STR-B.GE-LDR":12,
-    "LDR-LDR-LDR":6,
-    "CMP-STR-B.GE":6,
-    "STR-STR-STR":5,
-    "MOV-CMP-B.NE":3,
-    "LDUR-ADD-STUR":3,
-    "LDUR-LDR-LDR":3,
-    "MOV-STRB-B":2,
-    "ADRP-ADD-ADRP":2,
-    "ADD-ADD-STR":2,
-    "MOV-MUL-ADD":2,
-    "EOR-STR-MOV":2,
-    "MOV-MOVK-STR":2,
-    "MOV-STR-LDR":2,
-    "BL-LSL-ASR":2,
-    "MOVK-CMP-CSET":2,
-    "STR-ADD-ADD":2,
-    "LDR-LDUR-MOV":2,
-    "STR-MOV-MOVK":2,
-    "CMP-B.NE-LDR":2,
-    "MOV-SXTW-CMP":2,
-    "STRB-LDR-LDRSB":2,
-    "CMP-B.NE-MOV":2,
-    "STUR-ADD-ADD":2,
-    "CMP-B.LE-LDUR":2,
-    "LDR-LDUR-LDR":2,
-    "MUL-SUBS-LDR":2,
-    "LDR-LDR-STR":2,
-    "LDR-CMP-B.LE":2,
-    "B-LDR-LDUR":2,
-    "SDIV-MUL-SUBS":2
+    "STR-B.NE-LDR":15,
+    "LDR-TBNZ-MOV":13,
+    "ADRP-LDR-LDR":11,
+    "MOV-STR-ADRP":9,
+    "STR-B.GE-LDR":7,
+    "LDR-LDR-LDR":4,
+    "CMP-STR-B.GE":4,
+    "STR-STR-STR":3,
+    "MOV-CMP-B.NE":2,
+    "LDUR-ADD-STUR":2,
+    "LDUR-LDR-LDR":2,
+    "LDRB-CBNZ-LDR":2,
+    "MOV-STRB-B":1,
+    "ADRP-ADD-ADRP":1,
+    "ADD-ADD-STR":1,
+    "MOV-MUL-ADD":1,
+    "EOR-STR-MOV":1,
+    "MOV-MOVK-STR":1,
+    "MOV-STR-LDR":1,
+    "BL-LSL-ASR":1,
+    "MOVK-CMP-CSET":1,
+    "STR-ADD-ADD":1,
+    "LDR-LDUR-MOV":1,
+    "STR-MOV-MOVK":1,
+    "CMP-B.NE-LDR":1,
+    "MOV-SXTW-CMP":1,
+    "STRB-LDR-LDRSB":1,
+    "CMP-B.NE-MOV":1,
+    "STUR-ADD-ADD":1,
+    "CMP-B.LE-LDUR":1,
+    "LDR-LDUR-LDR":1,
+    "MUL-SUBS-LDR":1,
+    "LDR-LDR-STR":1,
+    "LDR-CMP-B.LE":1,
+    "B-LDR-LDUR":1,
+    "SDIV-MUL-SUBS":1,
+    "BLR-CMN-B.NE":1,
+    "CBNZ-LDP-LDR":1,
+    "LDP-LDP-LDP":1,
+    "LDR-MOV-MOV":1,
+    "RET-LDR-LDR":1,
+    "LDP-RET-CMN":1,
+    "BL-BL-BL":1
   },
   "MOV-ADD-LEA":{
     "ADD-ADD-ADD":24,
@@ -966,8 +1416,8 @@ var trigrams = {
     "B.GE-STR-LDR":1
   },
   "MOV-MOV-LEA":{
-    "LDUR-LDR-STR":8,
-    "STR-LDR-LDR":5,
+    "LDUR-LDR-STR":7,
+    "STR-LDR-LDR":4,
     "STR-STR-STR":4,
     "LDUR-STR-LDUR":4,
     "LDR-LDUR-LDR":4,
@@ -986,24 +1436,9 @@ var trigrams = {
     "STR-B-B":2,
     "LDUR-LDUR-LDUR":2,
     "ADD-ADRP-ADD":1,
-    "MOV-ADRP-ADD":1,
-    "ADD-STR-ADRP":1,
-    "LDR-CMP-B.GE":1,
-    "LDR-LDR-LDR":1,
-    "MOV-STR-BL":1,
-    "STURB-LDR-STUR":1,
-    "LDURSW-SUB-BL":1,
-    "TBNZ-B-B":1,
-    "ADD-CMP-B.GE":1,
-    "LDUR-SUBS-MOV":1,
-    "SUBS-LDUR-LDR":1,
-    "MUL-SUBS-SUBS":1,
-    "LDUR-LDR-MOV":1,
-    "SUBS-SDIV-MUL":1,
-    "STUR-LDUR-STUR":1,
   },
   "LEA-MOV-LEA":{
-    "STUR-STUR-STUR":22,
+    "STUR-STUR-STUR":21,
     "LDR-CMP-B.GE":11,
     "STR-STUR-SUB":11,
     "LDR-LDR-ADD":11,
@@ -1017,7 +1452,9 @@ var trigrams = {
     "LDR-ADD-STR":1,
     "STR-B-LDR":1,
     "MOV-MUL-MOV":1,
-    "MUL-MOV-MUL":1
+    "MUL-MOV-MUL":1,
+    "CBZ-LDRB-LDRB":1,
+    "CBZ-LDRB-LDR":1
   },
   "MOVAPS-LEA-LEA":{
     "BL-ADD-STR":10,
@@ -1203,13 +1640,13 @@ var trigrams = {
     "SUBS-STR-LDR":3
   },
   "MOV-SUB-MOV":{
-    "MUL-LDUR-SUBS":18,
+    "MUL-LDUR-SUBS":17,
     "STR-LDR-LDR":9,
     "STR-B-LDUR":9,
     "LDUR-LDR-STR":9,
     "LDUR-LDR-CMP":9,
-    "LDR-LDR-ADD":7,
-    "LDUR-SUBS-STUR":6,
+    "LDR-LDR-ADD":6,
+    "LDUR-SUBS-STUR":5,
     "STR-BL-LDR":4,
     "ADD-ADRP-ADD":2,
     "STR-LDUR-LDUR":2,
@@ -1230,7 +1667,12 @@ var trigrams = {
     "SUBS-SUBS-LDUR":1,
     "LDR-SUBS-STR":1,
     "ADD-MOV-MUL":1,
-    "MUL-SUBS-SUBS":1
+    "MUL-SUBS-SUBS":1,
+    "STR-AND-LDR":1,
+    "AND-MOV-LDR":1,
+    "LDR-STR-MOV":1,
+    "MOV-MOV-LDR":1,
+    "STR-MOV-LDR":1
   },
   "ADD-MOV-JMP":{
     "LDUR-SUBS-STUR":6,
@@ -1250,6 +1692,7 @@ var trigrams = {
     "ADD-STR-B":2,
     "ADD-STR-LDR":2,
     "LDUR-LDR-ADD":2,
+    "STR-ADD-ADD":1,
     "LDR-STR-MOV":1,
     "MOV-CMP-STR":1,
     "B-LDR-LDR":1,
@@ -1345,8 +1788,29 @@ var trigrams = {
     "STR-B-LDR":1,
     "CMP-B.GE-LDUR":1
   },
+  "MOV-CMP-JNE":{
+    "ADRP-LDR-LDR":22,
+    "MOV-STR-ADRP":22,
+    "LDR-TBNZ-MOV":19,
+    "LDR-LDR-LDR":9,
+    "STR-LDR-LDR":6,
+    "ADRP-ADD-ADD":2,
+    "MOV-SUB-ADRP":2,
+    "MUL-ADD-ADD":2,
+    "ADD-STR-STR":2,
+    "STR-LDR-CMP":2,
+    "STR-ADD-STR":2,
+    "STR-STR-STR":2,
+    "LDR-LDRH-LDR":2,
+    "STR-B-LDR":2,
+    "ADD-MOV-STUR":2,
+    "LDUR-STR-B":2,
+    "B-LDR-MOV":2,
+    "B.LS-LDRB-MOV":2,
+    "LDR-MOV-LDR":2
+  },
   "XOR-MOV-MOV":{
-    "STR-STR-STR":10,
+    "STR-STR-STR":9,
     "STR-LDR-LDR":6,
     "STUR-B-LDUR":6,
     "LDR-STR-LDR":4,
@@ -1370,6 +1834,8 @@ var trigrams = {
     "MOV-STR-BL":1,
     "MUL-LDUR-ADD":1,
     "MOV-LDR-BL":1,
+    "STR-LDR-STR":1,
+    "ADD-LDR-TST":1,
   },
   "ADD-MOV-LEA":{
     "LDR-STR-LDR":15,
@@ -1391,6 +1857,39 @@ var trigrams = {
     "STR-ADD-STR":1,
     "LDRH-ADD-STRH":1,
     "MOV-EOR-STR":1
+  },
+  "LEA-CALL-MOV":{
+    "ADD-STR-STR":10,
+    "LDR-STR-LDR":9,
+    "LDR-BL-ADD":6,
+    "ADD-LDR-STR":6,
+    "STR-LDR-LDR":6,
+    "MOV-LDR-BL":3,
+    "MOV-LDR-STR":3,
+    "ADD-STR-LDR":3,
+    "BL-ADD-STR":3,
+    "LDR-STR-STR":3,
+    "LDR-BL-LDR":3,
+    "CMP-B.GE-LDR":3,
+    "STUR-LDUR-STR":3,
+    "ADD-MOV-LDR":3,
+    "BL-ADD-LDR":3,
+    "MOV-BL-ADD":3,
+    "LDR-LDR-STR":3,
+    "CBZ-SUB-SUB":2,
+    "BL-LDUR-LDUR":2,
+    "STR-STR-BL":2,
+    "LDR-BL-LDUR":2,
+    "LDUR-CMP-B.GE":2,
+    "STR-MOV-LDR":2,
+    "LDURSW-SUB-MOV":2,
+    "BL-MOV-STR":2,
+    "STR-STR-MOV":2,
+    "LDR-STR-LDURSW":2,
+    "B-ADRP-ADD":2,
+    "B.GE-LDR-ADD":2,
+    "LDR-MOV-MUL":2,
+    "MOV-MUL-SUB":2,
   },
   "MOV-CMP-JGE":{
     "LDR-LDR-ADD":4,
@@ -1725,7 +2224,7 @@ var trigrams = {
     "STUR-LDUR-SUBS":20
   },
   "MOV-JMP-XOR":{
-    "LDUR-SUBS-STUR":39,
+    "LDUR-SUBS-STUR":38,
     "STR-LDR-LDR":13,
     "LDR-ADD-MOV":13,
     "STR-LDR-ADD":13,
@@ -1735,7 +2234,8 @@ var trigrams = {
     "LDR-STR-B":3,
     "ADRP-ADD-MOV":3,
     "ADD-STR-ADD":3,
-    "MOV-STR-BL":3
+    "MOV-STR-BL":3,
+    "LDUR-ADD-LDP":3
   },
   "CALL-MOVSS-MOV":{
     "BL-LDR-LDR":28,
@@ -1771,55 +2271,34 @@ var trigrams = {
     "LDUR-LDR-LDUR":1,
     "LDR-ADD-STR":1
   },
-  "LEA-CALL-MOV":{
-    "ADD-STR-STR":10,
-    "LDR-STR-LDR":10,
-    "LDR-BL-ADD":6,
-    "ADD-LDR-STR":6,
-    "STR-LDR-LDR":6,
-    "MOV-LDR-BL":3,
-    "MOV-LDR-STR":3,
-    "ADD-STR-LDR":3,
-    "BL-ADD-STR":3,
-    "LDR-STR-STR":3,
-    "LDR-BL-LDR":3,
-    "CMP-B.GE-LDR":3,
-    "STUR-LDUR-STR":3,
-    "ADD-MOV-LDR":3,
-    "BL-ADD-LDR":3,
-    "MOV-BL-ADD":3,
-    "LDR-LDR-STR":3,
-    "CBZ-SUB-SUB":2,
-    "BL-LDUR-LDUR":2,
-    "STR-STR-BL":2,
-    "LDR-BL-LDUR":2,
-    "LDUR-CMP-B.GE":2,
-    "STR-MOV-LDR":2,
-    "LDURSW-SUB-MOV":2,
-    "BL-MOV-STR":2,
-    "STR-STR-MOV":2,
-    "LDR-STR-LDURSW":2,
-    "B-ADRP-ADD":2,
-    "B.GE-LDR-ADD":2,
-    "LDR-MOV-MUL":2,
-    "MOV-MUL-SUB":2,
-  },
   "MOV-MOV-SUB":{
-    "LDR-STR-STR":19,
-    "LDR-CMP-B.GE":13,
-    "STUR-SUB-STUR":13,
-    "BL-ADD-LDR":13,
-    "STR-LDR-STR":6,
-    "STR-LDR-BL":6,
-    "LDR-STR-LDR":6,
-    "STR-LDR-SUBS":6,
-    "LDR-ADD-BL":6,
-    "SDIV-MUL-SUBS":3,
-    "STR-LDUR-LDR":3,
-    "MOV-BL-CBZ":2,
-    "LDUR-STR-LDUR":2,
-    "CMP-CSET-TBNZ":2,
-    "MUL-ADD-STR":2
+    "LDR-STR-STR":11,
+    "MOV-MOV-STP":9,
+    "STP-MOV-MOV":9,
+    "LDR-CMP-B.GE":8,
+    "STUR-SUB-STUR":8,
+    "BL-ADD-LDR":8,
+    "STR-LDR-STR":4,
+    "STR-LDR-BL":4,
+    "LDR-STR-LDR":4,
+    "STR-LDR-SUBS":4,
+    "LDR-ADD-BL":4,
+    "ADRP-MOV-LDR":4,
+    "LDR-MOV-MOV":4,
+    "MOV-LDR-STP":4,
+    "SDIV-MUL-SUBS":2,
+    "STR-LDUR-LDR":2,
+    "MOV-MOV-BL":2,
+    "ADRP-MOV-MOV":2,
+    "STP-MOV-ADRP":2,
+    "MOV-BL-CBZ":1,
+    "LDUR-STR-LDUR":1,
+    "CMP-CSET-TBNZ":1,
+    "MUL-ADD-STR":1,
+    "LDR-MOV-CBZ":1,
+    "MOV-LDR-STR":1,
+    "MOV-MOV-ADD":1,
+    "STP-MOV-LDRB":1
   },
   "SHL-ADD-LEA":{
     "LDR-ADD-STR":17,
@@ -1989,6 +2468,17 @@ var trigrams = {
     "STR-LDR-BL":5,
     "ADD-LDR-MOV":5
   },
+  "RET-NOP-MOV":{
+    "LDR-LDR-EOR":60,
+    "ADRP-ADRP-STP":5,
+    "MOV-LDR-LDR":5,
+    "CBNZ-LDP-LDR":5,
+    "LDR-EOR-CBNZ":5,
+    "LDP-STR-B":5,
+    "BL-LDR-ADRP":5,
+    "STR-LDR-CBZ":5,
+    "LDR-CBZ-LDR":5
+  },
   "MOV-JMP-JMP":{
     "LDR-LDR-LDR":6,
     "LDR-ADD-STR":5,
@@ -2048,38 +2538,54 @@ var trigrams = {
     "MOV-BL-ADD":2,
     "ADD-STR-ADD":1,
   },
-  "CALL-MOV-ADD":{
-    "STR-LDR-LDR":9,
-    "ADD-ADD-ADD":8,
-    "LDR-LDR-LDR":8,
-    "LDR-STR-LDR":8,
-    "STR-LDUR-LDUR":7,
-    "ADD-BL-ADD":4,
-    "ADD-STR-B":4,
-    "ADD-STR-ADD":4,
-    "BL-LDR-FMUL":4,
-    "ADD-MOV-ADRP":4,
-    "MOV-LDR-BL":4,
-    "LDR-MOV-MUL":4,
-    "ADD-MOV-ADD":4,
-    "LDR-LDR-MUL":4,
-    "ADD-STR-BL":4,
-    "LDR-LDR-STR":4,
-    "ADD-LDR-STR":4,
-    "LDP-ADD-RET":2,
-    "BL-LDUR-ADD":2,
-    "LDR-STUR-STUR":2,
+  "POP-POP-RET":{
+    "LDR-MOV-LDR":30,
+    "EOR-CBNZ-LDP":12,
+    "ADRP-STR-MOV":6,
+    "RET-MOV-CMP":6,
+    "RET-MOV-MOV":6,
+    "LDR-ADD-STR":3,
+    "CSET-AND-ADRP":3,
+    "LDR-LDRSH-EOR":3,
+    "SXTW-MOV-CMP":3,
+    "STR-CBNZ-ADRP":3,
+    "ADD-STR-ADD":3,
+    "LDR-ADRP-MOV":3,
+    "LDR-EOR-CBNZ":3,
+    "MOV-LDR-LDR":3,
+    "ADD-LDR-LDP":3,
+    "RET-MOV-BL":3,
+    "LDP-RET-STR":3,
+    "LDP-RET-LDR":3
+  },
+  "MOV-PUSH-MOV":{
+    "STP-ADRP-MOV":63,
+    "STP-ADRP-ADRP":13,
+    "STR-MOV-LDR":13,
+    "STP-MOV-LDR":6,
+    "STP-MOV-STR":6
+  },
+  "MOV-JMP-NOP":{
+    "ADD-STR-B":56,
+    "LDP-MOV-ORR":6,
+    "MOV-LDP-LDR":6,
+    "ADD-LDP-ORR":6,
+    "B.LS-LDR-STR":6,
+    "RET-BL-LDR":6,
+    "MOV-B-LDR":6,
+    "B-LDR-MOV":6,
+    "BLR-B-LDR":6
   },
   "JMP-MOV-MOV":{
     "MOV-MOV-STR":5,
     "LDUR-LDR-CMP":5,
-    "ADD-STUR-LDUR":5,
-    "STR-B-LDUR":5,
-    "CMP-B.GE-LDUR":5,
-    "STR-BL-LDR":5,
-    "STR-LDR-LDR":5,
-    "B-LDUR-LDR":5,
-    "SUB-STUR-LDUR":5,
+    "ADD-STUR-LDUR":4,
+    "STR-B-LDUR":4,
+    "CMP-B.GE-LDUR":4,
+    "STR-BL-LDR":4,
+    "STR-LDR-LDR":4,
+    "B-LDUR-LDR":4,
+    "SUB-STUR-LDUR":4,
     "LDR-STR-LDR":3,
     "STR-STR-STR":3,
     "LDR-CMP-B.GE":3,
@@ -2116,19 +2622,32 @@ var trigrams = {
     "CMP-CSET-TBNZ":10
   },
   "CMP-JNE-MOV":{
-    "CMP-B.NE-LDR":32,
-    "CBNZ-LDR-STR":14,
-    "B.NE-LDR-MOV":7,
-    "CMP-B.EQ-LDR":7,
-    "CMP-CSET-TBNZ":7,
-    "LDUR-LDR-LDR":7,
-    "MOV-SUB-ADD":4,
-    "ADRP-ADD-MOV":4,
-    "STR-STR-STR":4,
-    "BR-LDR-CMP":4,
-    "STR-B-LDR":4,
-    "STRB-B-LDR":4,
-    "LDR-BL-CBZ":4
+    "CMP-B.NE-LDR":20,
+    "CBNZ-LDR-STR":9,
+    "LDR-MOV-MOV":9,
+    "B.NE-LDR-MOV":4,
+    "CMP-B.EQ-LDR":4,
+    "CMP-CSET-TBNZ":4,
+    "LDUR-LDR-LDR":4,
+    "ADD-ADD-ADD":4,
+    "MOV-SUB-ADD":2,
+    "ADRP-ADD-MOV":2,
+    "STR-STR-STR":2,
+    "BR-LDR-CMP":2,
+    "STR-B-LDR":2,
+    "STRB-B-LDR":2,
+    "LDR-BL-CBZ":2,
+    "LDR-LDP-B":2,
+    "B-BL-LDR":2,
+    "CBNZ-LDP-LDP":2,
+    "LDP-RET-LDR":2,
+    "LDR-BLR-CMN":2,
+    "LDR-LDUR-ADD":2,
+    "BL-LDRB-CBNZ":2,
+    "STRB-STRB-LDRB":2,
+    "STLXR-CBNZ-CMP":2,
+    "LDR-MOV-LDR":2,
+    "NOP-B-MOV":2
   },
   "MOV-JMP-LEA":{
     "STR-LDR-ADD":69,
@@ -2154,27 +2673,43 @@ var trigrams = {
     "STUR-STUR-LDUR":1,
     "STUR-STUR-STUR":1,
     "LDUR-LDR-ADD":1,
-    "ADD-LDR-STUR":1
+    "ADD-LDR-STUR":1,
+    "ADD-STRB-ADD":1,
+    "ADD-STR-ADD":1,
+    "LDR-LDR-EOR":1
   },
   "LEA-MOV-CALL":{
-    "LDR-BL-LDR":12,
-    "STR-STUR-LDUR":11,
-    "LDR-LDR-LDR":11,
-    "ADD-STR-STR":11,
-    "STR-STR-STR":8,
-    "STUR-STUR-STUR":8,
-    "LDR-STR-LDUR":5,
-    "LDR-STR-MOV":5,
-    "ADD-STUR-STUR":5,
-    "STR-MOV-BL":5,
-    "STR-LDR-STR":5,
-    "B.GE-LDUR-BL":3,
-    "ADD-STUR-LDUR":3,
+    "LDR-BL-LDR":9,
+    "STR-STUR-LDUR":8,
+    "LDR-LDR-LDR":8,
+    "ADD-STR-STR":8,
+    "ADD-MOV-BL":8,
+    "STR-STR-STR":6,
+    "STUR-STUR-STUR":6,
+    "LDR-STR-LDUR":4,
+    "LDR-STR-MOV":4,
+    "ADD-STUR-STUR":4,
+    "STR-MOV-BL":4,
+    "STR-LDR-STR":4,
+    "MOV-BL-ADD":4,
+    "B.GE-LDUR-BL":2,
+    "ADD-STUR-LDUR":2,
+    "MOV-BL-MOV":2,
+    "CBZ-LDR-ADD":2,
     "B-LDR-CMP":1,
     "ADD-STR-LDR":1,
     "LDUR-STR-STR":1,
     "BL-LDR-LDR":1,
-    "STR-MOV-LDR":1
+    "STR-MOV-LDR":1,
+    "STR-BL-LDR":1,
+    "ADRP-STR-LDP":1,
+    "LDP-LDR-LDP":1,
+    "MOV-STR-BL":1,
+    "ADRP-ADD-LDR":1,
+    "LDR-STR-STR":1,
+    "LDR-STR-LDR":1,
+    "LDRB-CBZ-STRB":1,
+    "LDR-CBZ-STR":1
   },
   "MOV-MOV-JMP":{
     "LDUR-LDR-LDUR":6,
@@ -2199,6 +2734,56 @@ var trigrams = {
     "MOV-CMP-B.NE":1,
     "LDR-ADD-LDUR":1,
     "LDR-CMP-B.LE":1,
+    "B.HS-LDR-STUR":1,
+    "STR-LDR-B":1,
+  },
+  "CALL-MOV-CALL":{
+    "LDP-ORR-STR":10,
+    "BL-LDR-LDUR":9,
+    "MOV-BL-MOV":7,
+    "STR-TBZ-BL":5,
+    "STR-TBNZ-BL":5,
+    "LDUR-ADD-LDP":4,
+    "LDR-LDUR-ADD":3,
+    "ORR-STR-TBNZ":3,
+    "CMP-B.NE-BL":3,
+    "BL-MOV-BL":3,
+    "STRB-LDRB-TBNZ":2,
+    "MOV-MUL-LDR":2,
+    "BL-CMP-B.NE":2,
+    "B.NE-BL-LDR":2,
+    "ADD-LDP-ORR":2,
+    "ORR-STR-TBZ":2,
+    "TBNZ-BL-B":2,
+    "BL-B-MOV":2,
+    "MOV-MOV-BL":2,
+    "RET-STR-BL":2,
+    "BL-MOV-MOV":2,
+    "STRB-MOV-MOVK":1,
+    "BL-LDUR-BL":1,
+    "STP-STP-BL":1,
+    "LDR-STR-ORR":1,
+    "ADD-STR-LDR":1,
+    "LDR-LDP-RET":1,
+    "LDR-ADRP-MOV":1,
+    "MOV-BL-LDR":1,
+    "ADD-STR-MOV":1,
+    "BL-LDR-ADRP":1,
+    "TBNZ-BL-LDR":1,
+    "LDP-B-STR":1,
+    "STR-MOV-BL":1,
+    "BL-MOV-STR":1,
+    "TBZ-BL-MOV":1,
+    "BL-BL-MOV":1,
+    "BL-CMP-B.LE":1,
+    "LDR-B-MOV":1,
+    "ADD-MOV-BL":1,
+    "CMP-CSEL-BL":1
+  },
+  "PUSH-MOV-MOVABS":{
+    "SUB-STP-ADD":80,
+    "STP-MOV-ADRP":10,
+    "SUB-ADRP-ADD":10
   },
   "MOVSX-CMP-JL":{
     "CMP-CSET-TBNZ":89,
@@ -2229,23 +2814,23 @@ var trigrams = {
   "MOVABS-MOV-MOVABS":{
     "ADRP-ADD-ADRP":20,
     "LDR-TBNZ-B":15,
-    "B-ADRP-ADD":13,
-    "ADD-ADRP-ADD":8,
+    "B-ADRP-ADD":12,
+    "ADD-ADRP-ADD":10,
     "STUR-STR-STR":5,
     "BL-LDR-MOV":5,
     "LDUR-CMP-B.GE":5,
-    "STR-ADRP-ADD":3,
-    "ADD-STR-ADRP":3,
-    "BL-LDR-STR":3,
-    "STR-LDR-LDR":3,
-    "LDR-MOV-LDR":3,
-    "MOV-STR-BL":3,
-    "LDR-STR-STR":3,
-    "STR-LDR-ADD":3,
-    "MOVK-MOVK-STR":3,
-    "STR-STR-ADRP":3,
-    "SUB-STUR-STUR":3,
-    "MOV-STR-B":3
+    "STR-ADRP-ADD":2,
+    "ADD-STR-ADRP":2,
+    "BL-LDR-STR":2,
+    "STR-LDR-LDR":2,
+    "LDR-MOV-LDR":2,
+    "MOV-STR-BL":2,
+    "LDR-STR-STR":2,
+    "STR-LDR-ADD":2,
+    "MOVK-MOVK-STR":2,
+    "STR-STR-ADRP":2,
+    "SUB-STUR-STUR":2,
+    "MOV-STR-B":2
   },
   "CALL-XOR-MOVSS":{
     "LDUR-LDUR-LDR":100
@@ -2280,17 +2865,23 @@ var trigrams = {
     "CMP-B.NE-LDUR":5
   },
   "CALL-LEA-MOV":{
-    "LDUR-LDR-STR":24,
-    "LDR-STUR-LDUR":24,
-    "LDR-ADD-LDR":12,
-    "ADD-ADD-STR":12,
-    "LDR-LDR-LDR":12,
-    "LDR-CMP-CSET":3,
-    "ADRP-ADD-SUB":3,
-    "STUR-LDR-LDUR":3,
-    "ADD-STR-B":3,
-    "BL-SUB-MOV":3,
-    "MOV-STR-BL":3
+    "LDUR-LDR-STR":17,
+    "LDR-STUR-LDUR":17,
+    "LDR-ADD-LDR":9,
+    "ADD-ADD-STR":9,
+    "LDR-LDR-LDR":9,
+    "ADD-MOV-LDR":9,
+    "MOV-ADD-BL":4,
+    "ADD-MOV-BL":4,
+    "BL-ADD-MOV":4,
+    "LDR-CMP-CSET":2,
+    "ADRP-ADD-SUB":2,
+    "STUR-LDR-LDUR":2,
+    "ADD-STR-B":2,
+    "BL-SUB-MOV":2,
+    "MOV-STR-BL":2,
+    "LDP-LDR-LDP":2,
+    "BL-STRB-ADRP":2
   },
   "IMUL-MOV-MOV":{
     "MUL-STR-LDR":40,
@@ -2340,27 +2931,21 @@ var trigrams = {
     "LDR-LDUR-LDR":100
   },
   "MOV-LEA-LEA":{
-    "B-LDUR-LDR":44,
-    "LDR-CMP-B.GE":44,
-    "STUR-STUR-STUR":11
+    "B-LDUR-LDR":30,
+    "LDR-CMP-B.GE":30,
+    "STUR-STUR-STUR":7,
+    "STR-ADRP-STP":4,
+    "STR-ADD-STP":4,
+    "ADD-STP-LDR":4,
+    "STP-ADD-STP":4,
+    "STP-ADD-MOV":4,
+    "MOV-MOV-LDR":4,
+    "LDR-BL-ADRP":4,
+    "LDR-ADD-BL":4,
+    "ADD-LDR-ADD":4
   },
   "MOVSS-CALL-MOV":{
     "LDR-LDR-LDR":100
-  },
-  "MOV-MOV-XOR":{
-    "STR-MOV-ADD":29,
-    "SUBS-STR-LDR":29,
-    "LDR-LDR-LDR":7,
-    "STRB-LDR-LDRB":4,
-    "STR-LDR-CMP":4,
-    "ADD-LDR-MOV":4,
-    "STR-STR-STR":4,
-    "LDUR-ADD-STUR":4,
-    "MOV-MOV-BL":4,
-    "MOV-BL-MOV":4,
-    "LDRB-EOR-AND":4,
-    "UDIV-STR-LDUR":4,
-    "MOV-UDIV-STR":4
   },
   "XOR-LEA-MOV":{
     "ADD-LDR-STR":42,
@@ -2454,20 +3039,26 @@ var trigrams = {
     "STR-MOV-LDR":1
   },
   "JLE-MOV-TEST":{
-    "ADD-STR-BL":50,
-    "ADD-STR-LDR":25,
-    "LDR-LDR-LDR":25
+    "ADD-STR-BL":42,
+    "ADD-STR-LDR":21,
+    "LDR-LDR-LDR":21,
+    "LDR-B.LE-STR":5,
+    "BLR-LDR-ADD":5,
+    "STR-TBNZ-BL":5
   },
   "TEST-MOV-JE":{
-    "BL-ADD-STR":44,
-    "LDR-LDR-LDR":22,
-    "LDR-BL-ADD":22,
-    "LDRB-STR-TBNZ":11
+    "BL-ADD-STR":36,
+    "LDR-LDR-LDR":18,
+    "LDR-BL-ADD":18,
+    "LDRB-STR-TBNZ":9,
+    "ADD-MOV-LDR":9,
+    "ADD-CMP-B.LT":5,
+    "LDR-LDR-EOR":5
   },
   "JE-JMP-MOV":{
-    "STR-LDR-LDR":15,
-    "MUL-ADD-LDR":15,
-    "BL-LDR-LDR":15,
+    "STR-LDR-LDR":14,
+    "MUL-ADD-LDR":14,
+    "BL-LDR-LDR":14,
     "STR-LDR-ADD":9,
     "ADD-STR-ADD":9,
     "LDR-MUL-ADD":7,
@@ -2478,15 +3069,19 @@ var trigrams = {
     "CMP-CSET-AND":2,
     "STUR-LDUR-CMP":2,
     "MOV-MOV-BL":2,
-    "LDUR-LDR-FCVTZS":2
+    "LDUR-LDR-FCVTZS":2,
+    "B.LS-LDRB-STR":2,
+    "BL-LDR-LDUR":2,
+    "ORR-STR-TBZ":2
   },
   "MOV-SUB-JE":{
-    "LDR-LDR-MUL":25,
-    "LDR-LDR-BL":25,
-    "ADD-LDR-LDR":13,
-    "LDR-LDR-STR":13,
-    "ADD-STR-BL":13,
-    "STR-LDR-LDR":13
+    "LDR-LDR-MUL":24,
+    "LDR-LDR-BL":24,
+    "ADD-LDR-LDR":12,
+    "LDR-LDR-STR":12,
+    "ADD-STR-BL":12,
+    "STR-LDR-LDR":12,
+    "LDUR-ADD-LDR":3
   },
   "MOVAPS-MOV-MOV":{
     "LDR-STR-LDR":24,
@@ -2580,7 +3175,9 @@ var trigrams = {
     "LDR-STR-LDR":100
   },
   "AND-ADD-MOV":{
-    "LDR-STR-LDR":100
+    "LDR-STR-LDR":80,
+    "MOV-LDR-BLR":10,
+    "LDP-LDP-RET":10
   },
   "SUB-SUB-ADD":{
     "STR-LDR-STR":100
@@ -2598,37 +3195,6 @@ var trigrams = {
     "STR-B-LDR":50,
     "LDR-MOV-MOV":25,
     "B-LDR-MOV":25
-  },
-  "CMP-JE-MOV":{
-    "LDR-MOV-MOV":12,
-    "CSEL-STR-LDR":12,
-    "MOV-CMP-CSEL":6,
-    "LDR-MOV-UBFX":6,
-    "LDR-MOV-MUL":6,
-    "CMP-B.GE-LDR":6,
-    "ADD-STR-LDR":6,
-    "MOV-MOV-CMP":6,
-    "STR-LDR-MOV":6,
-    "LDR-LDR-CMP":6,
-    "LDUR-ADRP-ADD":4,
-    "ADD-BL-LDR":1,
-    "ADD-ADRP-ADD":1,
-    "ADRP-ADD-LDR":1,
-    "LDR-LDUR-ADRP":1,
-    "ASR-LSL-LDR":1,
-    "ADRP-ADD-BL":1,
-    "LDR-MOV-LDUR":1,
-    "LSL-MOV-ASR":1,
-    "ADD-LDUR-LDUR":1,
-    "LSL-ASR-STR":1,
-    "LDR-CBZ-LDR":1,
-    "LDR-BL-MOV":1,
-    "LDR-LDR-LDRB":1,
-    "LDR-STR-BL":1,
-    "STR-STR-STR":1,
-    "ADD-STR-STR":1,
-    "LDRB-STRB-LDRB":1,
-    "STUR-LDUR-SUBS":1
   },
   "MOV-AND-CMP":{
     "MOV-CMP-CSEL":40,
@@ -2728,13 +3294,17 @@ var trigrams = {
     "LDUR-ADRP-ADD":2
   },
   "MOV-MOV-TEST":{
-    "SUBS-CBZ-STR":30,
-    "STR-STR-MOV":15,
-    "MUL-SUBS-CBZ":15,
-    "STR-ADD-STR":15,
-    "LDR-CMP-B.GE":15,
-    "STR-LDUR-LDRB":7,
-    "STR-ADD-ADD":4
+    "SUBS-CBZ-STR":25,
+    "STR-STR-MOV":13,
+    "MUL-SUBS-CBZ":13,
+    "STR-ADD-STR":13,
+    "LDR-CMP-B.GE":13,
+    "STR-LDUR-LDRB":6,
+    "CBNZ-LDR-MOV":6,
+    "STR-ADD-ADD":3,
+    "LDR-LDUR-ADD":3,
+    "CBZ-CMN-B.NE":3,
+    "ADD-LDR-CBZ":3
   },
   "TEST-JNE-JMP":{
     "STR-STR-MOV":14,
@@ -2761,7 +3331,8 @@ var trigrams = {
     "ADD-MOV-STR":2,
     "LDR-LDRH-CMP":2,
     "STR-STR-STR":2,
-    "STR-LDR-TBNZ":2
+    "STR-LDR-TBNZ":2,
+    "CMP-B.HS-LDRB":2
   },
   "JMP-CMP-JNE":{
     "MOV-CMP-STR":40,
@@ -2807,10 +3378,10 @@ var trigrams = {
   },
   "CMP-MOV-MOV":{
     "TBNZ-B-LDR":13,
-    "LDR-ADD-STR":10,
-    "SUBS-ADD-STR":7,
-    "LDR-TBNZ-B":7,
-    "LDR-SUBS-SUBS":7,
+    "LDR-ADD-STR":9,
+    "SUBS-ADD-STR":6,
+    "LDR-TBNZ-B":6,
+    "LDR-SUBS-SUBS":6,
     "STR-STR-STR":5,
     "CMP-CSET-AND":3,
     "MOV-STR-MOV":3,
@@ -2840,7 +3411,10 @@ var trigrams = {
     "LDR-STR-LDRH":2,
     "LDR-ADD-LDR":2,
     "STR-ADD-ADD":2,
-    "STR-STR-MOV":2
+    "STR-STR-MOV":2,
+    "STR-CBZ-LDRB":2,
+    "CMP-B.LE-LDR":2,
+    "CMP-CSEL-MOV":2
   },
   "MOV-MOV-CMOVE":{
     "LDR-ADD-STR":33,
@@ -2980,24 +3554,27 @@ var trigrams = {
     "LDUR-STR-LDUR":2
   },
   "CALL-LEA-LEA":{
-    "STR-STR-BL":21,
-    "BL-ADD-STR":11,
-    "LDR-ADD-LDR":11,
-    "STR-STR-LDR":11,
-    "ADD-LDR-MOV":11,
-    "LDR-STR-ADD":11,
-    "ADD-LDR-STR":11,
+    "STR-STR-BL":20,
+    "LDR-STR-ADD":13,
+    "BL-ADD-STR":10,
+    "LDR-ADD-LDR":10,
+    "STR-STR-LDR":10,
+    "ADD-LDR-MOV":10,
+    "ADD-LDR-STR":10,
     "LDUR-STR-STR":5,
     "LDR-ADD-MOV":5,
-    "MOV-STR-STR":5
+    "MOV-STR-STR":5,
+    "LDR-STRB-ADD":3
   },
   "LEA-CALL-LEA":{
-    "STR-LDR-LDR":33,
-    "ADD-MOV-STR":17,
-    "ADD-LDR-MOV":17,
-    "ADD-LDR-MUL":17,
+    "STR-LDR-LDR":31,
+    "ADD-MOV-STR":15,
+    "ADD-LDR-MOV":15,
+    "ADD-LDR-MUL":15,
     "STUR-STUR-LDUR":8,
-    "LDUR-LDUR-LDR":8
+    "LDUR-LDUR-LDR":8,
+    "MOV-BL-LDR":4,
+    "BL-ADRP-STR":4
   },
   "MOVSD-MOV-LEA":{
     "LDR-STR-LDR":29,
@@ -3049,10 +3626,13 @@ var trigrams = {
     "ADD-LDR-STR":14,
     "BL-LDR-ADD":14
   },
-  "PUSH-MOV-MOVABS":{
-    "SUB-STP-ADD":78,
-    "STP-MOV-ADRP":11,
-    "SUB-ADRP-ADD":11
+  "SUB-CALL-LEA":{
+    "MOV-BL-ADD":100
+  },
+  "MOV-MOV-RET":{
+    "LDR-LDR-RET":67,
+    "STR-STR-RET":17,
+    "LDR-STR-MOV":17
   },
   "CALL-MOVSXD-MOV":{
     "ADD-STUR-B":27,
@@ -3243,11 +3823,12 @@ var trigrams = {
     "TBNZ-B-LDURSB":1
   },
   "MOV-MOV-POP":{
-    "LDR-ADD-RET":23,
-    "STR-ADD-RET":20,
-    "STRB-ADD-RET":13,
-    "LDR-STR-LDR":10,
-    "LDR-LDR-SDIV":7,
+    "LDR-ADD-RET":18,
+    "STR-ADD-RET":15,
+    "STRB-ADD-RET":10,
+    "LDR-STR-LDR":8,
+    "LDR-LDR-SDIV":5,
+    "LDR-CMP-B.GE":5,
     "STR-BL-LDR":3,
     "STRB-LDR-ADD":3,
     "STRH-ADD-RET":3,
@@ -3255,7 +3836,15 @@ var trigrams = {
     "LDR-LDR-SUBS":3,
     "LDR-MOV-ADD":3,
     "SUBS-STR-LDR":3,
-    "MOV-SUBS-STR":3
+    "MOV-SUBS-STR":3,
+    "LDRB-STRB-STR":3,
+    "MOV-MOV-LDR":3,
+    "STR-STRB-STR":3,
+    "BLR-MOV-MOV":3,
+    "CBNZ-LDR-CBZ":3,
+    "STRB-STRB-LDP":3,
+    "CMP-B.EQ-ADD":3,
+    "LDR-BLR-STR":3
   },
   "MOVAPS-MOVAPS-MOVAPS":{
     "STR-LDR-LDR":37,
@@ -3361,30 +3950,36 @@ var trigrams = {
     "STR-LDUR-ADD":1
   },
   "PUSH-MOV-PUSH":{
-    "STP-STP-STP":75,
-    "SUB-MOV-STR":13,
-    "SUB-STP-ADD":13
+    "STP-STP-STP":43,
+    "STP-MOV-LDR":21,
+    "SUB-MOV-STR":7,
+    "SUB-STP-ADD":7,
+    "LDR-CBNZ-STP":7,
+    "STP-ADRP-STP":7,
+    "ADD-LDR-CBNZ":7
   },
   "ADD-ADD-MOV":{
-    "STR-STR-STR":23,
-    "LDR-LDR-MOV":8,
-    "STR-ADD-ADD":8,
-    "ADD-MOV-ADRP":4,
-    "ADRP-ADD-MOV":4,
-    "LSL-ASR-CBNZ":4,
-    "STR-B.LO-LDR":4,
-    "STR-LDR-AND":4,
-    "STR-MOV-LDR":4,
-    "STR-MOV-STR":4,
-    "LDR-LDR-STR":4,
-    "STRH-LDR-STRB":4,
-    "LDURSW-MOV-MUL":4,
-    "ADD-LDR-ORR":4,
-    "MOV-STR-BL":4,
-    "CMP-CSET-AND":4,
-    "CMP-B.NE-MOV":4,
-    "STR-SUB-STR":4,
-    "LDR-STR-STR":4
+    "STR-STR-STR":20,
+    "LDR-LDR-MOV":7,
+    "STR-ADD-ADD":7,
+    "MOV-ADD-LDR":7,
+    "LDR-LDR-LDR":7,
+    "ADD-MOV-ADRP":3,
+    "ADRP-ADD-MOV":3,
+    "LSL-ASR-CBNZ":3,
+    "STR-B.LO-LDR":3,
+    "STR-LDR-AND":3,
+    "STR-MOV-LDR":3,
+    "STR-MOV-STR":3,
+    "LDR-LDR-STR":3,
+    "STRH-LDR-STRB":3,
+    "LDURSW-MOV-MUL":3,
+    "ADD-LDR-ORR":3,
+    "MOV-STR-BL":3,
+    "CMP-CSET-AND":3,
+    "CMP-B.NE-MOV":3,
+    "STR-SUB-STR":3,
+    "LDR-STR-STR":3
   },
   "MOV-MOVSX-SHL":{
     "STR-STR-STR":27,
@@ -3408,45 +4003,47 @@ var trigrams = {
     "ADRP-ADD-BL":8
   },
   "CALL-CMP-JNE":{
-    "MOV-STR-STR":29,
-    "STR-BL-LDR":29,
-    "BL-LDR-CMP":19,
-    "ADRP-ADD-ADRP":5,
-    "CBNZ-MOV-STR":5,
-    "CMP-B.NE-B":5,
-    "B-ADRP-ADD":5,
-    "ADD-MOV-ADRP":5
+    "MOV-STR-STR":19,
+    "STR-BL-LDR":19,
+    "BL-LDR-CMP":13,
+    "MOV-MOV-ADD":6,
+    "ADD-MOV-BL":6,
+    "LDP-RET-LDR":6,
+    "ADRP-ADD-ADRP":3,
+    "CBNZ-MOV-STR":3,
+    "CMP-B.NE-B":3,
+    "B-ADRP-ADD":3,
+    "ADD-MOV-ADRP":3,
+    "LDUR-ADD-LDR":3,
+    "CMP-B.LE-STRB":3,
+    "LDP-LDP-LDP":3,
+    "LDR-EOR-CBNZ":3,
+    "LDR-LDP-RET":3
   },
   "JNE-CMP-MOV":{
-    "STR-BL-LDR":50,
-    "LDR-BL-LDUR":50
+    "STR-BL-LDR":46,
+    "LDR-BL-LDUR":46,
+    "LDR-CMP-B.NE":8
   },
   "MOV-MOV-JE":{
-    "LDR-BL-LDR":32,
-    "LDUR-CBNZ-LDUR":32,
-    "CMP-B.GE-STR":5,
-    "B.GT-MOV-STRH":5,
-    "STR-B-LDUR":5,
-    "STR-LDR-STR":5,
-    "STUR-STUR-LDR":5,
-    "LDR-STR-LDRB":5,
-    "STR-STR-STR":5
+    "LDR-BL-LDR":26,
+    "LDUR-CBNZ-LDUR":26,
+    "LDRB-MOV-CBZ":9,
+    "LDUR-ADD-MOV":9,
+    "CMP-B.GE-STR":4,
+    "B.GT-MOV-STRH":4,
+    "STR-B-LDUR":4,
+    "STR-LDR-STR":4,
+    "STUR-STUR-LDR":4,
+    "LDR-STR-LDRB":4,
+    "STR-STR-STR":4
   },
   "JE-XOR-MOV":{
-    "LDR-LDR-CBNZ":43,
-    "LDUR-MOV-STR":43,
-    "STURB-LDURB-CMP":7,
-    "LDUR-LDURSW-BL":7
-  },
-  "MOV-TEST-JNE":{
-    "LDR-MOV-STR":23,
-    "MOV-STR-LDR":23,
-    "LDR-LDR-BL":15,
-    "STR-LDR-BL":15,
-    "STR-BL-LDR":8,
-    "MOV-LDR-STRB":8,
-    "ADRP-ADD-STR":4,
-    "LDRSB-CMP-CSET":4
+    "LDR-LDR-CBNZ":38,
+    "LDUR-MOV-STR":38,
+    "CBZ-LDR-LDR":13,
+    "STURB-LDURB-CMP":6,
+    "LDUR-LDURSW-BL":6
   },
   "JNE-JMP-JMP":{
     "STR-CBZ-MOV":29,
@@ -3541,6 +4138,181 @@ var trigrams = {
     "MUL-MOV-UDIV":6,
     "MOV-MUL-MOV":6
   },
+  "ADD-POP-POP":{
+    "LDP-LDP-RET":19,
+    "LDR-LDP-LDP":13,
+    "TST-B.EQ-LDR":13,
+    "MOV-LDR-LDR":9,
+    "LDR-MOV-LDR":9,
+    "RET-ADRP-MOV":6,
+    "MOV-LDR-ORR":6,
+    "AND-LDR-LDR":3,
+    "ADD-STR-ADD":3,
+    "ADD-LDR-ADD":3,
+    "LDR-LDUR-ADD":3,
+    "LDR-LDR-LDP":3,
+    "LDR-LDR-EOR":3,
+    "BL-LDR-MOV":3,
+    "LDP-RET-BL":3
+  },
+  "SUB-MOV-LEA":{
+    "STP-ADRP-MOV":50,
+    "MOV-MOV-LDR":33,
+    "LDR-LDR-STR":17
+  },
+  "MOV-XOR-CALL":{
+    "LDR-LDR-STR":38,
+    "MOV-STR-ADD":25,
+    "STR-STR-MOV":13,
+    "STR-LDR-STR":13,
+    "MOV-MOV-STR":13
+  },
+  "CALL-CMP-JE":{
+    "STR-MOV-STR":12,
+    "BL-ADD-MOV":8,
+    "ADD-STR-ADRP":4,
+    "ADD-BL-LDR":4,
+    "LDR-BL-MOV":4,
+    "ADD-MOV-BL":4,
+    "ADD-LDR-CBZ":4,
+    "TBNZ-B-LDUR":2,
+    "LDR-LDRB-MOV":2,
+    "ADD-STUR-ADD":2,
+    "STUR-ADRP-ADD":2,
+    "LDUR-ADD-STUR":2,
+    "LDR-MUL-LDR":2,
+    "LDR-LDUR-ADRP":2,
+    "LDUR-ADRP-ADD":2,
+    "ADD-STUR-B":2,
+    "LDR-MUL-ADD":2,
+    "LDRH-LDRB-ORR":2,
+    "ASR-MOV-SXTW":2,
+    "ASR-ASR-LSL":2,
+    "LDRH-MOV-LDUR":2,
+    "B-STUR-LDUR":2,
+    "ADD-STR-STR":2,
+    "ADD-LDURSW-LDR":2,
+    "LDR-LDRH-LDRB":2,
+    "BL-CBNZ-LDR":2,
+    "CSET-AND-LDR":2,
+    "CSET-AND-MOV":2,
+    "ADRP-ADD-LDR":2,
+    "STUR-STUR-MOV":2,
+    "LDR-LDR-CMP":2,
+    "LDR-ADD-STR":2,
+    "ADD-ADD-STRB":2,
+    "STUR-STR-LDARB":2,
+    "TBZ-BL-BL":2,
+    "ADD-LDP-ORR":2
+  },
+  "OR-TEST-JNE":{
+    "LDP-ORR-STR":26,
+    "ADD-LDP-ORR":17,
+    "ORR-STR-TBNZ":9,
+    "LDR-CBZ-B":9,
+    "LDUR-ADD-LDP":9,
+    "ADD-NOP-LDR":4,
+    "STRB-LDR-CBZ":4,
+    "LDR-MOV-LDR":4,
+    "B-BL-LDR":4,
+    "ORR-STR-TBZ":4,
+    "STR-TBNZ-BL":4,
+    "TBZ-BL-BL":4
+  },
+  "CALL-CALL-CALL":{
+    "LDUR-ADD-LDP":25,
+    "BL-BL-BL":21,
+    "ADD-LDP-ORR":13,
+    "LDR-LDUR-ADD":8,
+    "LDP-ORR-STR":8,
+    "ADD-ADRP-ADD":4,
+    "BL-LDR-CBNZ":4,
+    "STR-BL-CMP":4,
+    "MOV-BL-BL":4,
+    "STR-TBZ-BL":4,
+    "STR-TBNZ-BL":4
+  },
+  "SUB-MOV-TEST":{
+    "STP-MOV-BL":63,
+    "CBZ-BL-LDR":13,
+    "STR-MOV-CBZ":13,
+    "LDR-CBZ-LDRB":13
+  },
+  "XOR-MOV-POP":{
+    "MOV-MOV-MOV":83,
+    "AND-LDR-EOR":17
+  },
+  "POP-MOV-AND":{
+    "MOV-LDR-ADD":100
+  },
+  "AND-PUSH-PUSH":{
+    "ADD-MOV-MOVZ":100
+  },
+  "CALL-HLT-NOP":{
+    "MOVZ-MOVK-MOVK":100
+  },
+  "PUSH-MOV-CMP":{
+    "ADRP-ADD-ADRP":83,
+    "SUB-STP-ADD":17
+  },
+  "CMP-MOV-JE":{
+    "ADRP-ADD-CMP":17,
+    "LDUR-STR-CBZ":14,
+    "CMP-STR-B.EQ":7,
+    "LDR-STR-CBZ":7,
+    "LDR-MOV-LDR":7,
+    "MOV-BL-AND":3,
+    "ADD-ADD-ADD":3,
+    "LDUR-STUR-LDR":3,
+    "STR-LDR-STR":3,
+    "LSL-ASR-LDR":3,
+    "STR-ADD-STR":3,
+    "AND-LDR-CMP":3,
+    "ADRP-ADRP-LDR":3,
+    "B.EQ-CMP-B.EQ":3,
+    "CBZ-LDR-MOV":3,
+    "CMP-B.EQ-MOV":3,
+    "LDRB-AND-CBZ":3,
+    "STR-STR-STR":3,
+    "ADRP-LDRB-LDR":3
+  },
+  "JE-MOV-TEST":{
+    "CMP-B.EQ-ADRP":63,
+    "TBNZ-B-LDR":25,
+    "LDR-ADD-STR":13
+  },
+  "TEST-JE-POP":{
+    "ADRP-LDR-CBZ":83,
+    "ADD-LDRB-CBZ":17
+  },
+  "POP-MOV-JMP":{
+    "CBZ-BR-RET":100
+  },
+  "MOV-PUSH-SUB":{
+    "ADRP-ADD-ADRP":71,
+    "STP-MOV-ADD":14,
+    "LDR-STP-ADRP":14
+  },
+  "SUB-MOV-SAR":{
+    "ADRP-ADD-SUB":100
+  },
+  "SAR-MOV-SHR":{
+    "SUB-ASR-ADD":100
+  },
+  "SHR-ADD-SAR":{
+    "ADD-ASR-CBZ":100
+  },
+  "SAR-JE-MOV":{
+    "CBZ-ADRP-LDR":100
+  },
+  "CMP-JNE-PUSH":{
+    "STP-MOV-STR":100
+  },
+  "PUSH-MOV-CALL":{
+    "STR-ADRP-LDRB":45,
+    "STP-MOV-BL":36,
+    "STP-MOV-STR":18
+  },
   "MOVABS-MOV-CALL":{
     "ADD-ADRP-ADD":14,
     "MOV-LDUR-ADRP":5,
@@ -3573,24 +4345,23 @@ var trigrams = {
     "LDRSW-SUB-MOV":3,
     "STR-LDUR-MOV":3
   },
-  "CALL-CALL-CALL":{
-    "BL-BL-BL":83,
-    "ADD-ADRP-ADD":17
-  },
-  "MOV-CMP-JNE":{
-    "LDR-LDR-LDR":25,
-    "STR-LDR-LDR":20,
-    "ADRP-ADD-ADD":5,
-    "MOV-SUB-ADRP":5,
-    "MUL-ADD-ADD":5,
-    "ADD-STR-STR":5,
-    "STR-LDR-CMP":5,
-    "STR-ADD-STR":5,
-    "STR-STR-STR":5,
-    "LDR-LDRH-LDR":5,
-    "STR-B-LDR":5,
-    "ADD-MOV-STUR":5,
-    "LDUR-STR-B":5
+  "MOV-CALL-JMP":{
+    "BL-B-LDR":20,
+    "LDR-LDR-BL":16,
+    "LDURSW-LDR-MUL":8,
+    "LDR-CMP-B.EQ":8,
+    "STUR-ADRP-ADD":4,
+    "LDUR-ADRP-ADD":4,
+    "LDR-MUL-LDR":4,
+    "AND-LSL-MOV":4,
+    "MOV-SXTW-LDUR":4,
+    "LSL-ASR-MOV":4,
+    "LDRB-ORR-MOV":4,
+    "CBZ-B-MOV":4,
+    "LDR-MOV-LDR":4,
+    "BL-LDR-LDUR":4,
+    "LDR-BLR-MOV":4,
+    "BLR-AND-B":4
   },
   "CALL-MOVSS-LEA":{
     "STR-LDR-LDR":9,
@@ -3638,97 +4409,39 @@ var trigrams = {
     "LDURSW-LDR-STR":18,
     "STUR-LDUR-SUB":18
   },
-  "SUB-MOV-TEST":{
-    "STP-MOV-BL":100
-  },
-  "XOR-MOV-POP":{
-    "MOV-MOV-MOV":80,
-    "AND-LDR-EOR":20
-  },
-  "POP-MOV-AND":{
-    "MOV-LDR-ADD":100
-  },
-  "AND-PUSH-PUSH":{
-    "ADD-MOV-MOVZ":100
-  },
-  "CALL-HLT-NOP":{
-    "MOVZ-MOVK-MOVK":100
-  },
-  "PUSH-MOV-CMP":{
-    "ADRP-ADD-ADRP":80,
-    "SUB-STP-ADD":20
-  },
-  "CMP-MOV-JE":{
-    "ADRP-ADD-CMP":21,
-    "LDUR-STR-CBZ":21,
-    "CMP-STR-B.EQ":11,
-    "LDR-STR-CBZ":11,
-    "MOV-BL-AND":5,
-    "ADD-ADD-ADD":5,
-    "LDUR-STUR-LDR":5,
-    "STR-LDR-STR":5,
-    "LSL-ASR-LDR":5,
-    "STR-ADD-STR":5,
-    "AND-LDR-CMP":5
-  },
-  "JE-MOV-TEST":{
-    "CMP-B.EQ-ADRP":67,
-    "TBNZ-B-LDR":33
-  },
-  "TEST-JE-POP":{
-    "ADRP-LDR-CBZ":100
-  },
-  "POP-MOV-JMP":{
-    "CBZ-BR-RET":100
-  },
-  "MOV-PUSH-SUB":{
-    "ADRP-ADD-ADRP":100
-  },
-  "SUB-MOV-SAR":{
-    "ADRP-ADD-SUB":100
-  },
-  "SAR-MOV-SHR":{
-    "SUB-ASR-ADD":100
-  },
-  "SHR-ADD-SAR":{
-    "ADD-ASR-CBZ":100
-  },
-  "SAR-JE-MOV":{
-    "CBZ-ADRP-LDR":100
-  },
-  "MOV-TEST-JE":{
-    "LDR-CBZ-BR":36,
-    "LDR-LDR-BL":18,
-    "TBNZ-B-LDR":18,
-    "LDR-LDRB-TBNZ":18,
-    "ADD-ADRP-ADD":9
-  },
-  "CMP-JNE-PUSH":{
-    "STP-MOV-STR":100
-  },
-  "PUSH-MOV-CALL":{
-    "STR-ADRP-LDRB":57,
-    "STP-MOV-BL":43
+  "CALL-POP-RET":{
+    "BL-LDP-RET":44,
+    "ADD-STUR-MOV":22,
+    "ADRP-ADD-ADRP":11,
+    "LDR-MOV-BL":11,
+    "STR-BLR-LDR":11
   },
   "CALL-MOV-POP":{
-    "LDRB-CBNZ-BL":100
+    "LDRB-CBNZ-BL":31,
+    "STP-ADD-STR":15,
+    "STR-ADD-STP":15,
+    "LDR-LDR-CMN":15,
+    "STR-MOV-BL":15,
+    "BL-MOV-LDR":8
   },
   "NOP-REP-NOP":{
     "STRB-LDR-LDP":100
   },
   "CALL-TEST-JNE":{
-    "ADD-ADRP-ADD":24,
-    "MOV-LDR-BL":12,
-    "BL-TBNZ-LDUR":12,
-    "MOV-MUL-ADD":6,
-    "B-LDUR-LDRB":6,
-    "ADD-MOV-MOV":6,
-    "MOV-MOV-MOV":6,
-    "STRB-B-LDR":6,
-    "ADRP-ADD-LDRB":6,
-    "TBNZ-B-ADRP":6,
-    "MOV-BL-MOV":6,
-    "MOV-STR-MOV":6
+    "ADD-ADRP-ADD":20,
+    "MOV-MOV-MOV":10,
+    "MOV-LDR-BL":10,
+    "BL-TBNZ-LDUR":10,
+    "MOV-MUL-ADD":5,
+    "B-LDUR-LDRB":5,
+    "ADD-MOV-MOV":5,
+    "STRB-B-LDR":5,
+    "ADRP-ADD-LDRB":5,
+    "TBNZ-B-ADRP":5,
+    "MOV-BL-MOV":5,
+    "MOV-STR-MOV":5,
+    "BL-LDR-LDUR":5,
+    "BL-MOV-BL":5
   },
   "PUSH-MOV-XOR":{
     "SUB-STP-ADD":40,
@@ -3736,15 +4449,10 @@ var trigrams = {
     "SUB-MOV-STRB":20,
     "SUB-MOV-STRH":20
   },
-  "PUSH-PUSH-MOV":{
-    "STP-MOV-STP":100
-  },
-  "MOV-PUSH-PUSH":{
-    "STP-ADRP-ADRP":100
-  },
   "PUSH-LEA-PUSH":{
-    "ADRP-ADD-ADD":50,
-    "ADD-STP-SUB":50
+    "ADRP-ADD-ADD":40,
+    "ADD-STP-SUB":40,
+    "STP-MOV-STP":20
   },
   "MOV-SUB-SUB":{
     "MOV-MOV-ASR":33,
@@ -3755,33 +4463,19 @@ var trigrams = {
     "ASR-MOV-BL":100
   },
   "CALL-TEST-JE":{
-    "BL-CBZ-STR":80,
-    "BL-BL-ADRP":20
+    "BL-CBZ-STR":40,
+    "BL-TST-B.EQ":40,
+    "BL-BL-ADRP":10,
+    "CMP-B.LO-LDR":10
   },
   "JE-XOR-NOP":{
     "STR-MOV-LDR":100
-  },
-  "NOP-MOV-MOV":{
-    "LDR-MOV-MOV":100
   },
   "CALL-ADD-CMP":{
     "ADD-BLR-CMP":100
   },
   "CMP-JNE-ADD":{
     "CMP-B.NE-LDR":100
-  },
-  "ADD-POP-POP":{
-    "LDR-LDP-LDP":80,
-    "AND-LDR-LDR":20
-  },
-  "POP-POP-POP":{
-    "LDP-LDR-LDP":40,
-    "LDR-LDR-EOR":10,
-    "EOR-STR-CMP":10,
-    "AND-MOV-SXTW":10,
-    "LDRSH-CMP-CSET":10,
-    "LDR-LDRH-EOR":10,
-    "EOR-LDR-LDR":10
   },
   "IMUL-MOVABS-ADD":{
     "LDUR-ADRP-ADD":10,
@@ -3836,9 +4530,9 @@ var trigrams = {
     "STR-STR-STR":6
   },
   "MOVZX-MOV-MOV":{
-    "LDURSW-LDR-MUL":4,
-    "STR-STR-STR":4,
-    "ADRP-ADD-LDR":3,
+    "LDURSW-LDR-MUL":3,
+    "STR-STR-STR":3,
+    "ADRP-ADD-LDR":2,
     "ADRP-ADD-STR":2,
     "LDUR-ADRP-ADD":2,
     "ADD-LDURSW-LDR":2,
@@ -3851,6 +4545,10 @@ var trigrams = {
     "LDR-STR-LDR":2,
     "BL-AND-LDR":2,
     "STR-ADD-STR":2,
+    "LDR-STR-STR":2,
+    "LDP-STR-LDP":2,
+    "LDRB-STRB-STR":2,
+    "STR-STRB-STR":2,
   },
   "SETNE-AND-MOVZX":{
     "CMP-CSET-AND":11,
@@ -3896,24 +4594,26 @@ var trigrams = {
     "STR-ADD-STR":17
   },
   "MOVZX-MOVZX-MOV":{
-    "STR-STR-STR":17,
-    "ADD-LDR-LDR":9,
-    "LDR-STR-MOV":9,
-    "MOV-MOVK-STR":4,
-    "ADRP-ADD-STR":4,
-    "MOV-MOVK-AND":4,
-    "MOV-LDR-STR":4,
-    "MOV-STR-CBNZ":4,
-    "AND-LDUR-CMP":4,
-    "LDR-LDR-STR":4,
-    "MOV-STR-BL":4,
-    "BL-TST-CSET":4,
-    "LDR-LDUR-LDR":4,
-    "MOVK-MOVK-MOVK":4,
-    "LDR-LDUR-MOV":4,
-    "CBZ-LDR-LDRSB":4,
-    "STR-LDR-LDR":4,
-    "LDR-LDR-LDR":4
+    "STR-STR-STR":13,
+    "LDRB-LDRB-STRB":13,
+    "LDRB-STRB-STRB":13,
+    "ADD-LDR-LDR":6,
+    "LDR-STR-MOV":6,
+    "MOV-MOVK-STR":3,
+    "ADRP-ADD-STR":3,
+    "MOV-MOVK-AND":3,
+    "MOV-LDR-STR":3,
+    "MOV-STR-CBNZ":3,
+    "AND-LDUR-CMP":3,
+    "LDR-LDR-STR":3,
+    "MOV-STR-BL":3,
+    "BL-TST-CSET":3,
+    "LDR-LDUR-LDR":3,
+    "MOVK-MOVK-MOVK":3,
+    "LDR-LDUR-MOV":3,
+    "CBZ-LDR-LDRSB":3,
+    "STR-LDR-LDR":3,
+    "LDR-LDR-LDR":3
   },
   "AND-MOVZX-MOV":{
     "LDR-LDR-LDR":4,
@@ -4046,20 +4746,24 @@ var trigrams = {
     "CMP-CSET-TBNZ":33
   },
   "MOV-MOV-MOVZX":{
-    "STR-LDR-MOV":6,
-    "STR-STR-STR":4,
-    "STRB-LDRB-LDRB":4,
-    "STRH-LDRH-LDRH":4,
-    "LDR-LDR-LDR":3,
-    "LDR-LDR-STR":3,
-    "LDR-LSL-STR":3,
-    "STRB-LDRB-CBNZ":3,
-    "LDR-ASR-STR":3,
-    "STRH-LDRH-CBNZ":3,
-    "LDR-MOV-ADD":3,
-    "STR-LDR-STR":3,
-    "ADD-STR-STR":3,
-    "STUR-STUR-STUR":3,
+    "STRB-LDRB-LDRB":5,
+    "STR-LDR-MOV":5,
+    "STR-STR-STR":3,
+    "STRH-LDRH-LDRH":3,
+    "LDR-STR-STR":3,
+    "STR-LDRB-LDRB":3,
+    "STR-STR-LDRB":3,
+    "LDR-LDR-LDR":2,
+    "LDR-LDR-STR":2,
+    "LDR-LSL-STR":2,
+    "STRB-LDRB-CBNZ":2,
+    "LDR-ASR-STR":2,
+    "STRH-LDRH-CBNZ":2,
+    "LDR-MOV-ADD":2,
+    "STR-LDR-STR":2,
+    "ADD-STR-STR":2,
+    "STUR-STUR-STUR":2,
+    "STRB-STRB-LDRB":2,
     "ADRP-ADD-LDRB":1,
     "STUR-STR-STR":1,
     "ADRP-ADD-MOV":1,
@@ -4094,9 +4798,13 @@ var trigrams = {
     "LDR-MOV-STR":1,
     "BL-TST-CSET":1,
     "LDR-EOR-ADRP":1,
-    "LDR-STR-STR":1,
     "ADD-MOV-BL":1,
-    "LDR-LDR-MOV":1
+    "LDR-LDR-MOV":1,
+    "BL-LDR-STR":1,
+    "STRB-LDRB-STRB":1,
+    "STR-MOV-LDRB":1,
+    "LDRB-STR-LDR":1,
+    "STRB-STR-LDP":1
   },
   "MOVZX-POP-RET":{
     "MOV-ADD-RET":40,
@@ -4130,9 +4838,10 @@ var trigrams = {
     "STR-STR-ADRP":6
   },
   "MOV-SHR-AND":{
-    "LDR-LSR-AND":67,
-    "LDR-MOV-UDIV":17,
-    "B-LDR-MOV":17
+    "LDR-LSR-AND":50,
+    "LDR-UBFX-RET":25,
+    "LDR-MOV-UDIV":13,
+    "B-LDR-MOV":13
   },
   "AND-MOVZX-CALL":{
     "AND-MOV-BL":67,
@@ -4140,7 +4849,8 @@ var trigrams = {
     "ADD-STR-B":17
   },
   "CALL-MOV-SHR":{
-    "BL-LDR-LSR":100
+    "BL-LDR-LSR":67,
+    "LDR-MOV-MOV":33
   },
   "SHR-AND-MOVZX":{
     "LSR-AND-MOV":100
@@ -4152,43 +4862,64 @@ var trigrams = {
     "BL-LDR-STR":20
   },
   "JE-MOV-MOV":{
-    "CBZ-LDR-LDR":8,
-    "LDUR-SUB-STUR":4,
-    "B.EQ-LDURSW-SUB":4,
-    "CMP-B.GE-LDURSW":4,
-    "LDUR-SUB-BL":4,
-    "MOV-AND-STURB":4,
-    "LDR-LDRB-TBNZ":4,
-    "TBNZ-B-LDR":4,
-    "LDR-BL-MOV":4,
-    "B-MOV-LDUR":2,
-    "LDR-MOV-MOV":2,
-    "STRB-LDR-ADD":2,
-    "LDR-BL-TBNZ":2,
-    "SUBS-STR-MOV":2,
-    "ADD-STUR-ADRP":2,
-    "STUR-B-LDUR":2,
-    "ADRP-ADD-BL":2,
-    "ADD-LDURSW-LDR":2,
-    "ORR-MOV-AND":2,
-    "LDUR-ADRP-ADD":2,
-    "STR-BL-LDURSW":2,
-    "LDR-MUL-ADD":2,
-    "LDR-ADD-STR":2,
-    "STRH-MOV-STR":2,
-    "MOV-BL-LDUR":2,
-    "CSET-AND-MOV":2,
-    "AND-LDR-CMP":2,
-    "LDR-CMP-B.NE":2,
-    "MOV-SXTW-MOV":2,
-    "STR-STR-STR":2,
-    "STR-ADRP-ADD":2,
-    "STR-ADD-STR":2,
-    "CMP-CSET-AND":2,
-    "STRB-B-LDR":2,
-    "BL-LDUR-ADD":2,
+    "CBZ-LDR-LDR":5,
+    "STR-BL-LDRB":5,
+    "MOV-MOV-BL":5,
+    "LDUR-SUB-STUR":2,
+    "B.EQ-LDURSW-SUB":2,
+    "CMP-B.GE-LDURSW":2,
+    "LDUR-SUB-BL":2,
+    "MOV-AND-STURB":2,
+    "LDR-LDRB-TBNZ":2,
+    "TBNZ-B-LDR":2,
     "CBZ-LDR-STR":2,
-    "AND-CBZ-LDR":2
+    "LDR-BL-MOV":2,
+    "B.EQ-MOV-MOV":2,
+    "MOV-LDR-ORR":2,
+    "LDR-ORR-BL":2,
+    "STR-STR-BL":2,
+    "LDR-LDR-BLR":2,
+    "BL-LDRB-CBZ":2,
+    "ADRP-LDR-LDR":2,
+    "STP-CBZ-MOV":2,
+    "LDR-CBZ-LDR":2,
+    "B-MOV-LDUR":1,
+    "LDR-MOV-MOV":1,
+    "STRB-LDR-ADD":1,
+    "LDR-BL-TBNZ":1,
+    "SUBS-STR-MOV":1,
+    "ADD-STUR-ADRP":1,
+    "STUR-B-LDUR":1,
+    "ADRP-ADD-BL":1,
+    "ADD-LDURSW-LDR":1,
+    "ORR-MOV-AND":1,
+    "LDUR-ADRP-ADD":1,
+    "STR-BL-LDURSW":1,
+    "LDR-MUL-ADD":1,
+    "LDR-ADD-STR":1,
+    "STRH-MOV-STR":1,
+    "MOV-BL-LDUR":1,
+    "CSET-AND-MOV":1,
+    "AND-LDR-CMP":1,
+    "LDR-CMP-B.NE":1,
+    "MOV-SXTW-MOV":1,
+    "STR-STR-STR":1,
+    "STR-ADRP-ADD":1,
+    "STR-ADD-STR":1,
+    "CMP-CSET-AND":1,
+    "STRB-B-LDR":1,
+    "BL-LDUR-ADD":1,
+    "AND-CBZ-LDR":1,
+    "LDR-BLR-CMN":1,
+    "LDR-CMP-B.EQ":1,
+    "CMP-B.HS-ADD":1,
+    "BLR-TST-B.EQ":1,
+    "LDP-CMP-B.LS":1,
+    "STR-CBZ-LDR":1,
+    "LDR-STR-CMN":1,
+    "MOV-MOV-BLR":1,
+    "ADRP-MOV-LDR":1,
+    "LDR-BLR-STR":1
   },
   "CALL-SHL-MOV":{
     "BL-MOV-MUL":57,
@@ -4196,36 +4927,47 @@ var trigrams = {
     "MOV-BL-MOV":14
   },
   "CALL-MOV-JMP":{
-    "BL-MOV-AND":36,
-    "STR-LDRSW-ORR":9,
-    "MOVK-BL-MOV":9,
-    "ADD-STR-ADD":9,
-    "STR-ADD-STR":9,
-    "MOV-MOVK-MOVK":9,
-    "MOV-STR-BL":9,
-    "CMP-B.NE-LDURB":9
+    "BL-MOV-AND":19,
+    "STR-TBNZ-BL":10,
+    "MOV-BL-MOV":10,
+    "STR-LDRSW-ORR":5,
+    "MOVK-BL-MOV":5,
+    "ADD-STR-ADD":5,
+    "STR-ADD-STR":5,
+    "MOV-MOVK-MOVK":5,
+    "MOV-STR-BL":5,
+    "CMP-B.NE-LDURB":5,
+    "MOV-MOV-CMP":5,
+    "BLR-MOV-B":5,
+    "CMP-CSEL-LDR":5,
+    "LDR-BLR-MOV":5,
+    "LDR-LDR-LDR":5,
+    "LDR-MOV-LDR":5
   },
   "MOVZX-ADD-POP":{
-    "AND-STURB-LDURB":50,
-    "STR-MOV-LDR":25,
-    "CSET-EOR-AND":13,
-    "LDP-ADD-RET":13
+    "AND-STURB-LDURB":44,
+    "STR-MOV-LDR":22,
+    "CSET-EOR-AND":11,
+    "LDP-ADD-RET":11,
+    "CBZ-ADD-LDRB":11
   },
   "TEST-JE-MOV":{
-    "LDR-LDRB-TBNZ":50,
-    "TBNZ-B-LDR":50
-  },
-  "MOV-CALL-JMP":{
-    "LDR-LDR-BL":24,
-    "BL-B-LDR":24,
-    "LDURSW-LDR-MUL":12,
-    "STUR-ADRP-ADD":6,
-    "LDUR-ADRP-ADD":6,
-    "LDR-MUL-LDR":6,
-    "AND-LSL-MOV":6,
-    "MOV-SXTW-LDUR":6,
-    "LSL-ASR-MOV":6,
-    "LDRB-ORR-MOV":6
+    "LDR-LDRB-TBNZ":13,
+    "TBNZ-B-LDR":13,
+    "CBZ-LDR-LDUR":13,
+    "CBZ-LDR-MOV":13,
+    "CBZ-CBZ-MOV":6,
+    "CBZ-MOV-B":6,
+    "TST-B.EQ-MOV":6,
+    "BL-ADRP-LDR":3,
+    "CMP-B.LS-LDR":3,
+    "TBNZ-B-ADD":3,
+    "LDR-LDP-CMP":3,
+    "STR-CBNZ-MOV":3,
+    "MOV-MOV-LDR":3,
+    "STRB-STR-MOV":3,
+    "LDRB-CBNZ-LDR":3,
+    "CMP-B.CS-ADRP":3
   },
   "JMP-MOV-TEST":{
     "LDR-LDRB-TBNZ":16,
@@ -4421,7 +5163,9 @@ var trigrams = {
     "B-LDR-STR":1,
     "STR-LDR-MOV":1,
     "STR-LDR-STR":1,
-    "STR-B-LDR":1
+    "STR-B-LDR":1,
+    "LDP-STR-LDR":1,
+    "MOV-BL-LDR":1
   },
   "JMP-JMP-XOR":{
     "LDR-BL-ADD":50,
@@ -4486,14 +5230,24 @@ var trigrams = {
     "CSET-AND-MOV":6
   },
   "ADD-MOV-CALL":{
-    "BL-LDR-LDR":16,
-    "LDR-STR-LDR":16,
-    "MOV-MOV-BL":16,
-    "LDR-ADD-STUR":16,
-    "STR-BL-ADD":16,
-    "STR-LDR-BL":8,
-    "STR-LDUR-ADD":8,
-    "CMP-B.NE-B":4
+    "BL-LDR-LDR":10,
+    "LDR-STR-LDR":10,
+    "MOV-MOV-BL":10,
+    "LDR-ADD-STUR":10,
+    "STR-BL-ADD":10,
+    "STR-LDR-BL":5,
+    "STR-LDUR-ADD":5,
+    "LDR-LDR-LDR":5,
+    "LDR-ADD-STP":5,
+    "ADD-ADD-STR":5,
+    "STR-BL-MOV":5,
+    "CMP-B.NE-B":3,
+    "STRB-MOV-STP":3,
+    "CBNZ-LDR-ADD":3,
+    "CBZ-B-LDR":3,
+    "MOV-BL-MOV":3,
+    "ADD-STR-MOV":3,
+    "MOV-LDR-ADD":3
   },
   "MOV-ADDSS-MOVSS":{
     "BL-ADD-STR":33,
@@ -4538,21 +5292,37 @@ var trigrams = {
     "STR-LDUR-LDR":4
   },
   "MOV-CALL-CMP":{
-    "MOV-MOV-BL":27,
-    "B-LDR-LDRB":7,
-    "CMP-B.GE-MOV":7,
-    "STR-LDR-AND":7,
-    "LDUR-BL-LDR":7,
-    "STR-BL-LDR":7,
-    "LDR-STUR-LDUR":7,
-    "LDR-STR-LDR":7,
-    "CMP-CSET-AND":7,
-    "B-ADD-LDRB":7,
-    "LDRSW-MOV-MUL":7,
-    "CBNZ-MOV-STR":7
+    "MOV-MOV-BL":12,
+    "LDR-AND-BL":12,
+    "LDP-RET-LDR":12,
+    "LDUR-ADD-LDR":6,
+    "B-LDR-LDRB":3,
+    "CMP-B.GE-MOV":3,
+    "STR-LDR-AND":3,
+    "LDUR-BL-LDR":3,
+    "STR-BL-LDR":3,
+    "LDR-STUR-LDUR":3,
+    "LDR-STR-LDR":3,
+    "CMP-CSET-AND":3,
+    "B-ADD-LDRB":3,
+    "LDRSW-MOV-MUL":3,
+    "CBNZ-MOV-STR":3,
+    "ADD-MOV-LDR":3,
+    "EOR-CBNZ-LDP":3,
+    "STR-MOV-STR":3,
+    "LDP-CMP-B.LO":3,
+    "BLR-CMN-B.NE":3,
+    "CSEL-B-LDR":3,
+    "LDR-EOR-CBNZ":3,
+    "LDP-LDR-LDP":3,
+    "LDR-MOV-LDR":3
   },
   "CMP-JNE-JMP":{
-    "BL-LDR-CMP":100
+    "BL-LDR-CMP":44,
+    "STP-SUB-CMN":22,
+    "LDP-ORR-STR":11,
+    "LDR-STR-CMN":11,
+    "CMN-B.EQ-CMP":11
   },
   "IDIV-SHL-MOV":{
     "MOV-ADRP-ADD":20,
@@ -4591,23 +5361,26 @@ var trigrams = {
     "ADD-LDR-STR":25
   },
   "MOV-JMP-ADD":{
-    "STR-STR-STR":57,
-    "LDURSW-STR-BL":29,
-    "CMP-B.NE-LDURB":14
+    "STR-STR-STR":50,
+    "LDURSW-STR-BL":25,
+    "CMP-B.NE-LDURB":13,
+    "B.EQ-CMP-B.EQ":13
   },
   "RET-NOP-NOP":{
-    "LDR-LDR-ADD":24,
-    "MOV-ADD-RET":12,
-    "STR-LDUR-SUB":12,
-    "B-LDUR-LDP":6,
-    "STR-LDR-ADD":6,
-    "STR-B-MOV":6,
-    "B.GE-LDR-STR":6,
-    "MUL-SUBS-STR":6,
-    "LDURSW-LDR-BL":6,
-    "LDR-LDR-STR":6,
-    "SDIV-MUL-SUBS":6,
-    "LDR-BL-LDR":6
+    "LDR-LDR-ADD":18,
+    "MOV-LDR-LDP":18,
+    "MOV-ADD-RET":9,
+    "STR-LDUR-SUB":9,
+    "B-LDUR-LDP":5,
+    "STR-LDR-ADD":5,
+    "STR-B-MOV":5,
+    "B.GE-LDR-STR":5,
+    "MUL-SUBS-STR":5,
+    "LDURSW-LDR-BL":5,
+    "LDR-LDR-STR":5,
+    "SDIV-MUL-SUBS":5,
+    "LDR-BL-LDR":5,
+    "LDR-LDP-RET":5
   },
   "MOV-IDIV-SUB":{
     "STR-LDR-LDR":33,
@@ -4631,21 +5404,28 @@ var trigrams = {
     "LDR-STR-LDURSB":8
   },
   "MOV-CMP-MOV":{
-    "ADD-STR-LDR":17,
-    "STR-LDR-SUBS":17,
-    "B.GE-LDURSW-SUB":9,
-    "LDUR-STUR-STUR":9,
-    "LDUR-CMP-B.GT":4,
-    "LDR-CMP-B.GE":4,
-    "MOVK-BL-LDUR":4,
-    "ADRP-ADD-LDR":4,
-    "LDR-ADD-STR":4,
-    "LDR-LDR-STR":4,
-    "ADD-ADD-ADD":4,
-    "STR-STR-ADD":4,
-    "STR-ADD-STR":4,
-    "ADD-ADD-LDR":4,
-    "STR-B.NE-ADD":4
+    "ADD-STR-LDR":13,
+    "STR-LDR-SUBS":13,
+    "B.GE-LDURSW-SUB":6,
+    "LDUR-STUR-STUR":6,
+    "ADD-CMP-LDP":6,
+    "LDUR-CMP-B.GT":3,
+    "LDR-CMP-B.GE":3,
+    "MOVK-BL-LDUR":3,
+    "ADRP-ADD-LDR":3,
+    "LDR-ADD-STR":3,
+    "LDR-LDR-STR":3,
+    "ADD-ADD-ADD":3,
+    "STR-STR-ADD":3,
+    "STR-ADD-STR":3,
+    "ADD-ADD-LDR":3,
+    "STR-B.NE-ADD":3,
+    "B.LE-STRB-LDR":3,
+    "LDP-CMP-B.LS":3,
+    "LDUR-ADD-LDR":3,
+    "LDR-LDR-CMP":3,
+    "LDR-ADRP-LDR":3,
+    "LDR-BLR-MOV":3
   },
   "CMOVE-MOV-MOV":{
     "SUBS-ADD-STR":50,
@@ -4656,21 +5436,35 @@ var trigrams = {
     "STR-MOV-BL":50
   },
   "CALL-MOV-SUB":{
-    "LDR-MOV-STR":24,
-    "BL-STR-LDR":24,
-    "BL-ADD-LDR":24,
-    "LDR-SUBS-ADD":24,
-    "BL-LDR-SUBS":6
+    "LDR-MOV-STR":22,
+    "BL-STR-LDR":22,
+    "BL-ADD-LDR":22,
+    "LDR-SUBS-ADD":22,
+    "BL-LDR-SUBS":11
   },
   "CALL-MOV-LEA":{
-    "LDR-CMP-B.GE":24,
-    "SUBS-ADD-STR":24,
-    "STR-BL-LDR":12,
-    "STUR-B-LDURB":12,
-    "LDUR-LDUR-CMP":12,
-    "ADD-MOV-MOV":6,
-    "LDR-LDR-CMP":6,
-    "STR-MOV-STR":6
+    "LDR-CMP-B.GE":13,
+    "SUBS-ADD-STR":13,
+    "STR-BL-LDR":6,
+    "STUR-B-LDURB":6,
+    "LDUR-LDUR-CMP":6,
+    "ADRP-ADD-STR":6,
+    "ADD-MOV-MOV":3,
+    "LDR-LDR-CMP":3,
+    "STR-MOV-STR":3,
+    "LDR-MOV-LDR":3,
+    "ADD-STP-MOV":3,
+    "LDP-STP-LDR":3,
+    "ADD-MOV-BL":3,
+    "LDR-ADRP-ADRP":3,
+    "ADRP-ADRP-ADD":3,
+    "LDR-ADRP-ADD":3,
+    "STR-BL-ADRP":3,
+    "ADD-STR-BL":3,
+    "LDR-MOV-MOV":3,
+    "LDR-ADD-LDR":3,
+    "ADD-LDR-LDP":3,
+    "CMN-B.EQ-LDP":3
   },
   "CALL-MOV-CMP":{
     "STR-LDUR-CMP":11,
@@ -4747,12 +5541,282 @@ var trigrams = {
     "SDIV-MUL-STR":25,
     "LDUR-SUBS-MOV":25
   },
-  "CALL-POP-RET":{
-    "BL-LDP-RET":43,
-    "ADRP-ADD-ADRP":14,
-    "LDR-MOV-BL":14,
-    "STR-BLR-LDR":14,
-    "ADD-STUR-MOV":14
+  "PUSH-PUSH-PUSH":{
+    "STP-MOV-STR":18,
+    "STP-STP-STP":14,
+    "STP-MOV-STP":14,
+    "STP-STP-MOV":9,
+    "STP-ADD-STP":9,
+    "STP-CMP-MOV":9,
+    "MOV-STR-ADRP":9,
+    "STR-ADRP-STR":5,
+    "STP-AND-EOR":5,
+    "EOR-MOV-STP":5,
+    "STP-ADRP-AND":5
+  },
+  "MOV-ADD-JMP":{
+    "STR-STR-LDUR":100
+  },
+  "PUSH-PUSH-LEA":{
+    "STP-MOV-STP":100
+  },
+  "LEA-PUSH-MOV":{
+    "STP-ADD-MOV":100
+  },
+  "ADD-CALL-MOV":{
+    "LDR-LDUR-ADD":100
+  },
+  "MOV-POP-RET":{
+    "ADD-BLR-MOV":17,
+    "ADD-STRB-RET":13,
+    "SUBS-CMP-B.GE":8,
+    "STP-STP-LDR":8,
+    "LDR-MOV-BL":4,
+    "LDRB-EOR-STRB":4,
+    "LDR-LDR-ADD":4,
+    "BL-LDR-MOV":4,
+    "MOV-STR-BL":4,
+    "SDIV-STR-LDR":4,
+    "SDIV-MUL-SUBS":4,
+    "LDR-LDR-SUBS":4,
+    "LDR-MOV-ADD":4,
+    "LDR-ADD-RET":4,
+    "STR-ADD-RET":4,
+    "ADD-RET-":4,
+    "ADRP-ADD-BL":4
+  },
+  "MOV-CALL-LEA":{
+    "BL-ADD-MOV":24,
+    "ADD-MOV-MOV":12,
+    "MOV-BL-LDR":12,
+    "STR-CBNZ-MOV":6,
+    "ADD-STR-ADRP":6,
+    "AND-MOV-STR":6,
+    "MOVK-STR-MOV":6,
+    "STUR-STR-MOV":6,
+    "STUR-LDR-LDUR":6,
+    "CSET-AND-MOV":6,
+    "EOR-CBNZ-LDP":6,
+    "ADRP-ADRP-ADRP":6
+  },
+  "JE-LEA-MOV":{
+    "CBZ-LDR-MOV":44,
+    "LDR-CBZ-STR":22,
+    "CMP-B.GE-LDR":11,
+    "LDRB-MOV-ADD":11,
+    "STR-LDRB-TST":11
+  },
+  "MOV-PUSH-LEA":{
+    "ADD-ADD-MOV":100
+  },
+  "LEA-MOV-PUSH":{
+    "MOV-LDR-MOV":100
+  },
+  "PUSH-XOR-CALL":{
+    "MOV-BLR-LDR":100
+  },
+  "MOV-XOR-MOV":{
+    "MOV-STP-ADRP":7,
+    "LDR-MOV-LDR":7,
+    "MOV-LDUR-ADD":7,
+    "MOV-LDR-LDR":7,
+    "LDR-EOR-LDR":4,
+    "MOV-MUL-UDIV":4,
+    "LDR-EOR-CBNZ":4,
+    "MOV-LDR-LDUR":4,
+    "BL-MOV-BL":4,
+    "LDR-SUBS-STR":2,
+    "ASR-LSL-MOV":2,
+    "AND-LDR-LDR":2,
+    "B-LDR-ADD":2,
+    "B-STR-LDR":2,
+    "STR-LDUR-STR":2,
+    "B.GT-ADD-ADD":2,
+    "CMP-CSET-TBNZ":2,
+    "MOV-STR-SUB":2,
+    "STR-STR-STR":2,
+    "MOVK-STR-MOV":2,
+    "LDR-ORR-STR":2,
+    "STR-LDR-LDRH":2,
+    "STR-ADD-STR":2,
+    "MOV-MOVK-MOV":2,
+    "ADD-LDR-STR":2,
+    "MOV-LDR-STR":2,
+    "STR-STR-ADD":2,
+    "LDR-ADD-BL":2,
+    "STR-STRB-MOV":2,
+    "B.LS-ADD-STR":2,
+    "LDR-LDUR-STR":2,
+    "LDR-ORR-BL":2,
+    "LDRB-STR-STRB":2,
+    "STR-STR-MOV":2,
+    "ORR-BL-LDR":2,
+    "SUB-STR-CMN":2,
+    "LDUR-STR-CMN":2,
+    "LDUR-LDR-ADD":2,
+    "ADD-MOV-LDR":2,
+    "CMN-B.EQ-STR":2
+  },
+  "MOV-CMP-JBE":{
+    "LDR-LDUR-ADD":57,
+    "CBZ-LDR-LDUR":29,
+    "ADD-LDR-LDP":14
+  },
+  "ADD-MOV-AND":{
+    "LDR-STR-MOV":100
+  },
+  "AND-CALL-LEA":{
+    "MOV-LDUR-ADD":100
+  },
+  "ADD-MOV-TEST":{
+    "BL-LDRB-CBZ":67,
+    "BL-LDR-LDUR":17,
+    "LDR-CBZ-LDR":17
+  },
+  "SUB-LEA-MOV":{
+    "STP-ADRP-MOV":44,
+    "MOV-LDR-LDR":22,
+    "LDR-LDR-STR":22,
+    "ADD-LDR-STR":11
+  },
+  "MOV-AND-CALL":{
+    "MOV-LDUR-ADD":100
+  },
+  "MOV-ADD-TEST":{
+    "BL-LDRB-CBZ":67,
+    "LDR-TBZ-LDR":17,
+    "ADD-CBNZ-LDR":17
+  },
+  "MOV-JNE-ADD":{
+    "ADD-LDR-TST":22,
+    "LDUR-ADD-MOV":11,
+    "CMN-B.EQ-LDR":11,
+    "BL-LDR-LDR":11,
+    "BL-ADRP-ADD":6,
+    "STR-MOV-STR":6,
+    "BL-LDR-MOV":6,
+    "STRB-LDR-MOV":6,
+    "LDR-MOV-LDR":6,
+    "LDR-ORR-BL":6,
+    "STR-LDR-MOV":6,
+    "B.HS-LDR-CMP":6
+  },
+  "ADD-MOV-OR":{
+    "MOV-LDR-LDR":40,
+    "LDR-LDR-BLR":20,
+    "MOV-LDR-BLR":10,
+    "LDR-LDUR-ADD":10,
+    "LDP-LDP-RET":10,
+    "B.NE-NOP-LDR":10
+  },
+  "JMP-CALL-SUB":{
+    "CMN-B.NE-LDR":33,
+    "B.NE-LDR-LDUR":17,
+    "BL-NOP-MOV":17,
+    "STR-TBZ-BL":8,
+    "LDR-BLR-MOV":8,
+    "B-LDR-LDUR":8,
+    "LDR-MOV-MOV":8
+  },
+  "SUB-MOV-JNE":{
+    "LDR-LDUR-ADD":24,
+    "BL-LDR-LDUR":18,
+    "LDP-ORR-STR":12,
+    "LDUR-ADD-MOV":12,
+    "MOV-B-LDR":12,
+    "BL-LDP-B":6,
+    "MOV-CMN-B.NE":6,
+    "LDUR-ADD-LDR":6,
+    "MOV-LDR-BLR":6
+  },
+  "JNE-CALL-MOV":{
+    "ADD-MOV-LDR":18,
+    "B-MOV-BL":14,
+    "LDUR-ADD-LDP":14,
+    "TBNZ-BL-LDR":9,
+    "STR-TBZ-BL":9,
+    "MOV-LDR-ORR":9,
+    "LDR-LDUR-ADD":9,
+    "B.NE-LDR-MOV":5,
+    "LDR-ORR-BL":5,
+    "BL-NOP-LDR":5,
+    "BLR-B-BL":5
+  },
+  "OR-TEST-JE":{
+    "BL-B-BL":24,
+    "STR-TBZ-BL":12,
+    "LDR-LDUR-ADD":12,
+    "B-BL-CMP":12,
+    "LDR-ORR-BL":12,
+    "BL-BL-BL":6,
+    "CMP-CSEL-B":6,
+    "STR-TBNZ-BL":6,
+    "BL-CMP-B.NE":6,
+    "B.NE-BL-LDR":6
+  },
+  "JE-CALL-CALL":{
+    "BL-CMP-B.NE":29,
+    "BL-BL-LDR":14,
+    "ADD-LDP-ORR":14,
+    "CMP-B.NE-BL":14,
+    "B-BL-CMP":7,
+    "BL-LDR-CBZ":7,
+    "B.NE-BL-LDR":7,
+    "LDR-LDUR-ADD":7
+  },
+  "JNE-CALL-JMP":{
+    "ORR-STR-TBZ":50,
+    "STR-TBZ-BL":25,
+    "TBZ-BL-BL":13,
+    "BL-LDR-LDUR":13
+  },
+  "JMP-MOV-CALL":{
+    "TBZ-BL-BL":33,
+    "BL-BL-LDR":25,
+    "LDR-LDR-ADD":8,
+    "LDP-ORR-STR":8,
+    "B.NE-B-LDP":8,
+    "BL-LDR-LDUR":8,
+    "LDUR-ADD-LDP":8
+  },
+  "MOV-MOVSXD-MOV":{
+    "LDR-SXTW-LDUR":15,
+    "MOV-MOV-BL":8,
+    "ADRP-ADD-STUR":4,
+    "STR-STR-STR":4,
+    "BL-LDUR-ADD":4,
+    "B.GE-STUR-LDUR":4,
+    "ORR-MOV-AND":4,
+    "LDRH-MOV-LDUR":4,
+    "ADRP-ADD-BL":4,
+    "LDR-MUL-LDR":4,
+    "LDRB-ORR-MOV":4,
+    "LSL-LDR-AND":4,
+    "MOV-LDUR-ADRP":4,
+    "LDR-SUBS-STR":4,
+    "STR-LDR-ADD":4,
+    "EOR-AND-ADRP":4,
+    "ADD-MOV-MOV":4,
+    "LDR-STR-ADRP":4,
+    "LDR-CMP-B.EQ":4,
+    "SUBS-STUR-CBZ":4,
+    "LDURSW-LDR-BL":4,
+    "BL-LDR-STR":4
+  },
+  "TEST-SETNE-RET":{
+    "LDR-MOV-TST":100
+  },
+  "JE-MOV-CALL":{
+    "B.EQ-MOV-BL":50,
+    "LDR-LDUR-ADD":25,
+    "STR-LDR-CMP":13,
+    "LDARB-AND-AND":13
+  },
+  "JNE-ADD-RET":{
+    "LDR-LDR-EOR":100
+  },
+  "RET-CALL-NOP":{
+    "EOR-LDR-CBNZ":100
   },
   "CALL-MOV-MOVZX":{
     "STR-STR-STR":16,
@@ -4772,22 +5836,6 @@ var trigrams = {
     "LDR-BL-MOV":5,
     "MOV-MOV-BL":5,
     "STR-BL-LSL":5
-  },
-  "MOV-POP-RET":{
-    "ADD-STRB-RET":18,
-    "SUBS-CMP-B.GE":12,
-    "LDR-MOV-BL":6,
-    "LDRB-EOR-STRB":6,
-    "LDR-LDR-ADD":6,
-    "BL-LDR-MOV":6,
-    "MOV-STR-BL":6,
-    "SDIV-STR-LDR":6,
-    "SDIV-MUL-SUBS":6,
-    "LDR-LDR-SUBS":6,
-    "LDR-MOV-ADD":6,
-    "LDR-ADD-RET":6,
-    "STR-ADD-RET":6,
-    "ADD-RET-<UNKNOWN>":6
   },
   "OR-MOV-MOV":{
     "STR-STR-STR":10,
@@ -4813,6 +5861,14 @@ var trigrams = {
     "ASR-CMP-CSET":3,
     "LDRB-MOV-ADD":3,
     "MOV-BL-MOV":3
+  },
+  "MOVABS-CALL-MOVABS":{
+    "ADD-ADRP-ADD":33,
+    "LDUR-ADRP-ADD":22,
+    "ADRP-ADD-BL":11,
+    "LDR-MOV-LDUR":11,
+    "LDRSH-LDUR-ADRP":11,
+    "CSET-STR-LDR":11
   },
   "CALL-MOVSXD-IMUL":{
     "LDURSW-LDR-MUL":8,
@@ -5002,9 +6058,9 @@ var trigrams = {
   },
   "MOV-MOVZX-MOV":{
     "LDUR-ADRP-ADD":5,
-    "STR-STR-STR":4,
-    "STR-STR-LDR":4,
-    "STR-ADD-STR":4,
+    "STR-STR-STR":3,
+    "STR-STR-LDR":3,
+    "STR-ADD-STR":3,
     "LDR-BL-B":2,
     "B.GE-ADRP-ADD":2,
     "ADD-STR-ADRP":2,
@@ -5050,7 +6106,12 @@ var trigrams = {
     "LDR-CMP-B.HI":2,
     "LDRB-CBZ-MOV":2,
     "ADD-LDR-STR":2,
-    "BL-LSL-LDUR":2
+    "BL-LSL-LDUR":2,
+    "EOR-CBNZ-LDR":2,
+    "CBZ-LDR-LDUR":2,
+    "EOR-CBNZ-LDP":2,
+    "STR-STR-LDRB":2,
+    "LDRB-LDRB-STRB":2
   },
   "CMP-SETE-AND":{
     "LDR-ADD-STR":6,
@@ -5127,10 +6188,6 @@ var trigrams = {
     "STR-ADD-STR":3,
     "ADD-STR-ADD":3,
     "BL-AND-LDR":3
-  },
-  "PUSH-PUSH-PUSH":{
-    "STP-STP-STP":60,
-    "STP-STP-MOV":40
   },
   "CMP-SETL-AND":{
     "STR-STR-STR":15,
@@ -5259,7 +6316,8 @@ var trigrams = {
     "ADD-ADD-ADD":3,
     "ADD-ADD-STRB":3,
     "STRH-LDR-LDRSH":3,
-    "LDR-LDR-LDR":3
+    "LDR-LDR-LDR":3,
+    "B.EQ-MOV-MOV":3
   },
   "MOVZX-MOV-CALL":{
     "STR-STR-STR":6,
@@ -5446,6 +6504,90 @@ var trigrams = {
     "STR-LDP-ADD":20,
     "LDR-LDR-BL":20
   },
+  "JMP-NOP-JMP":{
+    "ADRP-LDR-ADD":60,
+    "ADD-BR-ADRP":40
+  },
+  "MOV-JMP-CALL":{
+    "BL-LDR-LDUR":14,
+    "BL-BL-CMP":10,
+    "B-BL-CMP":10,
+    "LDR-LDP-LDP":10,
+    "MOV-ADRP-ADD":5,
+    "LDR-LDUR-ADD":5,
+    "B-LDR-CBNZ":5,
+    "MOV-CMN-B.NE":5,
+    "B-BL-LDR":5,
+    "LDR-MOV-LDR":5,
+    "LDR-B-STR":5,
+    "CBZ-MOV-LDR":5,
+    "LDR-LDR-LDP":5,
+    "LDR-BLR-STR":5,
+    "STR-ADD-STR":5,
+    "CMP-B.EQ-MOV":5
+  },
+  "CALL-JMP-CALL":{
+    "LDR-LDUR-ADD":27,
+    "B.NE-LDR-LDUR":18,
+    "BL-LDUR-MOV":9,
+    "TBNZ-BL-LDR":9,
+    "ADD-MOV-LDR":9,
+    "B-LDR-MOV":9,
+    "LDR-LDP-LDP":9,
+    "BLR-AND-B":9
+  },
+  "MOV-CMP-JAE":{
+    "LDUR-ADD-LDR":30,
+    "LDURSW-CMP-B.NE":20,
+    "ADD-ADRP-ADD":10,
+    "STR-CMP-B.HS":10,
+    "CMP-B.HS-LDR":10,
+    "LDR-BLR-TST":10,
+    "CMN-B.EQ-LDP":10
+  },
+  "MOV-CMP-JE":{
+    "BL-LDR-ADRP":7,
+    "LDR-LDR-CMP":5,
+    "STUR-LDUR-STUR":5,
+    "STUR-LDUR-CMP":5,
+    "LDR-LDR-LDR":5,
+    "LDR-CMP-B.EQ":5,
+    "STLXR-CBNZ-MOV":5,
+    "MOV-STR-LDR":2,
+    "AND-LDR-MOV":2,
+    "LDR-LDR-BL":2,
+    "LDR-LDR-EOR":2,
+    "LDR-LDRB-LDR":2,
+    "CSET-AND-LDUR":2,
+    "AND-LDR-EOR":2,
+    "STR-STR-STR":2,
+    "LDR-STR-STUR":2,
+    "MOV-MOVK-STR":2,
+    "STR-B-MOV":2,
+    "LDRH-MOV-MOV":2,
+    "LDR-STR-STR":2,
+    "CSET-AND-LDR":2,
+    "ADD-ADD-ADD":2,
+    "LDR-LDR-MOV":2,
+    "ADD-STR-LDURSB":2,
+    "FCVTZS-STUR-LDUR":2,
+    "ADD-LDR-BL":2,
+    "LDP-CMP-B.LS":2,
+    "MOV-LDR-LDR":2,
+    "B.HS-LDR-CMN":2,
+    "MOV-LDR-BLR":2,
+    "ADD-LDR-LDP":2,
+    "B.EQ-STR-LDP":2,
+    "CMP-B.LS-LDR":2
+  },
+  "CALL-NOP-NOP":{
+    "LDP-B-BL":33,
+    "TBZ-BL-MOV":22,
+    "LDUR-LDR-BL":11,
+    "AND-B-BL":11,
+    "STR-MOV-BL":11,
+    "STR-TBNZ-BL":11
+  },
   "SUB-MOV-MOVABS":{
     "ADD-ADRP-ADD":100
   },
@@ -5453,26 +6595,30 @@ var trigrams = {
     "ADD-ADRP-ADD":100
   },
   "MOV-CALL-TEST":{
-    "ADD-ADRP-ADD":18,
-    "STRH-LDR-LDR":18,
-    "STURB-STURB-MOV":9,
-    "STR-BL-LDURB":9,
-    "MOV-STR-STR":9,
-    "LDR-LDRB-TBNZ":9,
-    "CBZ-SUB-LDR":9,
-    "LDRH-STRH-SUB":9,
-    "LDRH-STRH-LDUR":9
+    "ADD-ADRP-ADD":11,
+    "STRH-LDR-LDR":11,
+    "MOV-BL-TST":11,
+    "TST-B.NE-STR":11,
+    "B.NE-STR-LDP":11,
+    "STURB-STURB-MOV":6,
+    "STR-BL-LDURB":6,
+    "MOV-STR-STR":6,
+    "LDR-LDRB-TBNZ":6,
+    "CBZ-SUB-LDR":6,
+    "LDRH-STRH-SUB":6,
+    "LDRH-STRH-LDUR":6,
+    "B.EQ-LDR-MOV":6
   },
   "JMP-MOV-SUB":{
-    "SUB-STUR-LDRH":17,
-    "STR-LDRH-STRH":17,
-    "B-LDUR-LDR":17,
+    "SUB-STUR-LDRH":15,
+    "STR-LDRH-STRH":15,
+    "B-LDUR-LDR":15,
+    "STUR-B-LDR":15,
     "ADD-ADRP-ADD":8,
     "ADRP-ADD-ADRP":8,
     "TBNZ-LDR-STR":8,
     "CBZ-B-LDR":8,
-    "FCVT-LDUR-LDUR":8,
-    "STUR-B-LDR":8
+    "FCVT-LDUR-LDUR":8
   },
   "MOVSX-MOVZX-ADD":{
     "MOV-CMP-STR":100
@@ -5482,46 +6628,6 @@ var trigrams = {
   },
   "MOV-MOV-JGE":{
     "LDRSH-LDRB-ADD":100
-  },
-  "MOVABS-CALL-MOVABS":{
-    "ADD-ADRP-ADD":25,
-    "LDUR-ADRP-ADD":25,
-    "ADRP-ADD-BL":13,
-    "LDR-MOV-LDUR":13,
-    "LDRSH-LDUR-ADRP":13,
-    "CSET-STR-LDR":13
-  },
-  "CALL-CMP-JE":{
-    "ADD-STR-ADRP":6,
-    "ADD-BL-LDR":6,
-    "LDR-BL-MOV":6,
-    "TBNZ-B-LDUR":3,
-    "LDR-LDRB-MOV":3,
-    "ADD-STUR-ADD":3,
-    "STUR-ADRP-ADD":3,
-    "LDUR-ADD-STUR":3,
-    "LDR-MUL-LDR":3,
-    "LDR-LDUR-ADRP":3,
-    "LDUR-ADRP-ADD":3,
-    "ADD-STUR-B":3,
-    "LDR-MUL-ADD":3,
-    "LDRH-LDRB-ORR":3,
-    "ASR-MOV-SXTW":3,
-    "ASR-ASR-LSL":3,
-    "LDRH-MOV-LDUR":3,
-    "B-STUR-LDUR":3,
-    "ADD-STR-STR":3,
-    "ADD-LDURSW-LDR":3,
-    "LDR-LDRH-LDRB":3,
-    "BL-CBNZ-LDR":3,
-    "CSET-AND-LDR":3,
-    "CSET-AND-MOV":3,
-    "ADRP-ADD-LDR":3,
-    "STUR-STUR-MOV":3,
-    "LDR-LDR-CMP":3,
-    "LDR-ADD-STR":3,
-    "ADD-ADD-STRB":3,
-    "STUR-STR-LDARB":3
   },
   "MOVABS-CALL-MOVSXD":{
     "ADD-STUR-B":11,
@@ -5841,26 +6947,28 @@ var trigrams = {
     "LDUR-CMP-CSET":3
   },
   "CMP-JE-JMP":{
-    "ADRP-ADD-LDR":9,
-    "STR-STR-STR":9,
-    "BL-LDR-LDR":5,
-    "CBNZ-LDR-CMP":5,
-    "LDR-LDR-STR":5,
-    "CBNZ-LDRSH-CMP":5,
-    "MOV-STR-MOV":5,
-    "LSL-ASR-MOV":5,
-    "MOV-UBFX-CMP":5,
-    "AND-LDR-ORR":5,
-    "BL-AND-MOV":5,
-    "ADD-LDR-STUR":5,
-    "STR-STR-MOV":5,
-    "MOVK-STR-MOV":5,
-    "CMP-B.GE-LDR":5,
-    "MOV-STR-BL":5,
-    "MUL-ADD-ADD":5,
-    "B.HI-LDUR-CBZ":5,
-    "STR-LDR-STR":5,
-    "ADD-STR-LDR":5
+    "ADRP-ADD-LDR":8,
+    "STR-STR-STR":8,
+    "BL-LDR-LDR":4,
+    "CBNZ-LDR-CMP":4,
+    "LDR-LDR-STR":4,
+    "CBNZ-LDRSH-CMP":4,
+    "MOV-STR-MOV":4,
+    "LSL-ASR-MOV":4,
+    "MOV-UBFX-CMP":4,
+    "AND-LDR-ORR":4,
+    "BL-AND-MOV":4,
+    "ADD-LDR-STUR":4,
+    "STR-STR-MOV":4,
+    "MOVK-STR-MOV":4,
+    "CMP-B.GE-LDR":4,
+    "MOV-STR-BL":4,
+    "MUL-ADD-ADD":4,
+    "B.HI-LDUR-CBZ":4,
+    "STR-LDR-STR":4,
+    "ADD-STR-LDR":4,
+    "STR-TBZ-BL":4,
+    "AND-CMN-B.NE":4
   },
   "CMP-SETGE-AND":{
     "CMP-CSET-AND":14,
@@ -6074,17 +7182,21 @@ var trigrams = {
     "MUL-SUBS-MOV":8
   },
   "MOV-JE-MOV":{
-    "LDR-STR-STR":15,
-    "STR-STR-STR":15,
-    "LDRSW-ADD-LDR":8,
-    "LDR-LDRB-AND":8,
-    "ADRP-ADD-LDR":8,
-    "STR-LDR-LDR":8,
-    "AND-LDR-LDR":8,
-    "ADD-STR-STR":8,
-    "MOV-MOVK-STR":8,
-    "LDR-LDR-CMP":8,
-    "ADD-LDR-STR":8
+    "LDR-STR-STR":12,
+    "STR-STR-STR":12,
+    "LDRSW-ADD-LDR":6,
+    "LDR-LDRB-AND":6,
+    "ADRP-ADD-LDR":6,
+    "STR-LDR-LDR":6,
+    "AND-LDR-LDR":6,
+    "ADD-STR-STR":6,
+    "MOV-MOVK-STR":6,
+    "LDR-LDR-CMP":6,
+    "ADD-LDR-STR":6,
+    "CBZ-LDAXR-ADD":6,
+    "LDR-CBNZ-MOV":6,
+    "CMP-B.EQ-MOV":6,
+    "B.NE-MOV-CMP":6
   },
   "XOR-MOV-MOVSX":{
     "MOV-MOV-BL":12,
@@ -6318,35 +7430,38 @@ var trigrams = {
     "LDR-LDR-MOV":20
   },
   "MOV-MOV-JNE":{
-    "STR-STR-STR":8,
-    "MUL-ADD-ADD":4,
-    "B.GE-LDRSW-MOV":4,
-    "ADD-STR-ADD":4,
-    "STR-B-MOV":4,
-    "STR-LDR-AND":4,
-    "ASR-CBNZ-ADRP":4,
-    "CBZ-LDUR-LDR":4,
-    "LDR-LDRB-BL":4,
-    "SXTW-MOV-MOVK":4,
-    "ADD-MOV-STR":4,
-    "LDR-LDR-LDR":4,
-    "B.EQ-LDR-LDR":4,
-    "STR-LDR-SUBS":4,
-    "STR-MOV-STR":4,
-    "EOR-LDUR-MOV":4,
-    "AND-MOV-LDR":4,
-    "ADRP-ADD-LDR":4,
-    "STR-ADD-STR":4,
-    "CSET-AND-MOV":4,
-    "MOV-LDR-STRB":4,
-    "ADD-STR-LDR":4,
-    "LDR-STR-LDR":4,
-    "LDUR-MOV-CMP":4,
-    "MOV-MOVK-LDR":4
+    "STR-STR-STR":7,
+    "MUL-ADD-ADD":3,
+    "B.GE-LDRSW-MOV":3,
+    "ADD-STR-ADD":3,
+    "STR-B-MOV":3,
+    "STR-LDR-AND":3,
+    "ASR-CBNZ-ADRP":3,
+    "CBZ-LDUR-LDR":3,
+    "LDR-LDRB-BL":3,
+    "SXTW-MOV-MOVK":3,
+    "ADD-MOV-STR":3,
+    "LDR-LDR-LDR":3,
+    "B.EQ-LDR-LDR":3,
+    "STR-LDR-SUBS":3,
+    "STR-MOV-STR":3,
+    "EOR-LDUR-MOV":3,
+    "AND-MOV-LDR":3,
+    "ADRP-ADD-LDR":3,
+    "STR-ADD-STR":3,
+    "CSET-AND-MOV":3,
+    "MOV-LDR-STRB":3,
+    "ADD-STR-LDR":3,
+    "LDR-STR-LDR":3,
+    "LDUR-MOV-CMP":3,
+    "MOV-MOVK-LDR":3,
+    "MOV-BL-LDR":3,
+    "LDR-ORR-BL":3,
+    "MOV-MOV-STRB":3
   },
   "MOVSX-MOV-CALL":{
-    "STR-STR-STR":7,
-    "ADD-STR-ADD":7,
+    "STR-STR-STR":6,
+    "ADD-STR-ADD":6,
     "MOV-MOV-MOV":3,
     "STR-B.EQ-MOV":3,
     "MOV-BL-MOV":3,
@@ -6372,32 +7487,8 @@ var trigrams = {
     "STR-ADD-STR":3,
     "MOV-MOV-STR":3,
     "SXTW-MOV-MOVK":3,
-    "STR-STR-LDR":3
-  },
-  "MOV-CMP-JE":{
-    "LDR-LDR-CMP":7,
-    "STUR-LDUR-STUR":7,
-    "STUR-LDUR-CMP":7,
-    "LDR-LDR-LDR":7,
-    "MOV-STR-LDR":4,
-    "AND-LDR-MOV":4,
-    "LDR-LDR-BL":4,
-    "LDR-LDR-EOR":4,
-    "LDR-LDRB-LDR":4,
-    "CSET-AND-LDUR":4,
-    "AND-LDR-EOR":4,
-    "STR-STR-STR":4,
-    "LDR-STR-STUR":4,
-    "MOV-MOVK-STR":4,
-    "STR-B-MOV":4,
-    "LDRH-MOV-MOV":4,
-    "LDR-STR-STR":4,
-    "CSET-AND-LDR":4,
-    "ADD-ADD-ADD":4,
-    "LDR-LDR-MOV":4,
-    "ADD-STR-LDURSB":4,
-    "FCVTZS-STUR-LDUR":4,
-    "ADD-LDR-BL":4
+    "STR-STR-LDR":3,
+    "LDP-RET-LDR":3
   },
   "MOV-AND-MOV":{
     "ADD-STR-ADD":13,
@@ -6443,15 +7534,16 @@ var trigrams = {
     "STR-ADRP-ADD":4
   },
   "CMP-JG-MOV":{
-    "STR-LDR-CMP":18,
-    "STUR-LDUR-SUB":18,
-    "MOV-MOV-ADRP":9,
-    "MOVK-MOVK-STR":9,
-    "LDRB-MOV-BL":9,
-    "LDR-LDR-MOV":9,
-    "CMP-CSET-AND":9,
-    "LDR-CMP-B.GT":9,
-    "CMP-CSET-TBNZ":9
+    "STR-LDR-CMP":15,
+    "STUR-LDUR-SUB":15,
+    "ADD-CMP-MOV":15,
+    "MOV-MOV-ADRP":8,
+    "MOVK-MOVK-STR":8,
+    "LDRB-MOV-BL":8,
+    "LDR-LDR-MOV":8,
+    "CMP-CSET-AND":8,
+    "LDR-CMP-B.GT":8,
+    "CMP-CSET-TBNZ":8
   },
   "MOV-MOV-AND":{
     "LDR-LDR-LDR":6,
@@ -6538,7 +7630,8 @@ var trigrams = {
     "MOV-CMP-B.NE":100
   },
   "JNE-CMP-JNE":{
-    "B.NE-LDR-MOV":100
+    "B.NE-LDR-MOV":50,
+    "ADD-BL-LDRB":50
   },
   "JL-CMP-JGE":{
     "CMP-CSET-TBNZ":100
@@ -6608,13 +7701,18 @@ var trigrams = {
     "LDR-ASR-STR":25
   },
   "CMP-JE-CMP":{
-    "CBZ-LDR-MOV":33,
-    "STR-LDR-CMP":33,
-    "LDR-STR-LDR":17,
-    "LDUR-LDR-STR":17
+    "CBZ-LDR-MOV":22,
+    "STR-LDR-CMP":22,
+    "LDR-STR-LDR":11,
+    "LDUR-LDR-STR":11,
+    "LDP-CMP-B.LS":11,
+    "LDR-SUB-MOV":11,
+    "STR-LDXR-STLXR":11
   },
   "CMP-JNE-CMP":{
-    "MOV-CMP-B.NE":100
+    "MOV-CMP-B.NE":50,
+    "LDP-LDP-RET":25,
+    "STR-STRB-LDR":25
   },
   "JMP-MOV-CDQ":{
     "B.NE-LDR-STR":100
@@ -6642,28 +7740,6 @@ var trigrams = {
     "MOV-ASR-CMP":50,
     "CMP-B.LE-LDRH":25,
     "CMP-B.LE-LDRB":25
-  },
-  "MOV-XOR-MOV":{
-    "LDR-EOR-LDR":9,
-    "MOV-MUL-UDIV":9,
-    "LDR-SUBS-STR":5,
-    "ASR-LSL-MOV":5,
-    "AND-LDR-LDR":5,
-    "B-LDR-ADD":5,
-    "B-STR-LDR":5,
-    "STR-LDUR-STR":5,
-    "B.GT-ADD-ADD":5,
-    "CMP-CSET-TBNZ":5,
-    "MOV-STR-SUB":5,
-    "STR-STR-STR":5,
-    "MOVK-STR-MOV":5,
-    "LDR-ORR-STR":5,
-    "STR-LDR-LDRH":5,
-    "STR-ADD-STR":5,
-    "MOV-MOVK-MOV":5,
-    "ADD-LDR-STR":5,
-    "MOV-LDR-STR":5,
-    "STR-STR-ADD":5
   },
   "JL-MOVSX-MOV":{
     "TBNZ-LDR-CMP":100
@@ -6859,20 +7935,17 @@ var trigrams = {
     "LDRB-STRB-MOV":33
   },
   "ADD-MOV-MOVSX":{
-    "STR-STR-STR":40,
-    "ADD-STR-STR":20,
-    "STR-LDURSB-MUL":20,
-    "MUL-ADD-STR":20
+    "STR-STR-STR":33,
+    "ADD-STR-STR":17,
+    "STR-LDURSB-MUL":17,
+    "MUL-ADD-STR":17,
+    "CMP-B.EQ-MOV":17
   },
   "MOVZX-CALL-ADD":{
     "MOV-BL-LDP":100
   },
   "MOV-MOVABS-MOVABS":{
     "STUR-STUR-STUR":100
-  },
-  "MOV-CALL-NOP":{
-    "STR-STR-MOV":67,
-    "LDUR-STR-LDR":33
   },
   "CMP-JE-LEA":{
     "LDUR-STUR-LDUR":50,
@@ -6886,16 +7959,17 @@ var trigrams = {
     "STR-BL-LDUR":100
   },
   "XOR-MOV-CMP":{
-    "LDUR-LDUR-LDUR":15,
-    "MOV-LDR-CMP":15,
-    "STUR-LDUR-ADD":15,
-    "STR-LDR-CMP":8,
-    "STR-LDR-AND":8,
-    "STR-LDR-STR":8,
-    "LDRB-ORR-STRB":8,
-    "CSET-AND-ADRP":8,
-    "MOV-BL-LSL":8,
-    "MOV-BL-MOV":8
+    "LDUR-LDUR-LDUR":14,
+    "MOV-LDR-CMP":14,
+    "STUR-LDUR-ADD":14,
+    "STR-LDR-CMP":7,
+    "STR-LDR-AND":7,
+    "STR-LDR-STR":7,
+    "LDRB-ORR-STRB":7,
+    "CSET-AND-ADRP":7,
+    "MOV-BL-LSL":7,
+    "MOV-BL-MOV":7,
+    "CMP-B.LS-LDR":7
   },
   "MOV-CMOVNE-MOV":{
     "MOV-STR-BL":100
@@ -6929,12 +8003,6 @@ var trigrams = {
   },
   "JE-LEA-CALL":{
     "BL-AND-STRB":100
-  },
-  "CALL-MOV-CALL":{
-    "STRB-LDRB-TBNZ":33,
-    "MOV-MUL-LDR":33,
-    "STRB-MOV-MOVK":17,
-    "BL-LDUR-BL":17
   },
   "IDIV-SHL-SHL":{
     "MOV-STR-LDR":100
@@ -7027,43 +8095,20 @@ var trigrams = {
   "JNE-LEA-MOVSXD":{
     "MOV-CMP-CSET":100
   },
-  "MOV-MOVSXD-MOV":{
-    "MOV-MOV-BL":9,
-    "ADRP-ADD-STUR":5,
-    "STR-STR-STR":5,
-    "BL-LDUR-ADD":5,
-    "B.GE-STUR-LDUR":5,
-    "ORR-MOV-AND":5,
-    "LDRH-MOV-LDUR":5,
-    "ADRP-ADD-BL":5,
-    "LDR-MUL-LDR":5,
-    "LDRB-ORR-MOV":5,
-    "LSL-LDR-AND":5,
-    "MOV-LDUR-ADRP":5,
-    "LDR-SUBS-STR":5,
-    "STR-LDR-ADD":5,
-    "EOR-AND-ADRP":5,
-    "ADD-MOV-MOV":5,
-    "LDR-STR-ADRP":5,
-    "LDR-CMP-B.EQ":5,
-    "SUBS-STUR-CBZ":5,
-    "LDURSW-LDR-BL":5,
-    "BL-LDR-STR":5
-  },
-  "MOV-CMP-JAE":{
-    "LDURSW-CMP-B.NE":67,
-    "ADD-ADRP-ADD":33
-  },
   "JAE-MOV-ADD":{
-    "B.NE-MOV-STURB":100
+    "B.NE-MOV-STURB":40,
+    "B.HS-LDR-STR":20,
+    "TST-B.EQ-LDP":20,
+    "STR-ADD-CMP":20
   },
   "MOVSXD-CMP-JNE":{
     "LDR-STR-B":100
   },
   "JNE-MOV-JMP":{
-    "B-LDR-ADD":50,
-    "STR-STR-STR":25,
-    "B-LDUR-ADD":25
+    "B-LDR-ADD":40,
+    "STR-STR-STR":20,
+    "B-LDUR-ADD":20,
+    "LDUR-ADD-LDP":20
   },
   "MOV-JMP-TEST":{
     "LDR-LDURSW-SUB":100
@@ -7072,12 +8117,22 @@ var trigrams = {
     "SUB-STR-BL":100
   },
   "CMP-JAE-MOV":{
-    "STUR-STUR-LDUR":67,
-    "LDR-CMP-B.HS":33
+    "STUR-STUR-LDUR":25,
+    "LDR-CMP-B.HS":25,
+    "LDR-LDP-ADD":13,
+    "LDR-MOV-MOV":13,
+    "B.GE-CMN-B.EQ":13,
+    "LDR-SUB-AND":13
   },
   "MOV-ADD-CMP":{
-    "SUB-MOV-STR":67,
-    "ADD-LDRB-ORR":33
+    "SUB-MOV-STR":20,
+    "SUBS-B.MI-STP":20,
+    "ADD-LDRB-ORR":10,
+    "LDR-ADD-CMP":10,
+    "ADD-STR-LDR":10,
+    "STR-MOV-CBZ":10,
+    "ADD-LDRB-STR":10,
+    "STR-MOV-ADRP":10
   },
   "MOV-SUB-MOVSXD":{
     "STR-BL-LDR":100
@@ -7146,7 +8201,8 @@ var trigrams = {
     "B.LE-LDUR-LDUR":100
   },
   "CMP-JGE-CMP":{
-    "MUL-UDIV-STR":100
+    "MUL-UDIV-STR":67,
+    "ADD-LDR-LDP":33
   },
   "CMP-JL-MOV":{
     "STR-LDUR-BL":50,
@@ -7217,9 +8273,10 @@ var trigrams = {
     "BL-LDR-STR":100
   },
   "SUB-MOV-CALL":{
-    "ADD-MOV-ADRP":50,
-    "ADD-STUR-BL":25,
-    "LDR-SUBS-BL":25
+    "ADD-MOV-ADRP":33,
+    "LDR-SUBS-BL":33,
+    "ADD-STUR-BL":17,
+    "ADD-MOV-MOV":17
   },
   "JE-JMP-MOVABS":{
     "CBZ-B-ADRP":67,
@@ -7243,8 +8300,599 @@ var trigrams = {
     "MOV-TBL-STR":17
   },
   "MOVABS-MOVABS-CALL":{
-    "ADRP-ADD-ADRP":50,
-    "ADD-ADRP-ADD":50
+    "ADD-ADRP-ADD":67,
+    "ADRP-ADD-ADRP":33
+  },
+  "SUB-MOV-CMP":{
+    "ADD-STR-LDR":33,
+    "CBZ-LDR-LDRB":17,
+    "LDUR-LDR-SUBS":17,
+    "MOV-CMP-B.GE":17,
+    "B.HS-LDUR-CMP":17
+  },
+  "CMP-JE-OR":{
+    "ADRP-LDR-CBZ":100
+  },
+  "OR-LOCK-XADD":{
+    "CBZ-ADD-LDAXR":100
+  },
+  "XADD-JMP-MOV":{
+    "LDAXR-SUB-STLXR":100
+  },
+  "MOV-TEST-JG":{
+    "B-LDR-SUB":100
+  },
+  "JG-JMP-RET":{
+    "SUB-STR-CMP":100
+  },
+  "JNE-MOV-REP":{
+    "ADRP-LDR-LDR":50,
+    "MOV-STR-ADRP":25,
+    "MOV-STR-RET":25
+  },
+  "JMP-NOP-NOP":{
+    "ADD-STP-B":33,
+    "LDUR-ADD-B":33,
+    "MOV-BL-MOV":33
+  },
+  "LEA-ADD-MOV":{
+    "STR-MOV-LDR":22,
+    "ADD-STP-ADD":22,
+    "MOV-MOVK-CMP":11,
+    "STR-MOV-STR":11,
+    "STR-ADD-STR":11,
+    "LDR-LDRSW-MOV":11,
+    "LDR-LDR-CMP":11
+  },
+  "POP-JMP-NOP":{
+    "STR-BL-MOV":29,
+    "STP-BL-MOV":29,
+    "ADD-BL-LDP":14,
+    "LDR-BL-ADRP":14,
+    "LDR-LDP-B":14
+  },
+  "LEA-MOV-ADD":{
+    "ADD-STR-ADD":33,
+    "ADD-ADRP-ADD":17,
+    "STR-B-LDR":17,
+    "STR-MOV-MOV":17,
+    "BL-STR-STR":17
+  },
+  "MOV-CALL-POP":{
+    "BL-LDP-LDR":40,
+    "LDR-CMP-CSET":20,
+    "ADD-MOV-ADD":20,
+    "BL-ADRP-LDR":20
+  },
+  "POP-RET-MOV":{
+    "RET-ADRP-MOV":40,
+    "LDR-ADD-STR":40,
+    "STR-LDR-LDUR":20
+  },
+  "PUSH-SUB-MOV":{
+    "STP-MOV-LDR":33,
+    "STP-STP-STP":17,
+    "STR-STR-STR":17,
+    "STP-ADRP-ADRP":17,
+    "STP-MOV-STR":17
+  },
+  "JE-CMP-MOV":{
+    "STR-CBZ-LDRB":50,
+    "MOV-CMP-B.EQ":50
+  },
+  "JE-MOVSX-ADD":{
+    "CBZ-LDRB-MOV":100
+  },
+  "MOV-POP-POP":{
+    "LDR-LDP-LDP":33,
+    "MOV-MOV-MOV":33,
+    "LDR-LDP-RET":17,
+    "STRB-LDP-LDP":17
+  },
+  "POP-POP-JMP":{
+    "LDP-B-MOV":67,
+    "LDR-LDP-LDP":33
+  },
+  "JMP-NOP-MOV":{
+    "MOV-STR-BL":11,
+    "CBZ-B-BL":11,
+    "CMP-B.NE-BL":11,
+    "B-LDR-MOV":11,
+    "CMN-ADD-B.NE":11,
+    "LDP-B-MOV":5,
+    "CMN-B.EQ-LDP":5,
+    "STR-CBZ-LDR":5,
+    "CMP-B.NE-B":5,
+    "LDR-BLR-B":5,
+    "LDUR-ADD-LDP":5,
+    "LDUR-ADD-LDR":5,
+    "MOV-B-LDR":5,
+    "B.EQ-MOV-MOV":5
+  },
+  "MOV-MOVSX-JMP":{
+    "AND-LDR-B":100
+  },
+  "MOV-LEA-ADD":{
+    "STP-STP-ADD":10,
+    "LDR-LDR-LDR":5,
+    "AND-LDR-LDUR":5,
+    "CMP-STR-STR":5,
+    "ADD-MOV-STR":5,
+    "MUL-ADD-MOV":5,
+    "STRB-LDR-LDRH":5,
+    "ADD-STR-ADD":5,
+    "STP-STP-BL":5,
+    "STR-STR-BL":5,
+    "ADD-STP-STRB":5,
+    "ADRP-LDR-LDR":5,
+    "STR-LDR-CBNZ":5,
+    "LDP-LDP-LDR":5,
+    "ADD-STLXR-CBZ":5,
+    "ADD-STR-MOV":5,
+    "MOV-LDR-ADD":5,
+    "LDR-ADRP-MOV":5,
+    "STP-ADD-STP":5,
+    "ADD-STP-STP":5
+  },
+  "CALL-POP-POP":{
+    "LDP-RET-ADRP":100
+  },
+  "RET-MOV-MOV":{
+    "MOV-MOV-LDR":40,
+    "MOV-BL-MOV":40,
+    "ADD-STR-ADD":20
+  },
+  "POP-MOV-CMP":{
+    "CMN-B.GE-ORR":100
+  },
+  "CMP-POP-JGE":{
+    "ORR-MOV-STR":100
+  },
+  "JGE-OR-MOV":{
+    "STR-STRH-CBNZ":50,
+    "STR-STR-CBNZ":50
+  },
+  "NOP-CMP-JLE":{
+    "B.LE-ORR-STRH":100
+  },
+  "JLE-OR-MOV":{
+    "STRH-STR-CBZ":100
+  },
+  "MOV-TEST-MOV":{
+    "CBZ-LDR-LDUR":25,
+    "LDRSW-MOV-MUL":13,
+    "AND-MOV-SXTW":13,
+    "STR-ADD-ADRP":13,
+    "LDURSB-LDUR-CMP":13,
+    "STR-B-LDR":13,
+    "ADD-MOV-MOV":13
+  },
+  "CALL-CALL-SUB":{
+    "CMP-B.NE-BL":50,
+    "LDUR-ADD-LDP":50
+  },
+  "CALL-POP-MOV":{
+    "LDR-MOV-LDR":100
+  },
+  "POP-CMP-JGE":{
+    "B.GE-ORR-STR":100
+  },
+  "TEST-JNE-MOV":{
+    "MOV-LDR-LDR":25,
+    "LDP-LDP-RET":25,
+    "MOV-STR-STR":13,
+    "BL-LDR-LDUR":13,
+    "CBNZ-LDR-MOV":13,
+    "STR-AND-CCMP":13
+  },
+  "MOV-JNE-LEA":{
+    "CBNZ-LDP-LDR":100
+  },
+  "LEA-POP-POP":{
+    "LDR-LDP-RET":100
+  },
+  "RET-NOP-CMP":{
+    "CMP-B.GT-STR":67,
+    "LDR-LDR-EOR":33
+  },
+  "CMP-JLE-OR":{
+    "STR-CBZ-LDR":100
+  },
+  "OR-MOV-TEST":{
+    "LDR-LDUR-ADD":100
+  },
+  "ADD-TEST-JE":{
+    "CBZ-LDR-LDUR":50,
+    "CBZ-LDR-MOV":50
+  },
+  "CALL-TEST-MOVZX":{
+    "ADD-MOV-BL":100
+  },
+  "MOVZX-JE-TEST":{
+    "BL-LDRB-CBZ":100
+  },
+  "OR-CALL-NOP":{
+    "LDR-ORR-BL":100
+  },
+  "NOP-MOV-XOR":{
+    "BL-NOP-LDR":100
+  },
+  "JNE-ADD-POP":{
+    "LDR-LDR-EOR":10,
+    "ORR-BL-LDR":10,
+    "MOV-LDR-LDR":10,
+    "STR-LDR-MOV":10,
+    "MOV-CMN-B.EQ":10,
+    "LDR-BFXIL-LDR":10,
+    "MOV-BL-LDR":10,
+    "MOV-LDR-ORR":5,
+    "CMP-B.LS-LDRB":5,
+    "TBNZ-BL-LDR":5,
+    "SUB-STR-LDR":5,
+    "LDR-CMN-B.EQ":5,
+    "LDR-LDR-LDR":5,
+    "RET-LDR-MOV":5
+  },
+  "RET-NOP-TEST":{
+    "LDP-LDR-LDP":100
+  },
+  "TEST-JNE-NOP":{
+    "LDP-RET-CBNZ":50,
+    "STR-MOV-BL":50
+  },
+  "ADD-JMP-NOP":{
+    "LDUR-ADD-B":40,
+    "B-LDR-MOV":20,
+    "LDR-CMP-CSEL":20,
+    "B-LDR-ADD":20
+  },
+  "NOP-MOV-OR":{
+    "B-MOV-LDR":100
+  },
+  "JMP-NOP-TEST":{
+    "BL-B-CBZ":67,
+    "MOV-B-BL":33
+  },
+  "ADD-OR-CALL":{
+    "MOV-LDR-LDUR":33,
+    "B.NE-MOV-CMP":17,
+    "CBNZ-LDR-MOV":17,
+    "LDR-BLR-B":17,
+    "LDR-EOR-CBNZ":17
+  },
+  "CALL-MOV-XOR":{
+    "LDUR-ADD-MOV":18,
+    "BL-LDR-LDR":18,
+    "MOV-MOV-BL":9,
+    "LDUR-LDR-SUBS":9,
+    "ADD-ADD-LDR":9,
+    "MOV-CMP-CSET":9,
+    "LDRH-STR-MOV":9,
+    "MOV-LDR-LDUR":9,
+    "CBNZ-LDP-LDR":9
+  },
+  "MOV-OR-CALL":{
+    "CMP-B.EQ-LDR":20,
+    "LDP-ORR-STR":20,
+    "CMN-B.NE-LDR":10,
+    "BLR-CMN-B.NE":10,
+    "MOV-CMN-B.NE":10,
+    "LDR-LDUR-ADD":10,
+    "LDP-RET-LDR":10,
+    "MOV-B-LDR":10
+  },
+  "CALL-JMP-NOP":{
+    "LDR-LDUR-ADD":22,
+    "CMP-B.LE-STRB":11,
+    "LDR-ORR-LDR":11,
+    "B.EQ-MOV-STR":11,
+    "B-LDR-CBNZ":11,
+    "MOV-LDR-BLR":11,
+    "ADD-MOV-LDR":11,
+    "LDR-LDP-RET":11
+  },
+  "XOR-MOV-ADD":{
+    "STR-LDR-LDR":29,
+    "LDR-STR-LDR":29,
+    "BL-LDR-LDR":14,
+    "LDUR-STR-MOV":14,
+    "LDRB-MOV-MUL":14
+  },
+  "MOV-XOR-JNE":{
+    "LDR-BLR-MOV":25,
+    "MOV-MOV-LDR":25,
+    "LDR-LDP-CMP":13,
+    "ORR-STR-TBNZ":13,
+    "CMP-B.LS-LDR":13,
+    "BL-NOP-LDR":13
+  },
+  "POP-RET-CALL":{
+    "B.EQ-MOV-LDR":33,
+    "ORR-STR-TBNZ":17,
+    "BL-LDR-LDUR":17,
+    "B.EQ-LDR-MOV":17,
+    "STR-MOV-STRB":17
+  },
+  "CALL-NOP-MOV":{
+    "LDP-LDR-LDP":50,
+    "ORR-BL-B":25,
+    "LDR-LDP-RET":25
+  },
+  "JE-CALL-MOV":{
+    "BL-B-BL":33,
+    "BL-LDR-CMP":33,
+    "BL-LDR-CBNZ":17,
+    "BL-MOV-BL":17
+  },
+  "JE-XOR-XOR":{
+    "MOV-LDUR-ADD":100
+  },
+  "SHL-OR-MOV":{
+    "MOV-MOV-MOV":100
+  },
+  "XOR-MOV-CALL":{
+    "LDP-RET-LDR":100
+  },
+  "SHR-JMP-CALL":{
+    "MOV-MOV-MOV":100
+  },
+  "JNE-CALL-XOR":{
+    "STR-TBZ-BL":100
+  },
+  "XOR-XOR-OR":{
+    "BL-BL-LDR":100
+  },
+  "OR-JMP-MOV":{
+    "LDR-LDUR-ADD":67,
+    "MOV-LDR-BLR":33
+  },
+  "NOP-MOV-CALL":{
+    "CBNZ-LDP-LDR":17,
+    "MOV-LDR-LDR":8,
+    "ADD-MOV-LDR":8,
+    "LDR-LDP-RET":8,
+    "ORR-STR-TBNZ":8,
+    "STR-CMN-B.EQ":8,
+    "LDR-EOR-CBNZ":8,
+    "LDR-LDUR-ADD":8,
+    "LDR-ORR-BL":8,
+    "BL-LDR-ADRP":8,
+    "ADD-STR-B":8
+  },
+  "OR-RET-NOP":{
+    "ORR-STR-RET":100
+  },
+  "MOV-NOT-MOV":{
+    "LDR-LDUR-ADD":100
+  },
+  "ADD-AND-RET":{
+    "BIC-STR-RET":100
+  },
+  "ADD-CMP-JE":{
+    "ADD-B.EQ-MOV":100
+  },
+  "MOV-JE-XOR":{
+    "B.EQ-CMP-CSET":50,
+    "MOV-STR-MOV":25,
+    "STR-MOV-LDR":25
+  },
+  "XOR-CMP-SETE":{
+    "CSET-LSL-LDR":100
+  },
+  "SETE-SHL-MOV":{
+    "LDR-MOV-AND":100
+  },
+  "MOV-AND-OR":{
+    "AND-ORR-STR":100
+  },
+  "JBE-MOV-ADD":{
+    "ADD-LDR-LDP":100
+  },
+  "ADD-MOV-CMP":{
+    "LDP-CMP-B.LS":10,
+    "MOV-STR-BL":5,
+    "STR-STR-STR":5,
+    "STR-STR-CBNZ":5,
+    "LDR-ORR-MOV":5,
+    "LDR-STRB-LDR":5,
+    "ADD-STR-ADD":5,
+    "LDR-STR-LDUR":5,
+    "LDUR-STR-STUR":5,
+    "LDR-CMP-STR":5,
+    "LDR-LDRH-TBZ":5,
+    "B.EQ-STRB-LDR":5,
+    "ADD-STR-CMP":5,
+    "CMP-B.LS-LDRB":5,
+    "STR-CMN-B.EQ":5,
+    "LDP-CMP-B.HS":5,
+    "BLR-TST-B.NE":5,
+    "CMP-B.HS-LDR":5,
+    "ADRP-LDR-LDR":5
+  },
+  "CMP-JBE-MOV":{
+    "LDUR-ADD-LDR":33,
+    "CBZ-UBFIZ-LDR":17,
+    "LDR-LDR-CBZ":17,
+    "LDP-RET-LDR":17,
+    "ADD-LDR-LDP":17
+  },
+  "MOV-POP-JMP":{
+    "ADD-STR-BL":100
+  },
+  "TEST-SETE-RET":{
+    "LDR-MOV-TST":100
+  },
+  "CMP-JE-TEST":{
+    "LDR-CBZ-STR":100
+  },
+  "TEST-MOV-JNE":{
+    "STR-LDR-TST":50,
+    "EOR-STR-LDR":25,
+    "LDR-MOV-STP":25
+  },
+  "JNE-REP-NOP":{
+    "TST-B.NE-RET":100
+  },
+  "NOP-OR-JMP":{
+    "RET-ORR-B":100
+  },
+  "JMP-LEA-SUB":{
+    "B-STP-ADRP":100
+  },
+  "SUB-CALL-NOP":{
+    "ADRP-ADD-MOV":33,
+    "B.NE-RET-STP":33,
+    "STP-MOV-BL":33
+  },
+  "OR-JMP-NOP":{
+    "LDR-ORR-B":33,
+    "TBNZ-MOV-STRB":17,
+    "B-CBNZ-LDR":17,
+    "B-LDR-LDUR":17,
+    "B.LE-STR-CBZ":17
+  },
+  "JNE-REP-SUB":{
+    "STR-TST-B.NE":100
+  },
+  "MOV-TEST-SETE":{
+    "LDR-CMP-CSET":100
+  },
+  "MOV-AND-RET":{
+    "LDR-AND-RET":100
+  },
+  "MOV-SUB-CALL":{
+    "MOV-MOV-BL":100
+  },
+  "MOV-XOR-CMP":{
+    "MOV-LDR-STR":40,
+    "AND-LDR-CMP":20,
+    "ADD-ADD-ADRP":20,
+    "LDR-LDR-LDR":20
+  },
+  "JE-CMP-JE":{
+    "LDR-CBZ-ADRP":25,
+    "LDR-CBZ-LDRB":25,
+    "CMP-B.LO-LDR":13,
+    "B.EQ-LDP-CMP":13,
+    "CBZ-LDRB-LDR":13,
+    "STR-CBZ-LDRB":13
+  },
+  "JE-LOCK-ADD":{
+    "ADRP-LDR-CBZ":100
+  },
+  "ADD-XOR-MOV":{
+    "CBZ-ADD-LDAXR":67,
+    "STR-MOV-LDR":33
+  },
+  "JE-TEST-JE":{
+    "MOV-MOV-BL":67,
+    "MOV-STR-STR":33
+  },
+  "MOV-TEST-JLE":{
+    "STR-MOV-BL":67,
+    "CBNZ-CMP-LDR":33
+  },
+  "JLE-LEA-MOV":{
+    "BL-LDR-STR":100
+  },
+  "MOV-XOR-ADD":{
+    "STR-CMP-B.LE":100
+  },
+  "ADD-SHL-NOP":{
+    "B.LE-SUB-LDR":100
+  },
+  "NOP-MOVDQU-MOVUPS":{
+    "LDR-ADD-MOV":100
+  },
+  "MOVUPS-ADD-CMP":{
+    "MOV-LSL-ADD":100
+  },
+  "MOV-JE-CMP":{
+    "STR-LDR-STR":20,
+    "LDR-MOV-MOV":10,
+    "BL-LSL-LDUR":10,
+    "STRB-AND-LDR":10,
+    "LDR-LDR-LDRB":10,
+    "AND-LDUR-CMP":10,
+    "AND-LDR-LDRSB":10,
+    "LDR-ADD-STR":10,
+    "B.LS-LDR-CMN":10
+  },
+  "NOP-MOVSXD-SHL":{
+    "EOR-CBNZ-LDP":100
+  },
+  "SHL-CALL-MOVSXD":{
+    "LDP-LDR-LDP":100
+  },
+  "MOVSXD-MOV-SUB":{
+    "LDP-RET-SBFIZ":100
+  },
+  "SUB-JS-SUB":{
+    "SBFIZ-BL-LDRSW":100
+  },
+  "LEA-SUB-MOV":{
+    "ADD-ADD-LDR":100
+  },
+  "RET-CALL-MOV":{
+    "LDP-LDP-LDR":67,
+    "MOV-MOV-ADD":33
+  },
+  "CALL-XOR-TEST":{
+    "BL-STR-CMP":100
+  },
+  "SETE-MOV-MOV":{
+    "STRB-CSET-STP":33,
+    "MOV-BL-LDR":17,
+    "STR-STR-BL":17,
+    "ADD-STR-STR":17,
+    "MOV-SXTW-MOV":17
+  },
+  "SUB-CALL-MOV":{
+    "MOV-BL-ADRP":50,
+    "BL-STRB-ADRP":25,
+    "BL-ADRP-LDR":25
+  },
+  "MOVZX-MOV-MOVZX":{
+    "LDRB-STRB-LDRB":9,
+    "LDR-LDRB-MOV":5,
+    "LDR-LDR-LDR":5,
+    "ADD-STR-B":5,
+    "LDR-LDR-CMP":5,
+    "STRH-MOV-STR":5,
+    "MOV-SXTW-EOR":5,
+    "BL-LDR-ADD":5,
+    "B-LDR-LDR":5,
+    "MOV-BL-MOV":5,
+    "STR-LDR-STR":5,
+    "STR-STR-STR":5,
+    "ADRP-ADD-LDR":5,
+    "LDR-LDR-STR":5,
+    "STR-STR-CBNZ":5,
+    "MOV-MOVK-MOVK":5,
+    "LDR-EOR-STR":5,
+    "STR-STR-LDRB":5,
+    "STRB-STR-LDP":5,
+    "CMP-B.LO-LDR":5,
+    "LDR-LDRH-TBZ":5
+  },
+  "JE-MOV-MOVSX":{
+    "LDR-AND-LDR":100
+  },
+  "MOVSX-JMP-SUB":{
+    "LDR-BR-STP":100
+  },
+  "LOCK-JNE-JMP":{
+    "MOV-LDAXR-CBNZ":100
+  },
+  "JMP-CMPXCHG-JE":{
+    "CBNZ-STXR-CBNZ":100
+  },
+  "JE-LEA-SUB":{
+    "CBNZ-CMP-B.NE":100
+  },
+  "JE-LOCK-JNE":{
+    "LDXR-STLXR-CBNZ":67,
+    "BL-B-MOV":33
   },
   "JE-MOV-MOVZX":{
     "ADD-ADRP-ADD":100
@@ -7273,12 +8921,14 @@ var trigrams = {
     "STR-MOV-MOVK":8
   },
   "MOVZX-ADD-MOV":{
-    "STR-STR-BL":17,
-    "MOV-LDUR-STRB":17,
-    "MOV-MOV-LDR":17,
-    "LDR-BL-MOV":17,
-    "STR-MOV-STRB":17,
-    "MOVK-MOVK-CMP":17
+    "STR-STR-BL":13,
+    "MOV-LDUR-STRB":13,
+    "MOV-MOV-LDR":13,
+    "LDR-BL-MOV":13,
+    "STR-MOV-STRB":13,
+    "MOVK-MOVK-CMP":13,
+    "LDR-LDUR-ADD":13,
+    "LDR-LDP-CMP":13
   },
   "MOV-MOVZX-ADD":{
     "BL-TBNZ-B":25,
@@ -7311,24 +8961,6 @@ var trigrams = {
     "MOV-LDR-MOV":50,
     "MUL-ADD-MOV":50
   },
-  "MOVZX-MOV-MOVZX":{
-    "LDR-LDRB-MOV":6,
-    "LDR-LDR-LDR":6,
-    "ADD-STR-B":6,
-    "LDR-LDR-CMP":6,
-    "STRH-MOV-STR":6,
-    "MOV-SXTW-EOR":6,
-    "BL-LDR-ADD":6,
-    "B-LDR-LDR":6,
-    "MOV-BL-MOV":6,
-    "STR-LDR-STR":6,
-    "STR-STR-STR":6,
-    "ADRP-ADD-LDR":6,
-    "LDR-LDR-STR":6,
-    "STR-STR-CBNZ":6,
-    "MOV-MOVK-MOVK":6,
-    "LDR-EOR-STR":6
-  },
   "ADD-MOVZX-MOV":{
     "LDRB-TBNZ-B":25,
     "LDURSW-LDUR-ADRP":25,
@@ -7339,16 +8971,6 @@ var trigrams = {
     "STR-LDUR-LDRB":33,
     "LDR-LDRB-TBNZ":33,
     "ADRP-ADD-STR":33
-  },
-  "MOV-CALL-POP":{
-    "LDR-CMP-CSET":100
-  },
-  "CALL-MOV-XOR":{
-    "MOV-MOV-BL":20,
-    "LDUR-LDR-SUBS":20,
-    "ADD-ADD-LDR":20,
-    "MOV-CMP-CSET":20,
-    "LDRH-STR-MOV":20
   },
   "XOR-MOVZX-MOVZX":{
     "BL-ADRP-ADD":50,
@@ -7417,9 +9039,10 @@ var trigrams = {
     "STRB-MOV-MOV":100
   },
   "MOVZX-MOVZX-CMP":{
-    "BL-MOV-MOV":33,
-    "STR-MOV-CMP":33,
-    "MOV-STR-LDR":33
+    "BL-MOV-MOV":25,
+    "STR-MOV-CMP":25,
+    "MOV-STR-LDR":25,
+    "ADD-STR-CMP":25
   },
   "CMP-JE-XOR":{
     "MOV-ADRP-ADD":25,
@@ -7474,14 +9097,10 @@ var trigrams = {
     "B-LDUR-LDR":50,
     "STR-STR-STR":50
   },
-  "MOV-JMP-CALL":{
-    "MOV-ADRP-ADD":100
-  },
   "JNE-JMP-CALL":{
-    "MOV-BL-BL":100
-  },
-  "CALL-JMP-CALL":{
-    "BL-LDUR-MOV":100
+    "MOV-BL-BL":33,
+    "LDR-BLR-AND":33,
+    "LDR-MOV-LDR":33
   },
   "CALL-CALL-JMP":{
     "MOV-BL-TBNZ":100
@@ -7493,8 +9112,11 @@ var trigrams = {
     "MOV-MOV-LDR":100
   },
   "JE-MOVZX-MOV":{
-    "LDUR-LDR-SUBS":50,
-    "MOV-ORR-STRB":50
+    "LDUR-LDR-SUBS":20,
+    "MOV-ORR-STRB":20,
+    "CBZ-LDRB-STRB":20,
+    "LDR-MOV-STRB":20,
+    "LDRB-CBZ-LDRB":20
   },
   "MOV-OR-MOV":{
     "SUBS-STR-LDR":13,
@@ -7518,16 +9140,12 @@ var trigrams = {
     "LDR-CMP-CSET":10,
     "LDR-LDR-EOR":10
   },
-  "SUB-MOV-CMP":{
-    "CBZ-LDR-LDRB":25,
-    "LDUR-LDR-SUBS":25,
-    "MOV-CMP-B.GE":25,
-    "ADD-STR-LDR":25
-  },
   "CMP-JE-MOVZX":{
-    "LDRB-MOV-AND":33,
-    "MOV-MOV-MOV":33,
-    "CMP-STR-B.NE":33
+    "LDRB-MOV-AND":20,
+    "MOV-MOV-MOV":20,
+    "CMP-STR-B.NE":20,
+    "LDRB-CBZ-LDRB":20,
+    "LDRB-STRB-MOV":20
   },
   "OR-MOV-JMP":{
     "MOV-LDUR-STR":25,
@@ -7639,11 +9257,6 @@ var trigrams = {
   },
   "MOVABS-CALL-LEA":{
     "MOV-SUB-STUR":100
-  },
-  "XOR-MOV-ADD":{
-    "BL-LDR-LDR":33,
-    "LDUR-STR-MOV":33,
-    "LDRB-MOV-MUL":33
   },
   "ADD-MOVZX-IMUL":{
     "LDR-LDR-LDR":100
@@ -7758,17 +9371,6 @@ var trigrams = {
   "MOVZX-CALL-TEST":{
     "ADD-ADRP-ADD":100
   },
-  "ADD-MOV-CMP":{
-    "MOV-STR-BL":11,
-    "STR-STR-STR":11,
-    "STR-STR-CBNZ":11,
-    "LDR-ORR-MOV":11,
-    "LDR-STRB-LDR":11,
-    "ADD-STR-ADD":11,
-    "LDR-STR-LDUR":11,
-    "LDUR-STR-STUR":11,
-    "LDR-CMP-STR":11
-  },
   "MOVZX-OR-MOV":{
     "B-LDR-LDR":20,
     "ADD-LDR-ADD":20,
@@ -7786,12 +9388,11 @@ var trigrams = {
   "JNE-JMP-TEST":{
     "ADD-MOV-MOV":100
   },
-  "TEST-JNE-MOV":{
-    "MOV-STR-STR":100
-  },
   "JNE-TEST-JNE":{
-    "ADRP-ADD-MOV":50,
-    "MOV-STURB-B":50
+    "ADRP-ADD-MOV":25,
+    "MOV-STURB-B":25,
+    "LDP-LDP-RET":25,
+    "MOV-STRB-LDR":25
   },
   "SUB-MOV-ADD":{
     "STR-STP-ADD":100
@@ -8344,9 +9945,6 @@ var trigrams = {
     "STR-ADD-STR":17,
     "STRB-LSL-MOV":17
   },
-  "ADD-XOR-MOV":{
-    "STR-MOV-LDR":100
-  },
   "CMP-SETLE-AND":{
     "CMP-B.GE-LDRSW":7,
     "MOV-MOVK-CMP":7,
@@ -8378,10 +9976,6 @@ var trigrams = {
     "MOV-AND-MOV":8,
     "ADD-ADD-ADD":8,
     "CSET-AND-LDR":8
-  },
-  "JE-MOV-CALL":{
-    "STR-LDR-CMP":50,
-    "LDARB-AND-AND":50
   },
   "MOV-CMP-SETLE":{
     "MUL-ADD-ADD":20,
@@ -8485,14 +10079,6 @@ var trigrams = {
   "CMP-SETBE-MOV":{
     "MOV-STR-STR":100
   },
-  "MOV-TEST-MOV":{
-    "LDRSW-MOV-MUL":17,
-    "AND-MOV-SXTW":17,
-    "STR-ADD-ADRP":17,
-    "LDURSB-LDUR-CMP":17,
-    "STR-B-LDR":17,
-    "ADD-MOV-MOV":17
-  },
   "CALL-MOV-AND":{
     "STR-B-STR":33,
     "BL-LDR-MOV":33,
@@ -8517,10 +10103,11 @@ var trigrams = {
     "ORR-STR-LDR":17
   },
   "CALL-CMP-MOV":{
-    "STRB-ADRP-ADD":25,
-    "MOV-LSL-ASR":25,
-    "STR-STR-STR":25,
-    "STR-STUR-LDUR":25
+    "STRB-ADRP-ADD":20,
+    "MOV-LSL-ASR":20,
+    "STR-STR-STR":20,
+    "STR-STUR-LDUR":20,
+    "BLR-CMN-B.NE":20
   },
   "JNE-CMP-SETNE":{
     "ADD-STR-SUB":25,
@@ -8544,10 +10131,6 @@ var trigrams = {
     "MOV-BL-AND":20,
     "LDR-MOV-CMP":20,
     "B.GE-LDR-STR":20
-  },
-  "MOV-XOR-CMP":{
-    "AND-LDR-CMP":50,
-    "ADD-ADD-ADRP":50
   },
   "MOV-JNE-CMP":{
     "AND-LDR-LDR":50,
@@ -8632,15 +10215,6 @@ var trigrams = {
     "STRB-LDR-ADD":10,
     "SXTW-MOV-MOVK":10,
     "LDRH-MOV-ADD":10
-  },
-  "MOV-JE-CMP":{
-    "LDR-MOV-MOV":14,
-    "BL-LSL-LDUR":14,
-    "STRB-AND-LDR":14,
-    "LDR-LDR-LDRB":14,
-    "AND-LDUR-CMP":14,
-    "AND-LDR-LDRSB":14,
-    "LDR-ADD-STR":14
   },
   "MOVSXD-MOVSXD-CALL":{
     "LDRH-LDRSW-LDR":100
@@ -8738,9 +10312,10 @@ var trigrams = {
     "CSET-AND-LDR":100
   },
   "OR-CMP-MOV":{
-    "LDR-ORR-STR":33,
-    "STR-ADD-ADD":33,
-    "AND-LDUR-AND":33
+    "LDR-ORR-STR":25,
+    "STR-ADD-ADD":25,
+    "AND-LDUR-AND":25,
+    "LDR-ADD-MOV":25
   },
   "XOR-MOVSX-CMP":{
     "SXTW-MOV-CMP":20,
@@ -8833,15 +10408,6 @@ var trigrams = {
   "MOVSXD-MOVABS-CMP":{
     "CMP-CSET-AND":50,
     "LDR-LDR-LDR":50
-  },
-  "MOV-CALL-LEA":{
-    "STR-CBNZ-MOV":14,
-    "ADD-STR-ADRP":14,
-    "AND-MOV-STR":14,
-    "MOVK-STR-MOV":14,
-    "STUR-STR-MOV":14,
-    "STUR-LDR-LDUR":14,
-    "CSET-AND-MOV":14
   },
   "MOVSX-MOV-XOR":{
     "ADRP-ADD-LDR":20,
@@ -8953,7 +10519,10 @@ var trigrams = {
     "CSET-AND-LDRSH":100
   },
   "JLE-MOV-CMP":{
-    "STRH-B-LDRH":100
+    "STRH-B-LDRH":25,
+    "ADD-CMP-B.GE":25,
+    "SUBS-B.EQ-CMP":25,
+    "B.LE-LDR-CMP":25
   },
   "AND-MOVZX-MOVZX":{
     "STR-ADRP-ADD":7,
@@ -9008,12 +10577,6 @@ var trigrams = {
     "LDR-LDR-LDRSH":33,
     "MOV-SXTW-LDR":33
   },
-  "POP-POP-RET":{
-    "LDR-ADD-STR":25,
-    "CSET-AND-ADRP":25,
-    "LDR-LDRSH-EOR":25,
-    "SXTW-MOV-CMP":25
-  },
   "XOR-MOVABS-MOV":{
     "MOV-EOR-ADRP":100
   },
@@ -9041,12 +10604,6 @@ var trigrams = {
   },
   "LEA-MOVABS-ADD":{
     "ADD-ADD-ADRP":100
-  },
-  "LEA-MOV-ADD":{
-    "ADD-ADRP-ADD":25,
-    "STR-B-LDR":25,
-    "STR-MOV-MOV":25,
-    "BL-STR-STR":25
   },
   "ADD-MOVSXD-SHL":{
     "STR-ADD-ADD":20,
@@ -9147,24 +10704,11 @@ var trigrams = {
     "ADD-ADD-LDRSW":50,
     "LDR-LDR-LDR":50
   },
-  "SETE-MOV-MOV":{
-    "MOV-BL-LDR":25,
-    "STR-STR-BL":25,
-    "ADD-STR-STR":25,
-    "MOV-SXTW-MOV":25
-  },
   "MOV-MOVSX-XOR":{
     "ASR-LDR-LDRH":25,
     "BL-LDR-STR":25,
     "ADD-ADD-ADRP":25,
     "LDR-LDR-LDR":25
-  },
-  "LEA-ADD-MOV":{
-    "MOV-MOVK-CMP":20,
-    "STR-MOV-STR":20,
-    "STR-ADD-STR":20,
-    "LDR-LDRSW-MOV":20,
-    "LDR-LDR-CMP":20
   },
   "JGE-MOVABS-ADD":{
     "LDUR-LDR-CMP":50,
@@ -9200,8 +10744,10 @@ var trigrams = {
     "STR-LDR-STR":100
   },
   "MOV-MOV-OR":{
-    "CSET-AND-LDUR":50,
-    "MOV-BL-MOV":50
+    "CSET-AND-LDUR":25,
+    "MOV-BL-MOV":25,
+    "RET-LDR-LDR":25,
+    "ORR-STR-TBNZ":25
   },
   "OR-MOVZX-MOVZX":{
     "LDUR-CMP-CSET":100
@@ -9235,8 +10781,12 @@ var trigrams = {
     "STRH-LDRB-MOV":100
   },
   "JE-MOV-CMP":{
-    "LDR-EOR-LDR":50,
-    "STR-STR-STR":50
+    "LDR-EOR-LDR":17,
+    "STR-STR-STR":17,
+    "CMN-B.EQ-LDR":17,
+    "LDR-MOV-LDR":17,
+    "LDP-STR-CMP":17,
+    "CMP-B.LO-LDR":17
   },
   "MOVSX-CMP-SETNE":{
     "BL-MOV-LSL":9,
@@ -9330,10 +10880,6 @@ var trigrams = {
   "JMP-CMP-SETNE":{
     "MOV-MOV-STR":100
   },
-  "MOV-JE-XOR":{
-    "MOV-STR-MOV":50,
-    "STR-MOV-LDR":50
-  },
   "XOR-AND-MOVZX":{
     "LDR-STRB-MOV":13,
     "MOV-MOV-MOV":13,
@@ -9357,8 +10903,10 @@ var trigrams = {
     "LSL-ASR-LDR":100
   },
   "MOV-LEA-CMP":{
-    "STR-ADRP-ADD":50,
-    "STR-LDR-STR":50
+    "STR-ADRP-ADD":25,
+    "STR-LDR-STR":25,
+    "B.EQ-RET-LDR":25,
+    "LDUR-STR-ADD":25
   },
   "CALL-CMP-SETNE":{
     "LDR-STR-LDRSW":20,
@@ -9380,15 +10928,6 @@ var trigrams = {
   "JMP-LEA-ADD":{
     "MOV-BL-LSL":50,
     "MOV-MOVK-BL":50
-  },
-  "MOV-LEA-ADD":{
-    "LDR-LDR-LDR":14,
-    "AND-LDR-LDUR":14,
-    "CMP-STR-STR":14,
-    "ADD-MOV-STR":14,
-    "MUL-ADD-MOV":14,
-    "STRB-LDR-LDRH":14,
-    "ADD-STR-ADD":14
   },
   "ADD-ADD-MOVABS":{
     "LDUR-MOV-STR":50,
@@ -9447,7 +10986,9 @@ var trigrams = {
     "LDR-STR-LDR":33
   },
   "OR-MOV-CALL":{
-    "STR-STR-STR":100
+    "STR-STR-STR":33,
+    "B.NE-LDR-MOV":33,
+    "MOV-MOV-CMP":33
   },
   "CALL-MOVZX-MOVSX":{
     "STR-STR-STR":33,
@@ -9542,7 +11083,11 @@ var trigrams = {
     "MOV-MOV-MOV":33
   },
   "JB-MOV-MOV":{
-    "MOV-MOVK-STR":100
+    "MOV-MOVK-STR":20,
+    "LDR-LDUR-ADD":20,
+    "CMP-B.EQ-LDP":20,
+    "CMP-B.LO-LDR":20,
+    "B.EQ-LDP-CMP":20
   },
   "CMP-JA-MOVABS":{
     "MOV-MOVK-MOVK":50,
@@ -9737,8 +11282,9 @@ var trigrams = {
     "LDRH-MUL-MOV":50
   },
   "CMP-JAE-MOVZX":{
-    "CMP-B.HS-LDRH":50,
-    "CMP-B.HS-LDRB":50
+    "CMP-B.HS-LDRH":33,
+    "CMP-B.HS-LDRB":33,
+    "LDRB-UBFIZ-LDR":33
   },
   "MOV-MOVABS-SUB":{
     "CMP-CSET-TBNZ":100
@@ -9819,8 +11365,9 @@ var trigrams = {
     "SUBS-STR-LDR":50
   },
   "PUSH-PUSH-SUB":{
-    "STP-STP-STP":50,
-    "ADD-STUR-STR":50
+    "STP-STP-STP":33,
+    "ADD-STUR-STR":33,
+    "STR-ADRP-LDR":33
   },
   "SUB-MOVABS-ADD":{
     "STP-STP-MOV":100
@@ -9991,8 +11538,12 @@ var trigrams = {
     "STR-LDR-ADD":100
   },
   "MOV-CMP-JB":{
-    "STR-LDR-STR":50,
-    "STR-STR-STR":50
+    "STR-LDR-STR":17,
+    "STR-STR-STR":17,
+    "CMN-B.NE-LDR":17,
+    "LDRB-MOV-CMP":17,
+    "ADD-STR-CMP":17,
+    "STR-CMN-B.EQ":17
   },
   "JB-MOV-LEA":{
     "STR-ADD-STR":100
@@ -10025,14 +11576,14 @@ var trigrams = {
     "STR-STR-STR":50,
     "MOV-LDR-STRB":50
   },
-  "JMP-MOV-CALL":{
-    "LDR-LDR-ADD":100
-  },
   "AND-MOVSXD-CMP":{
     "LDR-LDR-CMP":100
   },
   "JNE-MOV-TEST":{
-    "LDR-STRH-LDR":100
+    "LDR-STRH-LDR":25,
+    "STRB-LDR-LDR":25,
+    "STRB-STR-LDRB":25,
+    "LDR-CBNZ-LDR":25
   },
   "MOV-LEA-MOVABS":{
     "LDR-LDRSH-MOV":100
@@ -10073,9 +11624,10 @@ var trigrams = {
     "ADD-LDRSW-MOV":50
   },
   "MOV-JE-MOVSX":{
-    "LDR-CMP-B.GE":33,
-    "STR-ADD-STR":33,
-    "CMP-B.GE-LDR":33
+    "LDR-CMP-B.GE":25,
+    "STR-ADD-STR":25,
+    "CMP-B.GE-LDR":25,
+    "LDRB-MOV-CBZ":25
   },
   "MOVZX-XOR-MOVZX":{
     "LDRSW-MOV-MUL":100
@@ -10112,9 +11664,6 @@ var trigrams = {
   },
   "OR-MOV-MOVSXD":{
     "LDR-STRH-LDR":100
-  },
-  "TEST-MOV-JNE":{
-    "EOR-STR-LDR":100
   },
   "JNE-MOV-MOVSX":{
     "LDR-LDR-LDR":50,
@@ -10155,7 +11704,8 @@ var trigrams = {
     "ADRP-ADD-LDR":100
   },
   "LEA-MOVABS-MOV":{
-    "LDR-STR-LDR":100
+    "LDR-STR-LDR":50,
+    "ADD-MOV-LDUR":50
   },
   "XOR-MOV-MOVSXD":{
     "ADD-STR-ADD":50,
@@ -10192,10 +11742,6 @@ var trigrams = {
   "MOVSX-AND-CMP":{
     "STR-STR-BL":100
   },
-  "JE-LEA-MOV":{
-    "CMP-B.GE-LDR":50,
-    "LDRB-MOV-ADD":50
-  },
   "OR-MOV-LEA":{
     "LDR-ADD-STR":100
   },
@@ -10231,7 +11777,8 @@ var trigrams = {
     "STR-B-LDUR":33
   },
   "MOV-CALL-OR":{
-    "STR-ADD-LDRB":100
+    "STR-ADD-LDRB":50,
+    "BL-ADRP-LDR":50
   },
   "MOVSX-MOVSX-CMP":{
     "LDRSH-CMP-B.LT":50,
@@ -10280,10 +11827,6 @@ var trigrams = {
     "LDR-LDUR-MOV":50,
     "STR-STR-STR":50
   },
-  "PUSH-SUB-MOV":{
-    "STP-STP-STP":50,
-    "STR-STR-STR":50
-  },
   "CMP-JL-MOVABS":{
     "ADD-STR-ADRP":100
   },
@@ -10320,8 +11863,9 @@ var trigrams = {
     "ADD-STUR-SUB":100
   },
   "MOV-CMP-JA":{
-    "LDUR-STRB-LSL":50,
-    "BL-LDR-STR":50
+    "LDUR-STRB-LSL":33,
+    "BL-LDR-STR":33,
+    "LDP-LDP-RET":33
   },
   "JA-MOVABS-MOVABS":{
     "LSL-MOV-ASR":100
@@ -10501,7 +12045,8 @@ var trigrams = {
     "SUB-BL-CMP":100
   },
   "MOV-SUB-SAR":{
-    "LDR-SUBS-SDIV":100
+    "LDR-SUBS-SDIV":50,
+    "LDR-LDP-SUBS":50
   },
   "SAR-MOV-CMP":{
     "SDIV-STR-LDR":100
@@ -10623,9 +12168,6 @@ var trigrams = {
   "CALL-JMP-MOVABS":{
     "AND-STR-STR":100
   },
-  "POP-RET-MOV":{
-    "STR-LDR-LDUR":100
-  },
   "SUB-MOV-CQO":{
     "SUBS-LDR-LDR":100
   },
@@ -10701,14 +12243,8 @@ var trigrams = {
   "JNE-CMP-JE":{
     "ADRP-ADD-BL":100
   },
-  "JE-CALL-MOV":{
-    "BL-LDR-CBNZ":100
-  },
   "CALL-MOVABS-MOVABS":{
     "STUR-STR-BL":100
-  },
-  "CALL-NOP-NOP":{
-    "LDUR-LDR-BL":100
   },
   "CALL-MOVABS-ADD":{
     "MOV-STR-STR":100
@@ -10793,6 +12329,635 @@ var trigrams = {
   },
   "MOV-MOVSD-POP":{
     "LDR-ADD-RET":100
+  },
+  "SUB-XOR-CALL":{
+    "ADD-MOV-MOV":100
+  },
+  "CALL-MOV-TEST":{
+    "LDRB-CBNZ-BL":33,
+    "LDR-CBZ-BL":33,
+    "CBZ-BL-LDR":33
+  },
+  "RET-NOP-REP":{
+    "BL-MOV-STRB":100
+  },
+  "REP-NOP-NOP":{
+    "STRB-LDR-LDP":100
+  },
+  "JE-PUSH-MOV":{
+    "CBZ-STP-ADRP":100
+  },
+  "NOP-JMP-NOP":{
+    "LDP-B-B":100
+  },
+  "SUB-CMP-MOV":{
+    "LDR-LDR-CBZ":100
+  },
+  "MOV-LOCK-XADD":{
+    "ADD-STLXR-CBNZ":100
+  },
+  "XADD-TEST-JE":{
+    "CBNZ-CBZ-LDR":100
+  },
+  "JE-ADD-POP":{
+    "LDR-LDR-LDP":100
+  },
+  "MOV-LEA-TEST":{
+    "STP-ADRP-LDR":100
+  },
+  "JNE-MOV-LEA":{
+    "STP-ADD-STP":100
+  },
+  "LEA-OR-MOV":{
+    "STP-MOV-BL":100
+  },
+  "JNE-ADD-ADD":{
+    "LDR-STR-ADD":50,
+    "MOV-LDR-BLR":50
+  },
+  "NOP-LOCK-ADD":{
+    "STP-BL-ADRP":100
+  },
+  "ADD-ADD-POP":{
+    "ADRP-LDR-ADD":100
+  },
+  "JE-MOV-LOCK":{
+    "LDR-LDR-CBZ":100
+  },
+  "LOCK-XADD-CMP":{
+    "CBZ-LDAXR-SUB":100
+  },
+  "CMP-JE-REP":{
+    "SUB-STLXR-CBNZ":100
+  },
+  "REP-NOP-MOV":{
+    "CBNZ-CMP-B.EQ":100
+  },
+  "JNE-SUB-MOV":{
+    "STR-CMP-B.NE":50,
+    "LDP-CMP-B.HS":50
+  },
+  "ADD-RET-MOV":{
+    "ADRP-LDR-BL":100
+  },
+  "CMP-MOVZX-JE":{
+    "LDR-STR-MOV":50,
+    "STR-STR-STR":50
+  },
+  "ADD-POP-MOV":{
+    "STR-LDP-LDP":50,
+    "MOV-LDP-LDP":50
+  },
+  "JNE-PUSH-PUSH":{
+    "LDUR-ADD-LDR":50,
+    "STRB-LDUR-ADD":50
+  },
+  "TEST-JNE-TEST":{
+    "LDR-LDP-CMP":50,
+    "LDR-TBZ-LDR":50
+  },
+  "MOV-MOVZX-TEST":{
+    "LDR-LDRH-TBNZ":50,
+    "ADD-STR-CMP":50
+  },
+  "JMP-NOP-ADD":{
+    "LDRB-UBFIZ-LDR":25,
+    "LDR-LDP-CMP":25,
+    "MOV-STRB-B":25,
+    "LDR-BLR-MOV":25
+  },
+  "CMP-JBE-MOVZX":{
+    "TBZ-LDP-CMP":25,
+    "LDP-RET-LDR":25,
+    "CMP-B.HS-ADD":25,
+    "LDUR-ADD-LDR":25
+  },
+  "MOVZX-TEST-JE":{
+    "LDR-MOV-LDR":50,
+    "TBZ-LDP-CMP":50
+  },
+  "NOP-XOR-MOV":{
+    "ORR-B-CBNZ":50,
+    "LDR-MOV-LDP":50
+  },
+  "MOV-OR-OR":{
+    "CBNZ-LDR-TBNZ":50,
+    "LDP-ORR-B":50
+  },
+  "NOP-TEST-JNE":{
+    "STRB-LDP-LDP":50,
+    "LDR-TBNZ-MOV":50
+  },
+  "JNE-MOV-ADD":{
+    "RET-BL-LDR":50,
+    "LDR-LDR-LDR":50
+  },
+  "JNE-CALL-NOP":{
+    "LDR-CBZ-LDP":33,
+    "LDR-LDUR-ADD":33,
+    "LDP-ORR-STR":33
+  },
+  "NOP-MOV-ADD":{
+    "LDP-MOV-LDP":33,
+    "B.NE-B-STRB":33,
+    "LDUR-ADD-MOV":33
+  },
+  "ADD-MOV-NOP":{
+    "LDP-ORR-LDP":100
+  },
+  "NOP-MOV-TEST":{
+    "LDP-MOV-ORR":25,
+    "LDRB-CBZ-LDR":25,
+    "MOV-LDUR-ADD":25,
+    "BLR-MOV-STRB":25
+  },
+  "TEST-JE-XOR":{
+    "ORR-B-LDR":50,
+    "CBZ-LDR-MOV":50
+  },
+  "XOR-ADD-OR":{
+    "LDR-MOV-LDR":50,
+    "MOV-LDR-ORR":50
+  },
+  "OR-MOV-POP":{
+    "LDR-BLR-CMN":50,
+    "ORR-LDR-MOV":50
+  },
+  "POP-POP-OR":{
+    "B-LDR-MOV":50,
+    "ORR-LDP-B":50
+  },
+  "JNE-JMP-NOP":{
+    "LDR-CBZ-CMN":25,
+    "MOV-CMP-B.NE":25,
+    "MOV-MOV-LDR":25,
+    "LDR-CBNZ-B":25
+  },
+  "TEST-JE-CMP":{
+    "LDUR-ADD-LDP":20,
+    "ADD-LDR-STR":20,
+    "LDR-MOV-STRB":20,
+    "B.NE-B-LDR":20,
+    "LDRB-CBZ-LDRB":20
+  },
+  "JBE-MOVZX-ADD":{
+    "ADD-LDR-LDP":100
+  },
+  "XOR-JNE-ADD":{
+    "STR-MOV-STR":50,
+    "B.EQ-MOV-STR":50
+  },
+  "CMP-SBB-AND":{
+    "RET-LDR-MOV":33,
+    "LDR-CBZ-B":33,
+    "EOR-CBNZ-LDP":33
+  },
+  "JMP-CALL-MOV":{
+    "CMP-CSEL-LDR":25,
+    "MOV-BL-MOV":25,
+    "LDR-LDUR-ADD":25,
+    "B.EQ-CMP-B.LE":25
+  },
+  "CALL-NOP-CMP":{
+    "BL-MOV-B":50,
+    "B-BL-LDR":50
+  },
+  "AND-ADD-JMP":{
+    "B-LDR-LDR":100
+  },
+  "JNE-CALL-CMP":{
+    "LDP-ORR-STR":50,
+    "LDR-BLR-AND":50
+  },
+  "CMP-JNE-TEST":{
+    "BL-LDRB-CBNZ":100
+  },
+  "TEST-JLE-MOV":{
+    "CBNZ-CMP-B.LE":50,
+    "LDR-CBZ-B":50
+  },
+  "JA-NOP-MOV":{
+    "RET-LDR-LDUR":100
+  },
+  "LEA-CMP-JL":{
+    "LDP-CMP-B.LS":50,
+    "LDP-CMP-B.LO":50
+  },
+  "JL-ADD-JNE":{
+    "B.LS-NOP-LDR":50,
+    "B.LO-LDR-MOV":50
+  },
+  "JNE-TEST-JLE":{
+    "LDR-LDRB-ADD":50,
+    "MOV-LDR-BLR":50
+  },
+  "MOV-MOVZX-LEA":{
+    "ADD-STR-CMP":100
+  },
+  "LEA-CMP-JGE":{
+    "CMP-B.HS-ADD":100
+  },
+  "JGE-CMP-JE":{
+    "ADD-STR-CMP":100
+  },
+  "JE-ADD-MOV":{
+    "LDR-MOV-LDR":100
+  },
+  "CMP-JB-MOV":{
+    "CMP-B.LT-CMN":25,
+    "LDR-BLR-B":25,
+    "CMP-B.HS-LDR":25,
+    "LDR-MOV-MOV":25
+  },
+  "JNE-OR-MOV":{
+    "MOV-LDR-BLR":100
+  },
+  "NOP-TEST-JE":{
+    "STRB-LDR-CBNZ":100
+  },
+  "JE-JMP-NOP":{
+    "CBNZ-ORR-LDR":100
+  },
+  "NOP-XOR-JMP":{
+    "LDR-B-LDR":100
+  },
+  "JNE-CALL-TEST":{
+    "CBZ-MOV-LDR":100
+  },
+  "TEST-JG-JMP":{
+    "LDR-B-MOV":100
+  },
+  "JBE-MOVZX-MOV":{
+    "LDP-CMP-B.LS":50,
+    "LDUR-ADD-LDR":50
+  },
+  "CMP-JAE-ADD":{
+    "LDR-LDP-ADD":100
+  },
+  "CMP-JNE-NOP":{
+    "B.LO-LDR-MOV":100
+  },
+  "NOP-CMP-JNE":{
+    "MOV-LDR-BLR":25,
+    "EOR-CBNZ-LDP":25,
+    "LDP-RET-LDR":25,
+    "LDP-LDP-LDP":25
+  },
+  "JNE-CMP-SBB":{
+    "LDP-RET-LDR":100
+  },
+  "SBB-AND-ADD":{
+    "LDR-CBNZ-B":33,
+    "B-LDR-LDR":33,
+    "MOV-MOV-LDR":33
+  },
+  "CMP-MOVZX-JNE":{
+    "B.NE-LDR-MOV":50,
+    "LDR-MOV-LDR":50
+  },
+  "MOV-JMP-SUB":{
+    "B.NE-B-BL":100
+  },
+  "MOVSX-POP-MOV":{
+    "CBZ-LDRB-MOV":100
+  },
+  "MOVSX-JMP-CALL":{
+    "MOV-BLR-AND":100
+  },
+  "JBE-ADD-MOV":{
+    "ADD-LDR-LDP":100
+  },
+  "OR-CALL-MOV":{
+    "LDR-BLR-MOV":20,
+    "ADD-MOV-LDR":20,
+    "MOV-LDR-ORR":20,
+    "TBNZ-BL-MOV":20,
+    "LDR-LDUR-ADD":20
+  },
+  "JE-TEST-JLE":{
+    "LDR-LDP-SUBS":50,
+    "B.EQ-CMP-B.LE":50
+  },
+  "MOV-CMOVLE-MOV":{
+    "CSEL-MOV-LDUR":50,
+    "ADD-LDR-MOV":50
+  },
+  "CALL-TEST-JG":{
+    "LDR-ORR-BL":50,
+    "BL-B-LDR":50
+  },
+  "JG-JMP-CALL":{
+    "BL-B-LDR":50,
+    "LDR-LDR-BLR":50
+  },
+  "JAE-CMP-JNE":{
+    "LDR-CBZ-LDP":100
+  },
+  "JAE-SUB-MOV":{
+    "LDR-CBZ-LDP":100
+  },
+  "MOV-ADD-CALL":{
+    "ADD-LDR-STR":50,
+    "ADD-STR-ADD":50
+  },
+  "CMP-JA-JMP":{
+    "LDUR-ADD-LDR":100
+  },
+  "MOV-CALL-":{
+    "B-MOV-BL":100
+  },
+  "JMP-CALL-NOP":{
+    "B.EQ-MOV-MOV":33,
+    "LDR-LDP-RET":33,
+    "LDR-LDR-LDP":33
+  },
+  "ADD-JMP-CALL":{
+    "ADD-B-BL":33,
+    "LDR-BLR-MOV":33,
+    "MOV-STRB-B":33
+  },
+  "NOP-CMP-SBB":{
+    "STR-STR-B":50,
+    "B-LDR-MOV":50
+  },
+  "CMP-JBE-NOP":{
+    "LDR-LDP-RET":50,
+    "LDUR-ADD-LDR":50
+  },
+  "CMP-JE-ADD":{
+    "B.LS-NOP-LDR":100
+  },
+  "JE-MOV-JMP":{
+    "B.LT-CMN-B.EQ":50,
+    "LDRB-CBZ-MOV":50
+  },
+  "CALL-TEST-JLE":{
+    "LDR-B.LE-STR":100
+  },
+  "JLE-CMP-MOV":{
+    "STR-MOV-CBNZ":100
+  },
+  "MOV-JNE-NOP":{
+    "CBNZ-ORR-LDR":100
+  },
+  "NOP-TEST-MOV":{
+    "CBNZ-B-MOV":100
+  },
+  "MOV-JLE-TEST":{
+    "MOV-CBNZ-ORR":100
+  },
+  "TEST-MOV-MOV":{
+    "ORR-B-MOV":50,
+    "ADD-MOV-LDR":50
+  },
+  "MOV-JNE-OR":{
+    "MOV-CMP-B.LE":100
+  },
+  "XOR-TEST-JLE":{
+    "LDP-ORR-STR":100
+  },
+  "TEST-JE-TEST":{
+    "BL-CMP-B.LE":100
+  },
+  "TEST-JE-JMP":{
+    "B.LE-LDR-STR":100
+  },
+  "JAE-MOV-CMP":{
+    "LDR-CMN-B.EQ":100
+  },
+  "MOV-JNE-TEST":{
+    "B.NE-LDR-CBNZ":100
+  },
+  "JE-JMP-CALL":{
+    "STR-TBNZ-BL":100
+  },
+  "CALL-ADD-MOV":{
+    "MOV-LDR-BLR":100
+  },
+  "JBE-MOV-CMP":{
+    "LDUR-ADD-LDR":100
+  },
+  "SAR-CMP-JE":{
+    "SUBS-ASR-B.EQ":100
+  },
+  "MOV-JAE-CMP":{
+    "LDR-CBZ-LDP":100
+  },
+  "CMP-JNE-SUB":{
+    "LDP-CMP-B.HS":100
+  },
+  "JAE-LEA-MOV":{
+    "LDR-CBZ-LDP":100
+  },
+  "NOP-MOV-CMP":{
+    "LDR-LDP-CMP":50,
+    "CMN-B.NE-CMP":50
+  },
+  "JNE-NOP-MOV":{
+    "LDR-BLR-MOV":50,
+    "BL-LDR-MOV":50
+  },
+  "PUSH-XOR-PUSH":{
+    "ADRP-STP-MOV":100
+  },
+  "MOV-TEST-CMOVLE":{
+    "ADD-STR-ADD":100
+  },
+  "CMOVLE-ADD-CALL":{
+    "ADD-LDR-CMP":100
+  },
+  "MOV-LEA-XOR":{
+    "LDR-LDP-CMP":100
+  },
+  "CMP-MOV-JAE":{
+    "B.NE-LDP-STR":100
+  },
+  "JAE-CMP-MOV":{
+    "LDP-CMP-B.HS":100
+  },
+  "ADD-JNE-NOP":{
+    "CMP-B.NE-CMN":100
+  },
+  "CMP-MOV-SBB":{
+    "CMP-MOV-MOV":100
+  },
+  "SBB-AND-MOV":{
+    "MOV-LDR-CSEL":100
+  },
+  "MOV-XOR-JMP":{
+    "MOV-CMP-B.NE":100
+  },
+  "MOVZX-RET-NOP":{
+    "LDRB-RET-STP":100
+  },
+  "NOP-PUSH-PUSH":{
+    "STP-MOV-STP":100
+  },
+  "MOV-PUSH-CMP":{
+    "STP-MOV-LDRB":100
+  },
+  "PUSH-MOV-TEST":{
+    "STR-LDR-CBZ":100
+  },
+  "TEST-JE-MOVZX":{
+    "CBZ-AND-STR":100
+  },
+  "MOVZX-MOVZX-TEST":{
+    "STR-MOV-ADD":100
+  },
+  "NOP-MOVSX-MOVSX":{
+    "LDR-LDR-LDP":100
+  },
+  "JE-MOVZX-MOVZX":{
+    "LDRB-AND-CBZ":100
+  },
+  "MOV-JE-ADD":{
+    "LDR-LDR-CMP":100
+  },
+  "MOVSX-POP-JMP":{
+    "MOV-MOV-LDR":100
+  },
+  "CALL-CALL-NOP":{
+    "MOV-MOV-BLR":50,
+    "B-LDR-ADD":50
+  },
+  "TEST-MOV-SETE":{
+    "CMP-STRB-STRB":50,
+    "CMP-STR-STRB":50
+  },
+  "MOV-RET-PUSH":{
+    "LDR-RET-STP":100
+  },
+  "SUB-CMP-JE":{
+    "LDRB-MOV-CBZ":100
+  },
+  "XOR-CMP-JAE":{
+    "MOV-CMP-B.HS":100
+  },
+  "JAE-NOP-MOVSXD":{
+    "B.HS-NOP-LDR":100
+  },
+  "MOVSXD-ROL-ADD":{
+    "LDR-ROR-ADD":100
+  },
+  "ADD-ADD-CMP":{
+    "ADD-CMP-B.HI":100
+  },
+  "MOV-SUB-CMPQ":{
+    "STP-CMP-STP":100
+  },
+  "CMPQ-JE-TEST":{
+    "STP-MOV-STR":100
+  },
+  "MOV-NOPL-MOV":{
+    "CCMP-B.NE-ADRP":100
+  },
+  "MOV-XOR-CMPL":{
+    "ADRP-ADD-ADRP":50,
+    "CMP-B.EQ-CMP":50
+  },
+  "CMPL-JE-LOCK":{
+    "ADRP-NOP-MOV":50,
+    "CMP-B.EQ-MOV":50
+  },
+  "SUB-CALLQ-ADD":{
+    "B.NE-MOV-LDR":50,
+    "B.NE-LDR-CMP":50
+  },
+  "TEST-JNE-JMPQ":{
+    "LDR-CBZ-LDR":100
+  },
+  "JMPQ-NOPW-CMP":{
+    "LDR-SUB-STR":100
+  },
+  "MOV-ROR-XOR":{
+    "ADD-LDR-CMP":33,
+    "LDR-EOR-BLR":33,
+    "ADRP-STR-LDR":33
+  },
+  "XOR-CALLQ-MOV":{
+    "CMP-B.EQ-CMP":100
+  },
+  "ADD-CMP-JNE":{
+    "CMP-B.NE-LDR":100
+  },
+  "TEST-JE-LEA":{
+    "LDR-STR-CBZ":100
+  },
+  "MOV-CMPL-JE":{
+    "BL-MOV-LDXR":100
+  },
+  "JNE-JMP-DECL":{
+    "CBNZ-CMP-B.LE":33,
+    "MOV-MOV-MOV":33,
+    "CBNZ-CMP-B.GT":33
+  },
+  "DECL-JE-LEA":{
+    "B.LE-MOV-MOV":33,
+    "MOV-MOV-MOV":33,
+    "B.GT-CBZ-ADRP":33
+  },
+  "LEA-SUB-CALLQ":{
+    "MOV-MOV-MOV":33,
+    "MOV-SVC-B":33,
+    "ADRP-ADRP-LDR":33
+  },
+  "CALLQ-ADD-MOV":{
+    "MOV-MOV-SVC":100
+  },
+  "XOR-CALLQ-JMPQ":{
+    "BLR-B-MOV":100
+  },
+  "JMPQ-NOPL-MOV":{
+    "MOV-BL-B":100
+  },
+  "MOV-MOVQ-MOV":{
+    "B-LDP-ADRP":100
+  },
+  "XOR-MOV-CALLQ":{
+    "LDR-MOV-EOR":100
+  },
+  "CALLQ-JMPQ-XCHG":{
+    "EOR-BLR-B":100
+  },
+  "XCHG-MOV-TEST":{
+    "B-ADRP-LDR":100
+  },
+  "JE-MOV-CALLQ":{
+    "EOR-BLR-B":100
+  },
+  "CALLQ-CMPL-JE":{
+    "B-MOV-BL":100
+  },
+  "CALLQ-ADD-JMPQ":{
+    "B-ADRP-ADD":100
+  },
+  "JMPQ-NOP-MOVB":{
+    "ADD-MOV-MOV":100
+  },
+  "MOVB-CMPL-JE":{
+    "MOV-STRB-LDXR":100
+  },
+  "CALLQ-ADD-TEST":{
+    "LDR-LDR-CMP":100
+  },
+  "MOV-NOT-ADD":{
+    "AND-ADD-LDR":100
+  },
+  "ADD-SHR-LEA":{
+    "LDR-BLR-CMP":100
+  },
+  "LEA-NOPW-CALLQ":{
+    "CMP-B.NE-MOV":100
+  },
+  "CALLQ-ADD-CMP":{
+    "MOV-BL-NOP":100
+  },
+  "MOV-CALLQ-CALLQ":{
+    "MOV-MOV-MOV":100
+  },
+  "CALLQ-JMPQ-NOPL":{
+    "MOV-MOV-SVC":100
   },
 
   // Special transition trigrams

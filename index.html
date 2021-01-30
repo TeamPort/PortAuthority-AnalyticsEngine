@@ -139,28 +139,26 @@
 </script>
 <br>
 <button onclick="instance()">Build Instance Table</button>
-<script>
-function instance()
-{
-    buildInstanceMap(run)
-
-    var text = ""
-    var total = 0
-    var keys = instrMap.keys()
-    for(var i = 0; i < instrMap.size; i++)
-    {
-        var key = keys.next()
-        var count = instrMap.get(key.value)
-        text += key.value + " " + count + "\n"
-        total+=count
-    }
-    document.getElementById("output").value = text + total + "\n"
-}
-</script>
-<br>
 <button onclick="synthetic(2)">Build Synthetic 2-Gram Table</button>
 <button onclick="synthetic(3)">Build Synthetic 3-Gram Table</button>
 <script>
+    function instance()
+    {
+        buildInstanceMap(run)
+
+        var text = ""
+        var total = 0
+        var keys = instrMap.keys()
+        for(var i = 0; i < instrMap.size; i++)
+        {
+            var key = keys.next()
+            var count = instrMap.get(key.value)
+            text += key.value + " " + count + "\n"
+            total+=count
+        }
+        document.getElementById("output").value = text + total + "\n"
+    }
+
     function synthetic(n)
     {
         buildSyntheticInstanceMap(run, n)
@@ -222,4 +220,8 @@ function instance()
         document.getElementById("replay").style.display = "none"
     }
 </script>
+<br>
+<form method="get" action="sample.zip">
+    <button type="submit">Download sample</button>
+</form>
 </html>

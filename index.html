@@ -141,6 +141,7 @@
 <button onclick="instance()">Build Instance Table</button>
 <button onclick="synthetic(2)">Build Synthetic 2-Gram Table</button>
 <button onclick="synthetic(3)">Build Synthetic 3-Gram Table</button>
+<button onclick="memory()">Memory Usage</button>
 <script>
     function instance()
     {
@@ -174,6 +175,50 @@
             total+=count
         }
         document.getElementById("output").value = text + total + "\n"
+    }
+
+    function store()
+    {
+        var count = 0
+        if(synthMap.has("STR"))
+        {
+            count += synthMap.get("STR")*4
+        }
+        if(synthMap.has("STRH"))
+        {
+            count += synthMap.get("STRH")*2
+        }
+        if(synthMap.has("STRB"))
+        {
+            count += synthMap.get("STRB")
+        }
+        document.getElementById("output").value += "Stored bytes " + count + "\n"
+    }
+
+    function access()
+    {
+        var count = 0
+        if(synthMap.has("LDR"))
+        {
+            count += synthMap.get("LDR")*4
+        }
+        if(synthMap.has("LDRH"))
+        {
+            count += synthMap.get("LDRH")*2
+        }
+        if(synthMap.has("LDRB"))
+        {
+            count += synthMap.get("LDRB")
+        }
+        document.getElementById("output").value += "Loaded bytes " + count + "\n"
+    }
+
+    function memory()
+    {
+        buildSyntheticInstanceMap(run, 2)
+        document.getElementById("output").value = ""
+        store()
+        access()
     }
 </script>
 <br>

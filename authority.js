@@ -90,7 +90,57 @@ class Energy extends Analyser
     }
 }
 
+class AArch64Memory extends Analyser
+{
+    constructor()
+    {
+        super()
+        this.access = 0
+        this.store = 0
+    }
+
+    analyze(instruction)
+    {
+        if(instruction.m == "STR")
+        {
+            this.store += 4
+        }
+        if(instruction.m == "STRH")
+        {
+            this.store += 2
+        }
+        if(instruction.m == "STRB")
+        {
+            this.store += 1
+        }
+
+        if(instruction.m == "LDR")
+        {
+            this.access += 4
+        }
+        if(instruction.m == "LDRH")
+        {
+            this.access += 2
+        }
+        if(instruction.m == "LDRB")
+        {
+            this.access += 1
+        }
+    }
+
+    accesses()
+    {
+        return this.access
+    }
+
+    stores()
+    {
+        return this.store
+    }
+}
+
 var analyzers = null
+var predicted = null
 
 function analyze(selected)
 {
@@ -105,6 +155,21 @@ function analyze(selected)
         {
             var a = analyzers[count]
             a.analyze(instr);
+        }
+    }
+
+    buildSyntheticInstanceMap(run, 2)
+    for (const [key, value] of synthMap) {
+        var count = predicted.length
+        while(count--)
+        {
+            var instrs = value
+            var a = predicted[count]
+            while(instrs--)
+            {
+                var instr = {a: 0x0, m: key, o: 0}
+                a.analyze(instr)
+            }
         }
     }
 }

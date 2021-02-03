@@ -2,11 +2,11 @@
 <script src="run.js"></script>
 <script src="marcher-energy.js"></script>
 <script src="tx2-energy.js"></script>
-<script src="authority.js"></script>
 <script src="instance.js"></script>
 <script src="bigrams.js"></script>
 <script src="trigrams.js"></script>
 <script src="synthetic.js"></script>
+<script src="authority.js"></script>
 
 <script src="pako.min.js"></script>
 
@@ -30,9 +30,7 @@
 
     function updateOutput()
     {
-        var raw = analyzers[2].energyUsage()
-
-        var scaled = raw;
+        var scale = 1;
         var selected = document.getElementById("selection").selectedIndex
         var n = document.getElementById("BigO").value
         var c = document.getElementById("Constant").value
@@ -41,42 +39,55 @@
             case 0: // Constant
                 break;
             case 1: // Double Logarithmic
-                scaled*=Math.log10(Math.log10(n))
+                scale=Math.log10(Math.log10(n))
                 break;
             case 2: // Logarithmic
                 var factor = Math.log10(n)
-                scaled*=factor
+                scale=factor
                 break;
             case 3: // Polylogarithmic
-                scaled*=Math.pow(Math.log10(n), c)
+                scale=Math.pow(Math.log10(n), c)
                 break;
             case 4: // Fractional Power
-                scaled*=Math.pow(n,1/c)
+                scale=Math.pow(n,1/c)
                 break;
             case 5: // Linear
-                scaled*=n
+                scale=n
                 break;
             case 6: // N Log-Star N
                 break;
             case 7: // Linearithmic
-                scaled*=(n*Math.log10(n))
+                scale=(n*Math.log10(n))
                 break;
             case 8: // Quadratic
-                scaled*=Math.pow(n,2)
+                scale=Math.pow(n,2)
                 break;
             case 9: // Polynomial
-                scaled*=Math.pow(n,c)
+                scale=Math.pow(n,c)
                 break;
             case 10: // Exponential
-                scaled*=Math.pow(c,n)
+                scale=Math.pow(c,n)
                 break;
             case 11: // Factorial
-                scaled*=factorial(n)
+                scale=factorial(n)
                 break;
         }
 
-        document.getElementById("output").value  = "Coverage " + analyzers[0].percentCoverage() + "%\n"
-        document.getElementById("output").value += "Energy Usage (J) " +  scaled + "\n"
+        {
+            var energy = analyzers[2].energyUsage()
+            document.getElementById("output").value = "Host Platform:\n"
+            document.getElementById("output").value += "Coverage " + analyzers[0].percentCoverage() + "%\n"
+            document.getElementById("output").value += "Energy Usage (J) " +  energy*scale + "\n"
+        }
+
+        {
+            var energy = predicted[0].energyUsage()
+            var memory = predicted[1];
+            document.getElementById("output").value += "\nTarget Platform:\n"
+            document.getElementById("output").value += "Energy Usage (J) " +  energy*scale + "\n"
+            document.getElementById("output").value += "Stored bytes " + memory.stores()*scale + "\n"
+            document.getElementById("output").value += "Loaded bytes " + memory.accesses()*scale + "\n"
+        }
     }
 
     function updateText()
@@ -103,6 +114,12 @@
         "O(n!)"
     ]
 
+    replay.addEventListener('click', function(event)
+    {
+        analyzers = null
+        predicted = null
+    }, false)
+
     replay.addEventListener('change', function(event)
     {
           var i = 0;
@@ -127,6 +144,10 @@
                       {
                           analyzers = [new Coverage(run.size), new Category(), new Energy(run.triple)]
                       }
+                      if(predicted == null)
+                      {
+                           predicted = [new Energy("aarch64"), new AArch64Memory()]
+                      }
                       analyze(run);
                       updateOutput();
                   }
@@ -138,91 +159,8 @@
     }, false);
 </script>
 <br>
-<button onclick="instance()">Build Instance Table</button>
-<button onclick="synthetic(2)">Build Synthetic 2-Gram Table</button>
-<button onclick="synthetic(3)">Build Synthetic 3-Gram Table</button>
-<button onclick="memory()">Memory Usage</button>
-<script>
-    function instance()
-    {
-        buildInstanceMap(run)
-
-        var text = ""
-        var total = 0
-        var keys = instrMap.keys()
-        for(var i = 0; i < instrMap.size; i++)
-        {
-            var key = keys.next()
-            var count = instrMap.get(key.value)
-            text += key.value + " " + count + "\n"
-            total+=count
-        }
-        document.getElementById("output").value = text + total + "\n"
-    }
-
-    function synthetic(n)
-    {
-        buildSyntheticInstanceMap(run, n)
-
-        var text = ""
-        var total = 0
-        var keys = synthMap.keys()
-        for(var i = 0; i < synthMap.size; i++)
-        {
-            var key = keys.next()
-            var count = synthMap.get(key.value)
-            text += key.value + " " + count + "\n"
-            total+=count
-        }
-        document.getElementById("output").value = text + total + "\n"
-    }
-
-    function store()
-    {
-        var count = 0
-        if(synthMap.has("STR"))
-        {
-            count += synthMap.get("STR")*4
-        }
-        if(synthMap.has("STRH"))
-        {
-            count += synthMap.get("STRH")*2
-        }
-        if(synthMap.has("STRB"))
-        {
-            count += synthMap.get("STRB")
-        }
-        document.getElementById("output").value += "Stored bytes " + count + "\n"
-    }
-
-    function access()
-    {
-        var count = 0
-        if(synthMap.has("LDR"))
-        {
-            count += synthMap.get("LDR")*4
-        }
-        if(synthMap.has("LDRH"))
-        {
-            count += synthMap.get("LDRH")*2
-        }
-        if(synthMap.has("LDRB"))
-        {
-            count += synthMap.get("LDRB")
-        }
-        document.getElementById("output").value += "Loaded bytes " + count + "\n"
-    }
-
-    function memory()
-    {
-        buildSyntheticInstanceMap(run, 2)
-        document.getElementById("output").value = ""
-        store()
-        access()
-    }
-</script>
 <br>
-<textarea id="output" style="width: 512px; height: 512px"></textarea>
+<textarea id="output" style="width: 512px; height: 256px; border: none;">Ready!</textarea>
 <br>
 <table style="width: 512px;">
 <tr>
@@ -269,4 +207,43 @@
 <form method="get" action="sample.zip">
     <button type="submit">Download sample</button>
 </form>
+<br>
+<!--button onclick="instance()">Build Instance Table</button>
+<button onclick="synthetic(2)">Build Synthetic 2-Gram Table</button>
+<button onclick="synthetic(3)">Build Synthetic 3-Gram Table</button-->
+<script>
+    function instance()
+    {
+        buildInstanceMap(run)
+
+        var text = ""
+        var total = 0
+        var keys = instrMap.keys()
+        for(var i = 0; i < instrMap.size; i++)
+        {
+            var key = keys.next()
+            var count = instrMap.get(key.value)
+            text += key.value + " " + count + "\n"
+            total+=count
+        }
+//        document.getElementById("output").value = text + total + "\n"
+    }
+
+    function synthetic(n)
+    {
+        buildSyntheticInstanceMap(run, n)
+
+        var text = ""
+        var total = 0
+        var keys = synthMap.keys()
+        for(var i = 0; i < synthMap.size; i++)
+        {
+            var key = keys.next()
+            var count = synthMap.get(key.value)
+            text += key.value + " " + count + "\n"
+            total+=count
+        }
+//        document.getElementById("output").value = text + total + "\n"
+    }
+</script>
 </html>

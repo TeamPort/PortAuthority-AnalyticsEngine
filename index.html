@@ -1,4 +1,22 @@
 <html>
+<style>
+  html
+  {
+    background:#1e1e1e
+  }
+  body
+  {
+    margin: 0px
+  }
+  .menubar
+  {
+    background:#3e3e39
+  }
+  .toolbar
+  {
+    background:#303030
+  }
+</style>
 <script src="run.js"></script>
 <script src="marcher-energy.js"></script>
 <script src="tx2-energy.js"></script>
@@ -10,8 +28,23 @@
 
 <script src="pako.min.js"></script>
 
-<input type="file" id="replay" multiple>
+<div class="menubar" style="width: 100%; height: 20px;">
+</div>
+<div>
+<div class="toolbar" style="float: left; width: 44px; height: 100%;">
+<a href="sample.zip" title="Download sample" >
+    <img src="download.png"/>
+</a>
+<img src="files.png" onclick="forward()"/>
+</div>
+<div style="margin-left: 64px;">
+<input type="file" id="replay" style="display:none" multiple>
 <script>
+    function forward()
+    {
+        document.getElementById("replay").click();
+    }
+
     function factorial(value)
     {
         if (value < 0)
@@ -159,8 +192,7 @@
     }, false);
 </script>
 <br>
-<br>
-<textarea id="output" style="width: 512px; height: 256px; border: none;">Ready!</textarea>
+<textarea id="output" style="width: 512px; height: 256px; border: none; color: white; background:#1e1e1e">Ready!</textarea>
 <br>
 <table style="width: 512px;">
 <tr>
@@ -203,10 +235,7 @@
         document.getElementById("replay").style.display = "none"
     }
 </script>
-<br>
-<form method="get" action="sample.zip">
-    <button type="submit">Download sample</button>
-</form>
+</div>
 <br>
 <!--button onclick="instance()">Build Instance Table</button>
 <button onclick="synthetic(2)">Build Synthetic 2-Gram Table</button>

@@ -1,4 +1,4 @@
-var tx2 = {"hardwareName":"TX2","hardwareId":"000e0dc6-8e0e-420e-b5e1-d5677dc1a6c2","idle":".231","instructions":[
+var tx2_energy = {"hardwareName":"TX2","hardwareId":"000e0dc6-8e0e-420e-b5e1-d5677dc1a6c2","idle":".231","instructions":[
     {"name":"ADD","joules":"0.00000000022814874649"},
     {"name":"ADRP","joules":"0.00000000011564033031"},
     {"name":"B","joules":"0.00000000011564033031"},

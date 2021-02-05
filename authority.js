@@ -31,6 +31,71 @@ class Coverage extends Analyser
 
 class Category extends Analyser
 {
+    constructor(platform)
+    {
+        super()
+        this.categories = new Map()
+        this.categories.set("datamov", 0)
+        this.categories.set("arith", 0)
+        this.categories.set("logical", 0)
+        this.categories.set("bit", 0)
+        this.categories.set("branch", 0)
+        this.categories.set("control", 0)
+        this.categories.set("stack", 0)
+        this.categories.set("conver", 0)
+        this.categories.set("binary", 0)
+        this.categories.set("decimal", 0)
+        this.categories.set("shftrot", 0)
+        this.categories.set("cond", 0)
+        this.categories.set("break", 0)
+        this.categories.set("string", 0)
+        this.categories.set("inout", 0)
+        this.categories.set("flgctrl", 0)
+        this.categories.set("segreg", 0)
+    }
+
+    analyze(instruction)
+    {
+        var mnem = parseInt(instruction.m)
+        this.dictionary =  this.x86 ? x86_category: aarch64_category
+        for(var i = 0; i < this.dictionary.parameters.length; i++)
+        {
+            var test = this.dictionary.parameters[i]
+            if(instruction.m == test.mnemonic.toUpperCase())
+            {
+                var value = this.categories.get(test.subgroup)
+                this.categories.set(test.subgroup, value +1)
+                return
+            }
+        }
+    }
+
+    drawChart()
+    {
+        var total = 0;
+        for (const [key, value] of this.categories)
+        {
+            total += value;
+        }
+
+        addRange((this.categories.get("datamov")/total)*100, "datamov", "red");
+        addRange((this.categories.get("arith")/total)*100, "arith", "orange");
+        addRange((this.categories.get("logical")/total)*100, "logical", "yellow");
+        addRange((this.categories.get("bit")/total)*100, "bit", "green");
+        addRange((this.categories.get("branch")/total)*100, "branch", "blue");
+        addRange((this.categories.get("control")/total)*100, "control", "indigo");
+        addRange((this.categories.get("stack")/total)*100, "stack", "violet");
+        addRange((this.categories.get("conver")/total)*100, "conver", "white");
+        addRange((this.categories.get("binary")/total)*100, "binary", "silver");
+        addRange((this.categories.get("decimal")/total)*100, "decimal", "gray");
+        addRange((this.categories.get("shftrot")/total)*100, "shrfrot", "black");
+        addRange((this.categories.get("cond")/total)*100, "cond", "maroon");
+        addRange((this.categories.get("break")/total)*100, "break", "olive");
+        addRange((this.categories.get("string")/total)*100, "string", "lime");
+        addRange((this.categories.get("inout")/total)*100, "inout", "aqua");
+        addRange((this.categories.get("flgctrl")/total)*100, "flgctrl", "fuchsia");
+        addRange((this.categories.get("segreg")/total)*100, "segreg", "purple");
+    }
 }
 
 class Energy extends Analyser
@@ -41,7 +106,7 @@ class Energy extends Analyser
         this.energy = 0
         this.defaultValue = 0.0
         this.x86 = platform.includes("x86_64")
-        this.dictionary =  this.x86 ? marcher: tx2
+        this.dictionary =  this.x86 ? marcher_energy: tx2_energy
         for(var i = 0; i < this.dictionary.instructions.length; i++)
         {
             var instr = this.dictionary.instructions[i]
@@ -159,7 +224,8 @@ function analyze(selected)
     }
 
     buildSyntheticInstanceMap(run, 2)
-    for (const [key, value] of synthMap) {
+    for (const [key, value] of synthMap)
+    {
         var count = predicted.length
         while(count--)
         {

@@ -18,8 +18,8 @@
   }
 </style>
 <script src="run.js"></script>
-<script src="marcher-energy.js"></script>
-<script src="tx2-energy.js"></script>
+<script src="marcherEnergy.js"></script>
+<script src="tx2Energy.js"></script>
 <script src="instance.js"></script>
 <script src="bigrams.js"></script>
 <script src="trigrams.js"></script>
@@ -39,7 +39,7 @@
     <img src="download.png"/>
 </a>
 <img src="files.png" title="Load replay" onclick="forward()"/>
-<img src="files.png" title="Settings" onclick="openSettings()"/>
+<img src="settings.png" title="Settings" onclick="openSettings()"/>
 </div>
 <div style="margin-left: 64px;">
 <input type="file" id="replay" style="display:none" multiple>
@@ -131,6 +131,14 @@
             document.getElementById("output").value += "Energy Usage (J) " +  energy*scale + "\n"
             document.getElementById("output").value += "Stored bytes " + memory.stores()*scale + "\n"
             document.getElementById("output").value += "Loaded bytes " + memory.accesses()*scale + "\n"
+        }
+
+        {
+            if(sessionStorage.bias > 0)
+            {
+                document.getElementById("output").value += "\nSettings:\n"
+                document.getElementById("output").value += "Runtime Bias " + sessionStorage.bias + "\n"
+            }
         }
 
         analyzers[1].drawChart()

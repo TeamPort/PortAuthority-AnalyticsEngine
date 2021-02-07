@@ -51,6 +51,7 @@ function buildSyntheticInstanceMap(selected, n)
     synthMap = new Map()
     if(!selected.triple.includes("x86_64")) return
 
+    var processed = 0
     usedMap = new Map()
     var parts = ["", "", "", ""];
     for(var i = 0; i < selected.run.length-(n-1); i+=n)
@@ -117,7 +118,33 @@ function buildSyntheticInstanceMap(selected, n)
             }
 
             value++;
+            processed++
             synthMap.set(instruction, value)
         }
+    }
+
+    var total = Math.floor(selected.run.length*densityRatio)
+    var needed = total - processed
+
+    var i = 0
+    var keys = Object.keys(aarch64_distribution)
+    while(needed > 0)
+    {
+        if(i >= keys.length)
+        {
+            i = 0;
+        }
+
+        var value = 0
+        var instruction = keys[i];
+        if(synthMap.has(instruction))
+        {
+            value = synthMap.get(instruction)
+        }
+
+        value+=aarch64_distribution[instruction]
+        synthMap.set(instruction, value)
+        needed-=aarch64_distribution[instruction]
+        i++
     }
 }

@@ -1,45 +1,28 @@
 <html>
-<style>
-  html
-  {
-    background:#1e1e1e
-  }
-  body
-  {
-    margin: 0px
-  }
-  .menubar
-  {
-    background:#3e3e39
-  }
-  .toolbar
-  {
-    background:#303030
-  }
-</style>
-<script src="run.js"></script>
-<script src="marcherEnergy.js"></script>
-<script src="tx2Energy.js"></script>
-<script src="instance.js"></script>
-<script src="bigrams.js"></script>
-<script src="trigrams.js"></script>
-<script src="synthetic.js"></script>
-<script src="x86.json"></script>
-<script src="aarch64.json"></script>
+<link rel="stylesheet" href="styles.css">
+<script src="data/marcherEnergy.js"></script>
+<script src="data/tx2Energy.js"></script>
+<script src="data/x86Category.js"></script>
+<script src="data/aarch64Category.js"></script>
+<script src="data/bigrams.js"></script>
+<script src="data/trigrams.js"></script>
+
 <script src="chart.js"></script>
+<script src="synthetic.js"></script>
 <script src="authority.js"></script>
 
+<script src="run.js"></script>
+<script src="instance.js"></script>
 <script src="pako.min.js"></script>
-
 <div class="menubar" style="width: 100%; height: 20px;">
 </div>
 <div>
 <div class="toolbar" style="float: left; width: 44px; height: 150%;">
 <a href="sample.zip" title="Download sample" >
-    <img src="download.png"/>
+    <img src="images/download.png"/>
 </a>
-<img src="files.png" title="Load replay" onclick="forward()"/>
-<img src="settings.png" title="Settings" onclick="openSettings()"/>
+<img src="images/files.png" title="Load replay" onclick="forward()"/>
+<img src="images/settings.png" title="Settings" onclick="openSettings()"/>
 </div>
 <div style="margin-left: 64px;">
 <input type="file" id="replay" style="display:none" multiple>

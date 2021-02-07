@@ -1,0 +1,35 @@
+<html>
+    <style>
+      html
+      {
+        background:#1e1e1e
+      }
+      body
+      {
+        margin: 0px
+      }
+    </style>
+<br>
+<table>
+    <tr>
+        <td><p style="color: white">Runtime Bias</p></td>
+    </tr>
+    <tr>
+        <td><input style="width: 64px" type="number" id="Bias" min="0" value="0"></td>
+    </tr>
+</table>
+<br>
+<input type="button" id="apply" onclick="apply()" value="Apply">
+<script>
+    function setBias(bias)
+    {
+        document.getElementById("Bias").value = bias
+    }
+
+    function apply()
+    {
+        window.opener.setBias(document.getElementById("Bias").value);
+        window.close()
+    }
+</script>
+</html>

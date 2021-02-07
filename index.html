@@ -39,10 +39,18 @@
     <img src="download.png"/>
 </a>
 <img src="files.png" title="Load replay" onclick="forward()"/>
+<img src="files.png" title="Settings" onclick="openSettings()"/>
 </div>
 <div style="margin-left: 64px;">
 <input type="file" id="replay" style="display:none" multiple>
 <script>
+    function openSettings()
+    {
+//        var settings = window.open("settings.html")
+        var settings = window.open("settings.html", "", "height=200, width=200");
+        setTimeout(function(){ settings.setBias(sessionStorage.bias) }, 200);
+    }
+
     function forward()
     {
         document.getElementById("replay").click();
@@ -255,11 +263,11 @@
 <br>
 <textarea id="output" style="width: 512px; height: 160px; border: none; color: white; background:#1e1e1e">Ready!</textarea>
 <br>
-<table style="width: 512px;">
+<table>
 <tr>
-<td><p style="color: white "id="algorithm">O(1)</p></td>
-<td><p>n</p></td>
-<td><p>c</p></td>
+<td><p style="color: white" id="algorithm">O(1)</p></td>
+<td><p style="color: white">n</p></td>
+<td><p style="color: white">c</p></td>
 </tr>
 <tr>
 <td>
@@ -289,15 +297,14 @@
 </td>
 </tr>
 </table>
+</div>
 <script>
     if(run != null)
     {
         analyze(run);
         document.getElementById("replay").style.display = "none"
     }
-</script>
-</div>
-<script>
+
     initialize()
     wipe()
     function instance()
@@ -332,6 +339,14 @@
             total+=count
         }
         document.getElementById("debug" + n).value = text + total + "\n"
+    }
+</script>
+<script>
+    //Callbacks from settings window
+    sessionStorage.bias = 0
+    function setBias(bias)
+    {
+        sessionStorage.bias = bias
     }
 </script>
 </html>

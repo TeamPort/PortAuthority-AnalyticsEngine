@@ -209,7 +209,8 @@ var predicted = null
 
 function analyze(selected)
 {
-    for(var i = 0; i < selected.run.length; i++)
+    var bias = sessionStorage.bias //Runtime bias
+    for(var i = bias; i < selected.run.length; i++)
     {
         var count = analyzers.length
         var instr = selected.run[i]

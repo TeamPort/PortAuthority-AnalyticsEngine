@@ -70,7 +70,7 @@ class Category extends Analyser
         }
     }
 
-    drawChart()
+    drawChart(host)
     {
         var total = 0;
         for (const [key, value] of this.categories)
@@ -78,23 +78,23 @@ class Category extends Analyser
             total += value;
         }
 
-        addRange((this.categories.get("datamov")/total)*100, "datamov", "red");
-        addRange((this.categories.get("arith")/total)*100, "arith", "orange");
-        addRange((this.categories.get("logical")/total)*100, "logical", "yellow");
-        addRange((this.categories.get("bit")/total)*100, "bit", "green");
-        addRange((this.categories.get("branch")/total)*100, "branch", "blue");
-        addRange((this.categories.get("control")/total)*100, "control", "indigo");
-        addRange((this.categories.get("stack")/total)*100, "stack", "violet");
-        addRange((this.categories.get("conver")/total)*100, "conver", "white");
-        addRange((this.categories.get("binary")/total)*100, "binary", "silver");
-        addRange((this.categories.get("decimal")/total)*100, "decimal", "gray");
-        addRange((this.categories.get("shftrot")/total)*100, "shrfrot", "black");
-        addRange((this.categories.get("cond")/total)*100, "cond", "maroon");
-        addRange((this.categories.get("break")/total)*100, "break", "olive");
-        addRange((this.categories.get("string")/total)*100, "string", "lime");
-        addRange((this.categories.get("inout")/total)*100, "inout", "aqua");
-        addRange((this.categories.get("flgctrl")/total)*100, "flgctrl", "fuchsia");
-        addRange((this.categories.get("segreg")/total)*100, "segreg", "purple");
+        addRange(host, (this.categories.get("datamov")/total)*100, "datamov", "red");
+        addRange(host, (this.categories.get("arith")/total)*100, "arith", "orange");
+        addRange(host, (this.categories.get("logical")/total)*100, "logical", "yellow");
+        addRange(host, (this.categories.get("bit")/total)*100, "bit", "green");
+        addRange(host, (this.categories.get("branch")/total)*100, "branch", "blue");
+        addRange(host, (this.categories.get("control")/total)*100, "control", "indigo");
+        addRange(host, (this.categories.get("stack")/total)*100, "stack", "violet");
+        addRange(host, (this.categories.get("conver")/total)*100, "conver", "white");
+        addRange(host, (this.categories.get("binary")/total)*100, "binary", "silver");
+        addRange(host, (this.categories.get("decimal")/total)*100, "decimal", "gray");
+        addRange(host, (this.categories.get("shftrot")/total)*100, "shrfrot", "darkred");
+        addRange(host, (this.categories.get("cond")/total)*100, "cond", "maroon");
+        addRange(host, (this.categories.get("break")/total)*100, "break", "olive");
+        addRange(host, (this.categories.get("string")/total)*100, "string", "lime");
+        addRange(host, (this.categories.get("inout")/total)*100, "inout", "aqua");
+        addRange(host, (this.categories.get("flgctrl")/total)*100, "flgctrl", "fuchsia");
+        addRange(host, (this.categories.get("segreg")/total)*100, "segreg", "purple");
     }
 }
 

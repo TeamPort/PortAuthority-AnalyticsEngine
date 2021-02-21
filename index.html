@@ -27,7 +27,7 @@
 <img src="images/files.png" title="Load replay" onclick="forward()"/>
 <img src="images/settings.png" title="Settings" onclick="openSettings()"/>
 </div>
-<div style="margin-left: 64px;">
+<div style="margin-left: 64px; width: 1024px">
 <input type="file" id="replay" style="display:none" multiple>
 <script>
     function openSettings()
@@ -113,10 +113,10 @@
         {
             var energy = predicted[0].energyUsage()
             var memory = predicted[1];
-            document.getElementById("output").value += "\nTarget Platform:\n"
-            document.getElementById("output").value += "Energy Usage (J) " +  energy*scale + "\n"
-            document.getElementById("output").value += "Stored bytes " + memory.stores()*scale + "\n"
-            document.getElementById("output").value += "Loaded bytes " + memory.accesses()*scale + "\n"
+            document.getElementById("targetOutput").value = "Target Platform:\n\n"
+            document.getElementById("targetOutput").value += "Energy Usage (J) " +  energy*scale + "\n"
+            document.getElementById("targetOutput").value += "Stored bytes " + memory.stores()*scale + "\n"
+            document.getElementById("targetOutput").value += "Loaded bytes " + memory.accesses()*scale + "\n"
         }
 
         {
@@ -127,22 +127,56 @@
             }
         }
 
-        analyzers[1].drawChart()
+        analyzers[1].drawChart(true)
+        predicted[2].drawChart(false)
         var output = document.getElementById("output")
         output.value += "\n"
+        var targetOutput = document.getElementById("targetOutput")
+        targetOutput.value += "\n"
         var results = document.getElementById("results")
         while(results.firstChild)
         {
             results.removeChild(results.lastChild);
         }
 
-        for (const [key, value] of legend)
+        for (const [key, value] of hostLegend)
         {
             var font = document.createElement("font");
             font.style.color = value
             font.innerText = key
             results.appendChild(font)
             results.appendChild(document.createElement("br"))
+        }
+
+        var targetResults = document.getElementById("targetResults")
+        while(targetResults.firstChild)
+        {
+            targetResults.removeChild(targetResults.lastChild);
+        }
+
+        for (const [key, value] of targetLegend)
+        {
+            var font = document.createElement("font");
+            font.style.color = value
+            font.innerText = key
+            targetResults.appendChild(font)
+            targetResults.appendChild(document.createElement("br"))
+        }
+
+        var slots = Math.max(hostLegend.size, targetLegend.size)
+
+        while(results.children.length < slots*2)
+        {
+            var font = document.createElement("font");
+            results.appendChild(font)
+            results.appendChild(document.createElement("br"))
+        }
+
+        while(targetResults.children.length < slots*2)
+        {
+            var font = document.createElement("font");
+            targetResults.appendChild(font)
+            targetResults.appendChild(document.createElement("br"))
         }
 
         instance()
@@ -184,8 +218,14 @@
         {
             results.removeChild(results.lastChild);
         }
+        const targetResults = document.getElementById("targetResults");
+        while(targetResults.firstChild)
+        {
+            targetResults.removeChild(targetResults.lastChild);
+        }
 
         document.getElementById("output").value = "";
+        document.getElementById("targetOutput").value = "";
         this.value = null
     }, false)
 
@@ -215,7 +255,7 @@
                       }
                       if(predicted == null)
                       {
-                           predicted = [new Energy("aarch64"), new AArch64Memory()]
+                           predicted = [new Energy("aarch64"), new AArch64Memory(),  new Category()]
                       }
                       analyze(run);
                       updateOutput();
@@ -229,8 +269,14 @@
 </script>
 <div style="float: right;">
     <br>
-    <!--table style="display: none"-->
-    <table>
+    <div id="targetChart"></div>
+    <br>
+    <div id="targetResults">
+    </div>
+    <br>
+    <textarea id="targetOutput" style="width: 512px; height: 160px; border: none; color: white; background:#1e1e1e"></textarea>
+    <table style="display: none">
+    <!--table-->
         <tr style="color: white;">
         <td>Replay</td>
         <td>2-gram</td>
@@ -250,7 +296,7 @@
     </table>
     </div>
 <br>
-<div id="chart"></div>
+<div id="hostChart"></div>
 <br>
 <div id="results">
 </div>

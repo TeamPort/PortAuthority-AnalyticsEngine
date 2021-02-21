@@ -1,19 +1,40 @@
 var max_width = 480;
 var width = screen.width > max_width ? max_width: screen.width;
 
-var chartCanvas = null;
-var fillPercentage = 0;
+var hostChartCanvas = null;
+var hostFillPercentage = 0;
+
+var targetChartCanvas = null;
+var targetFillPercentage = 0;
+
 var percentAdjustment = Math.PI/50;
 
-var legend;
-function addRange(percentage, label, color)
+var hostLegend;
+var targetLegend;
+function addRange(host, percentage, label, color)
 {
+    var legend = null
+    var canvas = null
+    var fillPercentage = null
+    if(host)
+    {
+        legend = hostLegend
+        canvas = hostChartCanvas
+        fillPercentage = hostFillPercentage
+    }
+    else
+    {
+        legend = targetLegend
+        canvas = targetChartCanvas
+        fillPercentage = targetFillPercentage
+    }
+
     if(percentage > 0)
     {
         legend.set(label, color)
     }
 
-    var context = chartCanvas.getContext("2d");
+    var context = canvas.getContext("2d");
     context.fillStyle = color;
 
     context.beginPath();
@@ -25,32 +46,53 @@ function addRange(percentage, label, color)
 
     context.fill();
 
-    fillPercentage += percentage;
+    if(host)
+    {
+        hostFillPercentage += percentage
+    }
+    else
+    {
+        targetFillPercentage += percentage
+    }
 }
 
 function initialize()
 {
-    var chart = document.getElementById('chart');
-    var canvas = document.createElement('canvas');
+    var hostCanvas = document.createElement('canvas');
+    var targetCanvas = document.createElement('canvas');
 
-    canvas.width = width;
-    canvas.height = width;
+    hostCanvas.width = width;
+    hostCanvas.height = width;
+    targetCanvas.width = width;
+    targetCanvas.height = width;
 
-    chartCanvas = canvas;
+    hostChartCanvas = hostCanvas;
+    targetChartCanvas = targetCanvas
 
-    fillPercentage = 0;
+    hostFillPercentage = 0;
+    targetFillPercentage = 0;
 
-    chart.appendChild(canvas);
+    var hostChart = document.getElementById('hostChart');
+    hostChart.appendChild(hostCanvas);
+    var targetChart = document.getElementById('targetChart');
+    targetChart.appendChild(targetCanvas);
 }
 
 function wipe()
 {
-    legend = new Map()
-    fillPercentage = 0;
-    var context = chartCanvas.getContext("2d");
-    context.clearRect(0, 0, chartCanvas.width, chartCanvas.height);  
+    hostLegend = new Map()
+    targetLegend = new Map()
+    hostFillPercentage = 0;
+    targetFillPercentage = 0;
 
-    addRange(100, "unknown", "gray");
-    fillPercentage = 0;
+    var hostContext = hostChartCanvas.getContext("2d");
+    hostContext.clearRect(0, 0, hostChartCanvas.width, hostChartCanvas.height);  
+    var targetContext = targetChartCanvas.getContext("2d");
+    targetContext.clearRect(0, 0, targetChartCanvas.width, targetChartCanvas.height);
+
+    addRange(true, 100, "unknown", "gray");
+    addRange(false, 100, "unknown", "gray");
+    hostFillPercentage = 0;
+    targetFillPercentage = 0;
 }
 

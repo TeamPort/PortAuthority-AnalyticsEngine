@@ -226,6 +226,9 @@
 
         document.getElementById("output").value = "";
         document.getElementById("targetOutput").value = "";
+        document.getElementById("targetOutput").style.display = "none";
+        document.getElementById("targetChart").style.display = "none";
+        document.getElementById("targetResults").style.display = "none";
         this.value = null
     }, false)
 
@@ -255,7 +258,13 @@
                       }
                       if(predicted == null)
                       {
-                           predicted = [new Energy("aarch64"), new AArch64Memory(),  new Category()]
+                          predicted = [new Energy("aarch64"), new AArch64Memory(),  new Category()]
+                      }
+                      if(run.triple.includes("x86_64"))
+                      {
+                          document.getElementById("targetOutput").style.display = "";
+                          document.getElementById("targetChart").style.display = "";
+                          document.getElementById("targetResults").style.display = "";
                       }
                       analyze(run);
                       updateOutput();
@@ -269,12 +278,12 @@
 </script>
 <div style="float: right;">
     <br>
-    <div id="targetChart"></div>
+    <div id="targetChart" style="display: none;"></div>
     <br>
-    <div id="targetResults">
+    <div id="targetResults" style="display: none;">
     </div>
     <br>
-    <textarea id="targetOutput" style="width: 512px; height: 160px; border: none; color: white; background:#1e1e1e"></textarea>
+    <textarea id="targetOutput" style="display: none; width: 512px; height: 160px; border: none; color: white; background:#1e1e1e"></textarea>
     <table style="display: none">
     <!--table-->
         <tr style="color: white;">

@@ -1,0 +1,26 @@
+{
+	"name": "portauthority-vscode-extension",
+	"description": "PortAuthority Analysis for VS Code",
+	"version": "0.0.1",
+	"publisher": "Blake W. Ford",
+	"repository": "https://github.com/TeamPort/PortAuthority-AnalyticsEngine",
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"activationEvents": [
+		"onCommand:extension.analyze"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.analyze",
+				"title": "PortAuthority Analysis"
+			}
+		]
+	},
+	"scripts": {},
+	"devDependencies": {
+		"@types/vscode": "^1.32.0"
+	}
+}

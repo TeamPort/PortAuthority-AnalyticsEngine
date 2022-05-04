@@ -42,16 +42,23 @@ class AnalysisPanel
     static _panel = undefined
     static getHtmlForWebview(extensionUri, webview) 
     {
-        return `
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body style="background-color:powderblue;">
-    </body>
-    </html>
-`;
+        const fs = require('fs');
+        var path = extensionUri.path + '/index.html'
+        fs.readFile(path, 'utf8', (err, data) => {
+          if (err) {
+            return `
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body style="background-color:powderblue;">
+                </body>
+                </html>
+            `;
+          }
+          return data;
+        });
     }
 }

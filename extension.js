@@ -44,7 +44,7 @@ class AnalysisPanel
     {
         const fs = require('fs');
         var path = extensionUri.path + '/index.html'
-        fs.readFile(path, 'utf8', (err, data) => {
+        var page =  fs.readFileSync(path, 'utf8', (err, data) => {
           if (err) {
             return `
             <!DOCTYPE html>
@@ -60,5 +60,7 @@ class AnalysisPanel
           }
           return data;
         });
+
+        return page
     }
 }
